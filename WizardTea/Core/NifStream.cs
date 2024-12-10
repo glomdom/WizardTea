@@ -37,23 +37,13 @@ public class NifStream : BinaryReader {
     public NiObject[] ParseBlocks(NifHeader header) {
         var blocks = new NiObject[header.NumBlocks];
         
-        header.BlockTypeIndex.Each((typeIndex, i) => { 
+        header.BlockTypeIndex.Each((typeIndex, i) => {
             Console.WriteLine($"Parsing {header.BlockTypes[typeIndex]}");
 
-            switch (header.BlockTypes[typeIndex]) {
-                case "NiNode": { // X: Test code.
-                    var block = new NiNode(this, header);
-                    Console.WriteLine($"NiNode has indexed string name -> {block.Name}");
-
-                    blocks[i] = block;
-
-                    break;
-                }
-
-                default: {
-                    throw new InvalidOperationException("unknown block type");
-                }
-            }
+            blocks[i] = header.BlockTypes[typeIndex] switch {
+                "NiNode" => new NiNode(this, header),
+                _ => throw new InvalidOperationException("unknown block type")
+            };
         });
 
         return blocks;
