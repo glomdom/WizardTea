@@ -32,7 +32,7 @@ public class NifStream : BinaryReader {
     public string ReadIndexString(NifHeader header) {
         var index = ReadUInt32();
 
-        return header.Strings[index];
+        return index == 0xFFFFFFFF ? string.Empty : header.Strings[index];
     }
     
     public NiObject[] ParseBlocks(NifHeader header) {
