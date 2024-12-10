@@ -12,7 +12,7 @@ public class NifHeader {
     public uint[] BlockSize { get; set; }
     public uint NumStrings { get; set; }
     public uint MaxStringLength { get; set; }
-    public uint[] Strings { get; set; }
+    public string[] Strings { get; set; }
     public uint NumGroups { get; set; }
     public uint[] Groups { get; set; }
 
@@ -37,6 +37,13 @@ public class NifHeader {
         BlockSize = new uint[NumBlocks];
         for (var i = 0; i < BlockSize.Length; i++) {
             BlockSize[i] = stream.ReadUInt32();
+        }
+        
+        NumStrings = stream.ReadUInt32();
+        MaxStringLength = stream.ReadUInt32();
+        Strings = new string[NumStrings];
+        for (var i = 0; i < Strings.Length; i++) {
+            Strings[i] = stream.ReadSizedString();
         }
         
         NumGroups = stream.ReadUInt32();
