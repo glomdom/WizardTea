@@ -24,4 +24,10 @@ public class NifStream : BinaryReader {
         
         return Encoding.ASCII.GetString(bytes);
     }
+
+    public string ReadIndexString(NifHeader header) {
+        var index = ReadUInt32();
+
+        return header.Strings[index];
+    }
 }

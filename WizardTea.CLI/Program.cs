@@ -44,3 +44,4 @@ foreach (var group in header.Groups) {
 }
 Console.WriteLine("]");
 
+BlockParser.ParseBlocks(stream, header);
