@@ -8,4 +8,8 @@ internal static class Extensions {
             action(elem, i++);
         }
     }
+
+    internal static int Sum(this IEnumerable<ushort> collection) {
+        return collection.Aggregate(0, (current, elem) => current + elem);
+    }
 }
