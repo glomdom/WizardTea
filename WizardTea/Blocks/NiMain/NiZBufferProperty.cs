@@ -15,8 +15,6 @@ public class NiZBufferProperty : NiProperty {
         set => _bitfield = (ushort)((_bitfield & ~0b_0000_0000_0011_1100) | ((ushort)value << 2));
     }
 
-    public ushort Bitfield => _bitfield;
-
     public NiZBufferProperty(NifStream stream, NifHeader header) : base(stream, header) {
         _bitfield = stream.ReadUInt16();
     }
