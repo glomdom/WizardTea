@@ -13,3 +13,7 @@ Console.WriteLine(header.UserVersion);
 foreach (var blockType in header.BlockTypes) {
     Console.WriteLine(blockType);
 }
+
+foreach (var index in header.BlockTypeIndex) {
+    Console.WriteLine(index);
+}
