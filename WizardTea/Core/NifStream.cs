@@ -49,6 +49,7 @@ public class NifStream : BinaryReader {
                 "NiMaterialProperty" => new NiMaterialProperty(this, header),
                 "NiTexturingProperty" => new NiTexturingProperty(this, header),
                 "NiSourceTexture" => new NiSourceTexture(this, header),
+                "NiPersistentSrcTextureRendererData" => new NiPersistentSrcTextureRendererData(this, header),
                 _ => null
             };
         });
