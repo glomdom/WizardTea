@@ -1,6 +1,8 @@
-﻿namespace WizardTea.Core.Types;
+﻿using WizardTea.Blocks.NiMain;
 
-public class Ref<T> {
+namespace WizardTea.Core.Types;
+
+public class Ref<T> where T : NiObject {
     public int Value { get; set; }
 
     public Ref(NifStream stream) {
