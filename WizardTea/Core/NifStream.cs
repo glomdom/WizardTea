@@ -45,6 +45,7 @@ public class NifStream : BinaryReader {
                 "NiNode" => new NiNode(this, header),
                 "NiZBufferProperty" => new NiZBufferProperty(this, header),
                 "NiVertexColorProperty" => new NiVertexColorProperty(this, header),
+                "NiTriStrips" => new NiTriStrips(this, header),
                 _ => null
             };
         });
