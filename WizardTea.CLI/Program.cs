@@ -17,3 +17,7 @@ foreach (var blockType in header.BlockTypes) {
 foreach (var index in header.BlockTypeIndex) {
     Console.WriteLine(index);
 }
+
+foreach (var group in header.Groups) {
+    Console.WriteLine(group);
+}
