@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizardTea", "WizardTea\WizardTea.csproj", "{594508D2-0AAB-4548-95D1-69D783152AD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizardTea.CLI", "WizardTea.CLI\WizardTea.CLI.csproj", "{BA3BAD3F-9C2B-44E9-BBB4-625FBA5ABF69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{594508D2-0AAB-4548-95D1-69D783152AD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{594508D2-0AAB-4548-95D1-69D783152AD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{594508D2-0AAB-4548-95D1-69D783152AD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{594508D2-0AAB-4548-95D1-69D783152AD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA3BAD3F-9C2B-44E9-BBB4-625FBA5ABF69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA3BAD3F-9C2B-44E9-BBB4-625FBA5ABF69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA3BAD3F-9C2B-44E9-BBB4-625FBA5ABF69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA3BAD3F-9C2B-44E9-BBB4-625FBA5ABF69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
