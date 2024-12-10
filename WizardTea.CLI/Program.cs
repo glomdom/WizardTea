@@ -25,6 +25,13 @@ foreach (var index in header.BlockTypeIndex) {
 }
 Console.WriteLine("]");
 
+Console.WriteLine("BlockSizes [");
+foreach (var size in header.BlockSize) {
+    Console.WriteLine("  " + size);
+}
+Console.WriteLine("]");
+
+
 Console.WriteLine("Strings [");
 foreach (var str in header.Strings) {
     Console.WriteLine("  " + str);
