@@ -23,12 +23,5 @@ public class NifStream : BinaryReader {
         var bytes = ReadBytes((int)size);
         
         return Encoding.ASCII.GetString(bytes);
-    } 
-
-    internal int GetVersionFromHeaderString(string headerString) {
-        var last = headerString.Trim().Split()[^1];
-        var parts = last.Split('.').Select(int.Parse).ToArray();
-
-        return parts[0] << 24 | parts[1] << 16 | parts[2] << 8 | parts[3];
     }
 }
