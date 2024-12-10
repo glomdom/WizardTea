@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using WizardTea.Blocks;
 using WizardTea.Blocks.NiMain;
+using WizardTea.Core.Types;
 using WizardTea.Internal;
 
 namespace WizardTea.Core;
@@ -42,7 +43,7 @@ public class NifStream : BinaryReader {
 
             blocks[i] = header.BlockTypes[typeIndex] switch {
                 "NiNode" => new NiNode(this, header),
-                _ => throw new InvalidOperationException("unknown block type")
+                _ => null
             };
         });
 
