@@ -6,8 +6,8 @@ public class NiZBufferProperty : NiProperty {
     private ushort _bitfield;
 
     public ZBufferFlags Flags {
-        get => (ZBufferFlags)(_bitfield & 0b_0000_0000_0000_0011);
-        set => _bitfield = (ushort)((_bitfield & ~0b_0000_0000_0000_0011) | (ushort)value);
+        get => (ZBufferFlags)(_bitfield & 0b_0000_0000_0011_1111);
+        set => _bitfield = (ushort)((_bitfield & ~0b_0000_0000_0011_1111) | (ushort)value);
     }
 
     public TestFunction TestFunc {
