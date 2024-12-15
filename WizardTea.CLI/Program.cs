@@ -1,6 +1,4 @@
-﻿// TODO: MAKE A SUPER COOL VISUALIZER LIKE JSONCRACK OR SOMETHING
-
-using Dumpify;
+﻿using Dumpify;
 using WizardTea.Core;
 
 using var file = File.OpenRead(args[0]);
