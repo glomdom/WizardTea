@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizardTea", "WizardTea\Wiza
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizardTea.CLI", "WizardTea.CLI\WizardTea.CLI.csproj", "{BA3BAD3F-9C2B-44E9-BBB4-625FBA5ABF69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizardTea.Visualizer", "WizardTea.Visualizer\WizardTea.Visualizer.csproj", "{CD7B526B-8381-4983-9ED7-7C764DC583CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{BA3BAD3F-9C2B-44E9-BBB4-625FBA5ABF69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA3BAD3F-9C2B-44E9-BBB4-625FBA5ABF69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA3BAD3F-9C2B-44E9-BBB4-625FBA5ABF69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD7B526B-8381-4983-9ED7-7C764DC583CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD7B526B-8381-4983-9ED7-7C764DC583CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD7B526B-8381-4983-9ED7-7C764DC583CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD7B526B-8381-4983-9ED7-7C764DC583CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
