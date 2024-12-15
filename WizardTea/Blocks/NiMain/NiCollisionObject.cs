@@ -3,5 +3,5 @@
 namespace WizardTea.Blocks.NiMain;
 
 public class NiCollisionObject : NiObject {
-    public Ptr<NiAVObject> Target { get; set; }
+    public required Ptr<NiAVObject> Target { get; set; }
 }
