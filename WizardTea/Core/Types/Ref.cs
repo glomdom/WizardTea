@@ -9,8 +9,8 @@ public class Ref<T> where T : NiObject {
         Value = stream.ReadInt32();
     }
 
-    public NiObject GetReference(NifFile file) {
-        return file.Blocks[Value];
+    public T GetReference(NifFile file) {
+        return (T)file.Blocks[Value];
     }
     
     public bool HasReference => Value != -1;
