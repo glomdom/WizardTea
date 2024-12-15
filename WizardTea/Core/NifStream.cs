@@ -37,9 +37,15 @@ public class NifStream : BinaryReader {
     
     public NiObject?[] ParseBlocks(NifHeader header) {
         var blocks = new NiObject?[header.NumBlocks];
+        var counter = 0;
+        var stopParsingAt = 3;
         
         header.BlockTypeIndex.Each((typeIndex, i) => {
             Console.WriteLine($"Parsing {header.BlockTypes[typeIndex]}");
+
+            if (counter++ == stopParsingAt) {
+                return false;
+            }
 
             blocks[i] = header.BlockTypes[typeIndex] switch {
                 "NiNode" => new NiNode(this, header),
@@ -53,6 +59,8 @@ public class NifStream : BinaryReader {
                 "NiTriStripsData" => new NiTriStripsData(this, header),
                 _ => null,
             };
+
+            return true;
         });
 
         return blocks;

@@ -28,8 +28,8 @@ public class NiVertexColorProperty : NiProperty {
 [Flags]
 public enum VertexColorFlags : ushort {
     ColorMode = 0b_0000_0000_0000_0111,
-    LightingMode = 0b_0000_0000_0001_0000,
-    SourceVertexMode = 0b_0000_0000_0110_0000,
+    LightingMode = 0b_0000_0000_0000_1000,
+    SourceVertexMode = 0b_0000_0000_0011_0000,
 }
 
 public enum SourceVertexMode : uint {
