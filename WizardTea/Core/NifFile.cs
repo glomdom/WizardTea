@@ -9,6 +9,6 @@ public class NifFile {
     
     public NifFile(NifStream stream) {
         Header = new NifHeader(stream);
-        Blocks = stream.ParseBlocks(Header);
+        Blocks = stream.ParseBlocks(Header)!; // TODO: remove this and actually catch errors
     }
 }
