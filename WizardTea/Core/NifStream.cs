@@ -35,8 +35,8 @@ public class NifStream : BinaryReader {
         return index == 0xFFFFFFFF ? string.Empty : header.Strings[index];
     }
     
-    public NiObject[] ParseBlocks(NifHeader header) {
-        var blocks = new NiObject[header.NumBlocks];
+    public NiObject?[] ParseBlocks(NifHeader header) {
+        var blocks = new NiObject?[header.NumBlocks];
         
         header.BlockTypeIndex.Each((typeIndex, i) => {
             Console.WriteLine($"Parsing {header.BlockTypes[typeIndex]}");
@@ -51,7 +51,7 @@ public class NifStream : BinaryReader {
                 "NiSourceTexture" => new NiSourceTexture(this, header),
                 "NiPersistentSrcTextureRendererData" => new NiPersistentSrcTextureRendererData(this, header),
                 "NiTriStripsData" => new NiTriStripsData(this, header),
-                _ => null
+                _ => null,
             };
         });
 
