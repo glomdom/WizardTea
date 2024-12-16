@@ -6,13 +6,28 @@
         xmlns:local="clr-namespace:WizardTea.Visualizer"
         mc:Ignorable="d"
         Title="WizardTea NIF Visualizer" Width="800" Height="600">
-    <DockPanel>
-        <Menu DockPanel.Dock="Top">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
             <MenuItem Header="_File">
-                <MenuItem x:Name="FileOpen" Header="Open..." Click="FileOpen_Click" />
+                <MenuItem Header="Open..." Click="FileOpen_Click" />
                 <Separator />
-                <MenuItem x:Name="FileExit" Header="Exit" Click="FileExit_Click" />
+                <MenuItem Header="Exit" Click="FileExit_Click" />
             </MenuItem>
         </Menu>
-    </DockPanel>
+
+        <Grid Grid.Row="1" Background="Transparent">
+            <Canvas Name="RootCanvas" Background="Transparent">
+                <Canvas Name="NodeContainer" Background="Transparent">
+                    <Ellipse Width="50" Height="50" Fill="SkyBlue" Canvas.Left="100" Canvas.Top="100" />
+                    <Ellipse Width="50" Height="50" Fill="LightGreen" Canvas.Left="300" Canvas.Top="200" />
+                    <Ellipse Width="50" Height="50" Fill="LightCoral" Canvas.Left="500" Canvas.Top="400" />
+                </Canvas>
+            </Canvas>
+        </Grid>
+    </Grid>
 </Window>
