@@ -16,5 +16,5 @@ var nifFile = new NifFile(stream);
 nifFile.Dump(members: config);
 
 Console.WriteLine("=> searching for node of type `NiNode` with name `Scene Root`");
-var block = nifFile.GetBlockByName<NiNode>("Scene Root");
+var block = nifFile.GetBlockOfName<NiNode>("Scene Root");
 block.Dump(members: config);

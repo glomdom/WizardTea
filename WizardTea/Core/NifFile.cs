@@ -12,7 +12,7 @@ public class NifFile {
         Blocks = stream.ParseBlocks(Header);
     }
 
-    public T? GetBlockByName<T>(string name) where T : NiObjectNET {
+    public T? GetBlockOfName<T>(string name) where T : NiObjectNET {
         return Blocks.OfType<T>().FirstOrDefault(item => item.Name == name);
     }
 }
