@@ -11,15 +11,8 @@ public class MaterialData {
 
     public MaterialData(NifStream stream, NifHeader header) {
         NumMaterials = stream.ReadUInt32();
-        MaterialName = new string[NumMaterials];
-        for (var i = 0; i < MaterialName.Length; i++) {
-            MaterialName[i] = stream.ReadIndexString(header);
-        }
-        
-        MaterialExtraData = new int[NumMaterials];
-        for (var i = 0; i < MaterialExtraData.Length; i++) {
-            MaterialExtraData[i] = stream.ReadInt32();
-        }
+        MaterialName = stream.ReadArray(NumMaterials, () => stream.ReadIndexString(header));
+        MaterialExtraData = stream.ReadArray(NumMaterials, stream.ReadInt32);
         
         ActiveMaterial = stream.ReadInt32();
         MaterialNeedsUpdate = stream.ReadBoolean();

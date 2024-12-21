@@ -13,10 +13,7 @@ public abstract class NiObjectNET : NiObject {
         Name = stream.ReadIndexString(header);
         
         NumExtraDataList = stream.ReadUInt32();
-        ExtraDataList = new Ref<NiExtraData>[NumExtraDataList];
-        for (var i = 0; i < NumExtraDataList; i++) {
-            // TODO: Implement
-        }
+        ExtraDataList = stream.ReadArray(NumExtraDataList, () => new Ref<NiExtraData>(stream));
         
         Controller = new Ref<NiTimeController>(stream);
     }

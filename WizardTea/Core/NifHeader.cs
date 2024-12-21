@@ -24,32 +24,15 @@ public class NifHeader {
         NumBlocks = stream.ReadUInt32();
         NumBlockTypes = stream.ReadUInt16();
         
-        BlockTypes = new string[NumBlockTypes];
-        for (var i = 0; i < BlockTypes.Length; i++) {
-            BlockTypes[i] = stream.ReadSizedString();
-        }
-        
-        BlockTypeIndex = new ushort[NumBlocks];
-        for (var i = 0; i < BlockTypeIndex.Length; i++) {
-            BlockTypeIndex[i] = stream.ReadUInt16();
-        }
-        
-        BlockSize = new uint[NumBlocks];
-        for (var i = 0; i < BlockSize.Length; i++) {
-            BlockSize[i] = stream.ReadUInt32();
-        }
+        BlockTypes = stream.ReadArray(NumBlockTypes, stream.ReadSizedString);
+        BlockTypeIndex = stream.ReadArray(NumBlocks, stream.ReadUInt16);
+        BlockSize = stream.ReadArray(NumBlocks, stream.ReadUInt32);
         
         NumStrings = stream.ReadUInt32();
         MaxStringLength = stream.ReadUInt32();
-        Strings = new string[NumStrings];
-        for (var i = 0; i < Strings.Length; i++) {
-            Strings[i] = stream.ReadSizedString();
-        }
+        Strings = stream.ReadArray(NumStrings, stream.ReadSizedString);
         
         NumGroups = stream.ReadUInt32();
-        Groups = new uint[NumGroups];
-        for (var i = 0; i < Groups.Length; i++) {
-            Groups[i] = stream.ReadUInt32();
-        }
+        Groups = stream.ReadArray(NumGroups, stream.ReadUInt32);
     }
 }

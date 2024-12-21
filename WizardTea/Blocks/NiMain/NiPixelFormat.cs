@@ -19,10 +19,6 @@ public abstract class NiPixelFormat : NiObject {
         ExtraData = stream.ReadUInt32();
         Flags = stream.ReadByte();
         Tiling = (PixelTiling)stream.ReadUInt32();
-
-        Channels = new PixelFormatComponent[4];
-        for (var i = 0; i < Channels.Length; i++) {
-            Channels[i] = new PixelFormatComponent(stream);
-        }
+        Channels = stream.ReadArray(4, () => new PixelFormatComponent(stream));
     }
 }

@@ -18,20 +18,14 @@ public class NiPersistentSrcTextureRendererData : NiPixelFormat {
         Palette = new Ref<NiPalette>(stream);
         NumMipmaps = stream.ReadUInt32();
         BytesPerPixel = stream.ReadUInt32();
-        
-        Mipmaps = new MipMap[NumMipmaps];
-        for (var i = 0; i < Mipmaps.Length; i++) {
-            Mipmaps[i] = new MipMap(stream);
-        }
+
+        Mipmaps = stream.ReadArray(NumMipmaps, () => new MipMap(stream));
         
         NumPixels = stream.ReadUInt32();
         PadNumPixels = stream.ReadUInt32();
         NumFaces = stream.ReadUInt32();
         Platform = (PlatformID)stream.ReadUInt32();
-        
-        PixelData = new byte[NumPixels * NumFaces];
-        for (var i = 0; i < PixelData.Length; i++) {
-            PixelData[i] = stream.ReadByte();
-        }
+
+        PixelData = stream.ReadBytes((int)(NumPixels * NumFaces));  
     }
 }

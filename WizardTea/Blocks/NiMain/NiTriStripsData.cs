@@ -11,15 +11,9 @@ public class NiTriStripsData : NiTriBasedGeomData {
     
     public NiTriStripsData(NifStream stream, NifHeader header) : base(stream, header) {
         NumStrips = stream.ReadUInt16();
-        StripLengths = new ushort[NumStrips];
-        for (var i = 0; i < StripLengths.Length; i++) {
-            StripLengths[i] = stream.ReadUInt16();
-        }
+        StripLengths = stream.ReadArray(NumStrips, stream.ReadUInt16);
         
         HasPoints = stream.ReadBoolean();
-        Points = new ushort[StripLengths.Sum()];
-        for (var i = 0; i < Points.Length; i++) {
-            Points[i] = stream.ReadUInt16();
-        }
+        Points = stream.ReadArray(StripLengths.Sum(), stream.ReadUInt16);
     }
 }

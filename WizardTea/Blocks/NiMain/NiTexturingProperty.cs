@@ -50,10 +50,7 @@ public class NiTexturingProperty : NiProperty {
         HasDecal0Texture = stream.ReadBoolean();
         
         NumShaderTextures = stream.ReadUInt32();
-        ShaderTextures = new ShaderTexDesc[NumShaderTextures];
-        for (var i = 0; i < NumShaderTextures; i++) {
-            ShaderTextures[i] = new ShaderTexDesc(stream);
-        }
+        ShaderTextures = stream.ReadArray(NumShaderTextures, () => new ShaderTexDesc(stream));
     }
 }
 

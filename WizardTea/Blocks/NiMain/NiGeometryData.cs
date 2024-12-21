@@ -49,35 +49,22 @@ public abstract class NiGeometryData : NiObject {
         NumVertices = stream.ReadUInt16();
         KeepFlags = stream.ReadByte();
         CompressFlags = stream.ReadByte();
+        
         HasVertices = stream.ReadBoolean();
-
-        Vertices = new Vector3[HasVertices ? NumVertices : 0];
-        for (var i = 0; i < Vertices.Length; i++) {
-            Vertices[i] = new Vector3(stream);
-        }
+        Vertices = HasVertices ? stream.ReadArray(NumVertices, () => new Vector3(stream)) : [];
 
         _bitfield = stream.ReadUInt16();
+
         HasNormals = stream.ReadBoolean();
-        Normals = new Vector3[HasNormals ? NumVertices : 0];
+        Normals = HasNormals ? stream.ReadArray(NumVertices, () => new Vector3(stream)) : [];
         // Tangents = new Vector3[HasVertices ? NumVertices : 0];
         // Bitangents = new Vector3[HasVertices ? NumVertices : 0];
 
-        for (var i = 0; i < Normals.Length; i++) {
-            Normals[i] = new Vector3(stream);
-        }
-
         BoundingSphere = new NiBound(stream);
         HasVertexColors = stream.ReadBoolean();
-
-        VertexColors = new Vector3[HasVertexColors ? NumVertices : 0];
-        for (var i = 0; i < VertexColors.Length; i++) {
-            VertexColors[i] = new Vector3(stream);
-        }
-
-        UVSets = new TexCoord[HasUVSets == 1 ? NumVertices : 0];
-        for (var i = 0; i < UVSets.Length; i++) {
-            UVSets[i] = new TexCoord(stream);
-        }
+        
+        VertexColors = HasVertexColors ? stream.ReadArray(NumVertices, () => new Vector3(stream)) : [];
+        UVSets = HasUVSets == 1 ? stream.ReadArray(NumVertices, () => new TexCoord(stream)) : [];
         
         ConsistencyFlags = (ConsistencyType)stream.ReadUInt16();
         AdditionalData = new Ref<AbstractAdditionalGeometryData>(stream);

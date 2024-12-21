@@ -12,9 +12,6 @@ public class NiPalette : NiObject {
         NumEntries = stream.ReadUInt32();
 
         var entries = NumEntries == 16 ? 16 : 256;
-        Palette = new ByteColor4[entries];
-        for (var i = 0; i < entries; i++) {
-            Palette[i] = new ByteColor4(stream);
-        }
+        Palette = stream.ReadArray(entries, () => new ByteColor4(stream));
     }
 }

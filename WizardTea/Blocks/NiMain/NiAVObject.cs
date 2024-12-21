@@ -20,10 +20,7 @@ public abstract class NiAVObject : NiObjectNET {
         Scale = stream.ReadSingle();
         
         NumProperties = stream.ReadUInt32();
-        Properties = new Ref<NiProperty>[NumProperties];
-        for (var i = 0; i < NumProperties; i++) {
-            Properties[i] = new Ref<NiProperty>(stream);
-        }
+        Properties = stream.ReadArray(NumProperties, () => new Ref<NiProperty>(stream));
         
         CollisionObject = new Ref<NiCollisionObject>(stream);
     }
