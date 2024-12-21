@@ -34,6 +34,39 @@ public class NifStream : BinaryReader {
 
         return index == 0xFFFFFFFF ? string.Empty : header.Strings[index];
     }
+    
+    public T[] ReadArray<T>(int length, Func<T> reader) {
+        if (length < 0) {
+            throw new ArgumentOutOfRangeException(nameof(length), "length must be non-negative");
+        }
+
+        return ReadArray((uint)length, reader);
+    }
+
+    public T[] ReadArray<T>(uint length, Func<T> reader) {
+        var result = new T[length];
+        for (var i = 0; i < length; i++) {
+            result[i] = reader();
+        }
+        
+        return result;
+    }
+    
+    public void ReadArrayInto<T>(ref T[] array, int length, Func<T> reader) {
+        if (length < 0) {
+            throw new ArgumentOutOfRangeException(nameof(length), "length must be non-negative");
+        }
+
+        ReadArrayInto(ref array, (uint)length, reader);
+    }
+
+    public void ReadArrayInto<T>(ref T[] array, uint length, Func<T> reader) {
+        array = new T[length];
+
+        for (var i = 0; i < length; i++) {
+            array[i] = reader();
+        }
+    }
 
     public NiObject[] ParseBlocks(NifHeader header) {
         var blocks = new NiObject[header.NumBlocks];
