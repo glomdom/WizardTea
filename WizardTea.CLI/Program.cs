@@ -1,4 +1,5 @@
 ﻿using Dumpify;
+using WizardTea.Blocks.NiMain;
 using WizardTea.Core;
 
 using var file = File.OpenRead(args[0]);
@@ -13,3 +14,7 @@ var config = new MembersConfig {
 
 var nifFile = new NifFile(stream);
 nifFile.Dump(members: config);
+
+Console.WriteLine("=> searching for node of type `NiNode` with name `Scene Root`");
+var block = nifFile.GetBlockByName<NiNode>("Scene Root");
+block.Dump(members: config);

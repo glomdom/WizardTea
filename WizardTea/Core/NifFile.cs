@@ -9,6 +9,10 @@ public class NifFile {
     
     public NifFile(NifStream stream) {
         Header = new NifHeader(stream);
-        Blocks = stream.ParseBlocks(Header)!; // TODO: remove this and actually catch errors
+        Blocks = stream.ParseBlocks(Header);
+    }
+
+    public T? GetBlockByName<T>(string name) where T : NiObjectNET {
+        return Blocks.OfType<T>().FirstOrDefault(item => item.Name == name);
     }
 }
