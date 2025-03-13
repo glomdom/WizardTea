@@ -1,0 +1,8 @@
+﻿/WizardTea/Generated/
+
+.idea/
+bin/
+obj/
+nupkg/
+
+/WizardTea.sln.DotSettings.user

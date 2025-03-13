@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Include="Generated\*.g.cs" />
+    </ItemGroup>
+    
+    <Target Name="GenerateFiles" BeforeTargets="BeforeBuild">
+        <Exec Command="dotnet run --project ../WizardTea.Generator/WizardTea.Generator.csproj" />
+    </Target>
+
+</Project>
