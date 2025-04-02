@@ -24,6 +24,7 @@ public abstract class BaseParser : IParser {
         sb.AppendLine("/// </auto-generated>");
         sb.AppendLine();
         sb.AppendLine("using System;");
+        sb.AppendLine("using System.Numerics;");
         sb.AppendLine();
         sb.AppendLine("namespace WizardTea;");
         
