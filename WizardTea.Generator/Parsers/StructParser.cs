@@ -72,24 +72,27 @@ public class StructParser : BaseParser {
                     sb.AppendLine("    " + before + " // injection: BeforeField");
                 }
 
-                var useOverride = injector.HasAny(InjectionPoint.FieldOverride);
-                string finalFieldCode;
+                var wasOverridden = false;
+                fieldContext.CurrentSource = baseFieldCode;
 
-                if (useOverride) {
-                    fieldContext.CurrentSource = baseFieldCode;
-                    var fieldFinal = injector.Execute(InjectionPoint.FieldOverride, fieldContext);
-
-                    finalFieldCode = fieldFinal.Equals(baseFieldCode, StringComparison.Ordinal)
-                        ? baseFieldCode
-                        : fieldFinal;
+                string fieldFinal;
+                if (injector.HasAny(InjectionPoint.FieldOverride)) {
+                    var overridden = injector.Execute(InjectionPoint.FieldOverride, fieldContext);
+                    wasOverridden = !overridden.Equals(baseFieldCode, StringComparison.Ordinal);
+                    fieldFinal = overridden;
                 } else {
-                    finalFieldCode = baseFieldCode;
+                    fieldFinal = baseFieldCode;
                 }
 
-                sb.AppendLine("    " + finalFieldCode + " // injection: FieldOverride");
+                var finalLine = "    " + fieldFinal;
+                if (wasOverridden) {
+                    finalLine += " // injection: FieldOverride";
+                }
+
+                sb.AppendLine(finalLine);
 
                 var after = injector.Execute(InjectionPoint.AfterField, fieldContext);
-                if (!string.IsNullOrWhiteSpace(after) && after != finalFieldCode) {
+                if (!string.IsNullOrWhiteSpace(after) && after != fieldFinal) {
                     sb.AppendLine("    " + after + " // injection: AfterField");
                 }
             }
