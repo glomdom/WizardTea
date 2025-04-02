@@ -23,6 +23,8 @@ public abstract class BaseParser : IParser {
         sb.AppendLine("/// If there is an issue, file at https://github.com/glomdom/WizardTea/issues/");
         sb.AppendLine("/// </auto-generated>");
         sb.AppendLine();
+        sb.AppendLine("using System;");
+        sb.AppendLine();
         sb.AppendLine("namespace WizardTea;");
         
         

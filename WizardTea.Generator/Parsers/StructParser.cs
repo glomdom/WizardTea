@@ -9,12 +9,12 @@ public class StructParser : BaseParser {
     private Dictionary<string, string> Data { get; } = [];
 
     public StructParser(XDocument xml) : base(xml) {
-        BlacklistedTypes = ["string"];
+        BlacklistedTypes = ["string", "Vector3", "Vector2"];
     }
 
     public override void Parse() {
         var root = Xml.Root ?? throw new InvalidDataException("cache.xml missing root element");
-        var structElements = root.Elements("struct");
+        var structElements = root.Elements("struct").ToList();
 
         foreach (var structElem in structElements) {
             var structName = XmlHelper.GetRequiredAttributeValue(structElem, "name");
@@ -27,7 +27,7 @@ public class StructParser : BaseParser {
                 continue;
             }
 
-            var stringBuilder = new StringBuilder();
+            var sb = new StringBuilder();
             var injector = InjectionRegistry.GetForStruct(structName) ?? new Injector();
 
             var structStartContext = new InjectionContext {
@@ -36,8 +36,8 @@ public class StructParser : BaseParser {
                 CurrentSource = Prelude()
             };
 
-            stringBuilder.AppendLine(injector.Execute(InjectionPoint.StructStart, structStartContext));
-            stringBuilder.AppendLine(!isGeneric
+            sb.AppendLine(injector.Execute(InjectionPoint.StructStart, structStartContext));
+            sb.AppendLine(!isGeneric
                 ? $"public struct {structName} {{"
                 : $"public struct {structName}<T> {{"); // TODO: Support more than one type, depending on fields
 
@@ -69,21 +69,34 @@ public class StructParser : BaseParser {
 
                 var before = injector.Execute(InjectionPoint.BeforeField, fieldContext);
                 if (!string.IsNullOrWhiteSpace(before)) {
-                    stringBuilder.AppendLine("    " + before);
+                    sb.AppendLine("    " + before + " // injection: BeforeField");
                 }
 
-                fieldContext.CurrentSource = baseFieldCode;
-                var fieldFinal = injector.Execute(InjectionPoint.FieldOverride, fieldContext);
-                stringBuilder.AppendLine("    " + fieldFinal);
+                var useOverride = injector.HasAny(InjectionPoint.FieldOverride);
+                string finalFieldCode;
+
+                if (useOverride) {
+                    fieldContext.CurrentSource = baseFieldCode;
+                    var fieldFinal = injector.Execute(InjectionPoint.FieldOverride, fieldContext);
+
+                    finalFieldCode = fieldFinal.Equals(baseFieldCode, StringComparison.Ordinal)
+                        ? baseFieldCode
+                        : fieldFinal;
+                } else {
+                    finalFieldCode = baseFieldCode;
+                }
+
+                sb.AppendLine("    " + finalFieldCode + " // injection: FieldOverride");
 
                 var after = injector.Execute(InjectionPoint.AfterField, fieldContext);
-                if (!string.IsNullOrWhiteSpace(after)) {
-                    stringBuilder.AppendLine("    " + after);
+                if (!string.IsNullOrWhiteSpace(after) && after != finalFieldCode) {
+                    sb.AppendLine("    " + after + " // injection: AfterField");
                 }
             }
 
-            stringBuilder.AppendLine();
-            stringBuilder.AppendLine($"    public {structName}() {{ }}");
+            sb.AppendLine();
+            sb.AppendLine($"    public {structName}() {{ }}");
+            sb.AppendLine();
 
             var structEndContext = new InjectionContext {
                 StructName = structName,
@@ -93,11 +106,12 @@ public class StructParser : BaseParser {
 
             var structEndCode = injector.Execute(InjectionPoint.StructEnd, structEndContext);
             if (!string.IsNullOrWhiteSpace(structEndCode)) {
-                stringBuilder.AppendLine(structEndCode);
+                var indented = IndentLines(structEndCode, 4);
+                sb.AppendLine(indented + " // injection: StructEnd");
             }
 
-            stringBuilder.AppendLine("}");
-            Data[structName] = stringBuilder.ToString();
+            sb.AppendLine("}");
+            Data[structName] = sb.ToString();
         }
     }
 
@@ -107,21 +121,14 @@ public class StructParser : BaseParser {
         }
     }
 
-    private string ParseField(XElement fieldElem) {
-        var name = XmlHelper.GetRequiredAttributeValue(fieldElem, "name").Replace(" ", "_");
-        var type = XmlHelper.GetRequiredAttributeValue(fieldElem, "type");
-        var defaultValue = XmlHelper.GetOptionalAttributeValue(fieldElem, "default");
+    private static string IndentLines(string input, int spaceCount) {
+        var indent = new string(' ', spaceCount);
 
-        if (type == "#T#") {
-            type = "T";
-        }
-
-        if (defaultValue is not null) {
-            ParserHelper.RewriteValueBasedOnType(ref defaultValue, type);
-        }
-
-        return defaultValue != null
-            ? $"public {type} {name} {{ get; set; }} = {defaultValue};"
-            : $"public {type} {name} {{ get; set; }}";
+        return string.Join(
+            Environment.NewLine,
+            input
+                .Split(["\r\n", "\n"], StringSplitOptions.None)
+                .Select(line => indent + line)
+        );
     }
 }

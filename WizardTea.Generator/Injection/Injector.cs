@@ -13,8 +13,7 @@ public sealed class Injector {
             }
 
             _injectors[point].Add(func);
-        }
-        else {
+        } else {
             if (!_structInjectors.ContainsKey(structName)) {
                 _structInjectors[structName] = [];
             }
@@ -51,5 +50,31 @@ public sealed class Injector {
         }
 
         return context.CurrentSource;
+    }
+
+    public bool HasAny(InjectionPoint point) {
+        var hasGlobal = _injectors.TryGetValue(point, out var globalList) && globalList.Count > 0;
+        var hasStructSpecific = _structInjectors.Values
+            .Any(dict => dict.TryGetValue(point, out var funcs) && funcs.Count > 0);
+
+        return hasGlobal || hasStructSpecific;
+    }
+
+    public static Injector Merge(params Injector[] injectors) {
+        var merged = new Injector();
+
+        foreach (var injector in injectors) {
+            foreach (var (point, value) in injector.GetAllInjectors()) {
+                foreach (var func in value) {
+                    merged.Register(point, func);
+                }
+            }
+        }
+
+        return merged;
+    }
+
+    private Dictionary<InjectionPoint, List<InjectorFunction>> GetAllInjectors() {
+        return _injectors;
     }
 }

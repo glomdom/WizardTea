@@ -1,5 +1,9 @@
 ﻿using System.Xml.Linq;
+using Serilog;
+using WizardTea.Generator.Injection;
 using WizardTea.Generator.Parsers;
+using static WizardTea.Generator.Injection.DefaultInjections;
+using static WizardTea.Generator.Injection.InjectionBuilder;
 
 namespace WizardTea.Generator {
     internal static class Program {
@@ -9,6 +13,11 @@ namespace WizardTea.Generator {
         private const string GeneratedOutputPath = "Generated/";
 
         public static async Task Main() {
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
+                .WriteTo.Console()
+                .CreateLogger();
+
             Directory.CreateDirectory(Path.GetDirectoryName(XmlCachePath)!);
             Directory.CreateDirectory(GeneratedOutputPath);
 
@@ -23,36 +32,45 @@ namespace WizardTea.Generator {
                 var response = await client.GetAsync(XmlUrl);
 
                 if (response.StatusCode == System.Net.HttpStatusCode.NotModified) {
-                    Console.WriteLine("no xml updates (etags matched)");
+                    Log.Information("no xml updates (etags matched)");
                     if (!File.Exists(XmlCachePath)) return;
+
 
                     var cachedXml = await File.ReadAllTextAsync(XmlCachePath);
                     var cachedDoc = XDocument.Parse(cachedXml);
+
                     GenerateCode(cachedDoc);
 
                     return;
                 }
 
+                Log.Information("cache doesnt exist, creating");
+
                 if (!response.IsSuccessStatusCode) {
-                    Console.WriteLine($"error while fetching xml: {response.StatusCode}");
+                    Log.Error($"status is not success while fetching xml: {response.StatusCode}");
+
                     return;
                 }
 
-                Console.WriteLine("downloading new xml");
+                Log.Information("downloading new xml");
 
                 var newXml = await response.Content.ReadAsStringAsync();
                 await File.WriteAllTextAsync(XmlCachePath, newXml);
 
+                Log.Information("downloaded xml");
+
                 if (response.Headers.ETag != null) {
                     await File.WriteAllTextAsync(EtagCachePath, response.Headers.ETag.Tag);
+
+                    Log.Information("cached new etag {}", response.Headers.ETag.Tag);
                 }
 
                 var doc = XDocument.Parse(newXml);
                 GenerateCode(doc);
             } catch (HttpRequestException ex) {
-                Console.WriteLine($"http request failed: {ex.Message}");
+                Log.Error($"http request failed: {ex.Message}");
             } catch (Exception ex) {
-                Console.WriteLine($"an error occurred: {ex.Message}");
+                Log.Error($"an error occurred: {ex.Message}");
             }
         }
 
@@ -60,12 +78,26 @@ namespace WizardTea.Generator {
             var enumParser = new EnumParser(xml);
             enumParser.Parse();
             enumParser.Generate();
-            Console.WriteLine("generated enums");
+            Log.Information("generated enums");
+
+            RegisterInjections();
 
             var structParser = new StructParser(xml);
             structParser.Parse();
             structParser.Generate();
-            Console.WriteLine("generated structs");
+            Log.Information("generated structs");
+        }
+
+        private static void RegisterInjections() {
+            Log.Information("registering injections, might take some time");
+
+            InjectionRegistry.Register(
+                Use(NormbyteToByte),
+                
+                Use(SystemVector3ToXYZ).For("ByteVector3")
+            );
+
+            Log.Information("registered injections");
         }
     }
 }
