@@ -93,6 +93,7 @@ namespace WizardTea.Generator {
 
             InjectionRegistry.Register(
                 Use(NormbyteToByte),
+                Use(HFloatToHalf),
                 
                 Use(SystemVector3ToXYZ).For("ByteVector3")
             );
