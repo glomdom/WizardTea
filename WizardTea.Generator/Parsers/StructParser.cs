@@ -1,11 +1,11 @@
 ﻿using System.Text;
 using System.Xml.Linq;
+using WizardTea.Generator.Injection;
 
 namespace WizardTea.Generator.Parsers;
 
 public class StructParser : BaseParser {
-    public List<string> BlacklistedTypes { get; }
-
+    private List<string> BlacklistedTypes { get; }
     private Dictionary<string, string> Data { get; } = [];
 
     public StructParser(XDocument xml) : base(xml) {
@@ -23,31 +23,81 @@ public class StructParser : BaseParser {
                 out var result
             ) && result;
 
-            if (BlacklistedTypes.Contains(structName)) {
-                continue;
-            }
-
-            // idk how to do these yet so we ignore them
-            if (structName.StartsWith("bhk")) {
+            if (BlacklistedTypes.Contains(structName) || structName.StartsWith("bhk")) {
                 continue;
             }
 
             var stringBuilder = new StringBuilder();
+            var injector = InjectionRegistry.GetForStruct(structName) ?? new Injector();
 
-            stringBuilder.AppendLine(Prelude());
+            var structStartContext = new InjectionContext {
+                StructName = structName,
+                StructElement = structElem,
+                CurrentSource = Prelude()
+            };
+
+            stringBuilder.AppendLine(injector.Execute(InjectionPoint.StructStart, structStartContext));
             stringBuilder.AppendLine(!isGeneric
                 ? $"public struct {structName} {{"
                 : $"public struct {structName}<T> {{"); // TODO: Support more than one type, depending on fields
 
             foreach (var structFieldElem in structElem.Elements("field")) {
-                stringBuilder.AppendLine("    " + ParseField(structFieldElem));
+                var fieldName = XmlHelper.GetRequiredAttributeValue(structFieldElem, "name").Replace(" ", "_");
+                var fieldType = XmlHelper.GetRequiredAttributeValue(structFieldElem, "type");
+                var defaultValue = XmlHelper.GetOptionalAttributeValue(structFieldElem, "default");
+
+                if (fieldType == "#T#") {
+                    fieldType = "T";
+                }
+
+                if (defaultValue is not null) {
+                    ParserHelper.RewriteValueBasedOnType(ref defaultValue, fieldType);
+                }
+
+                var baseFieldCode = defaultValue != null
+                    ? $"public {fieldType} {fieldName} {{ get; set; }} = {defaultValue};"
+                    : $"public {fieldType} {fieldName} {{ get; set; }}";
+
+                var fieldContext = new InjectionContext {
+                    StructName = structName,
+                    StructElement = structElem,
+                    FieldElement = structFieldElem,
+                    FieldName = fieldName,
+                    FieldType = fieldType,
+                    CurrentSource = ""
+                };
+
+                var before = injector.Execute(InjectionPoint.BeforeField, fieldContext);
+                if (!string.IsNullOrWhiteSpace(before)) {
+                    stringBuilder.AppendLine("    " + before);
+                }
+
+                fieldContext.CurrentSource = baseFieldCode;
+                var fieldFinal = injector.Execute(InjectionPoint.FieldOverride, fieldContext);
+                stringBuilder.AppendLine("    " + fieldFinal);
+
+                var after = injector.Execute(InjectionPoint.AfterField, fieldContext);
+                if (!string.IsNullOrWhiteSpace(after)) {
+                    stringBuilder.AppendLine("    " + after);
+                }
             }
 
             stringBuilder.AppendLine();
             stringBuilder.AppendLine($"    public {structName}() {{ }}");
-            stringBuilder.AppendLine("}");
 
-            Data.Add(structName, stringBuilder.ToString());
+            var structEndContext = new InjectionContext {
+                StructName = structName,
+                StructElement = structElem,
+                CurrentSource = "",
+            };
+
+            var structEndCode = injector.Execute(InjectionPoint.StructEnd, structEndContext);
+            if (!string.IsNullOrWhiteSpace(structEndCode)) {
+                stringBuilder.AppendLine(structEndCode);
+            }
+
+            stringBuilder.AppendLine("}");
+            Data[structName] = stringBuilder.ToString();
         }
     }
 
