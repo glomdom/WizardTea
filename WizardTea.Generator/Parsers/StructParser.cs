@@ -23,7 +23,7 @@ public class StructParser : BaseParser {
                 out var result
             ) && result;
 
-            if (BlacklistedTypes.Contains(structName) || structName.StartsWith("bhk")) {
+            if (BlacklistedTypes.Contains(structName) || structName.StartsWith("bhk") || structName.StartsWith("BS")) {
                 continue;
             }
 
