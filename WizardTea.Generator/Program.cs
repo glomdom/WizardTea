@@ -47,7 +47,7 @@ namespace WizardTea.Generator {
                 Log.Information("cache doesnt exist, creating");
 
                 if (!response.IsSuccessStatusCode) {
-                    Log.Error($"status is not success while fetching xml: {response.StatusCode}");
+                    Log.Error("status is not success while fetching xml: {statusCode}", response.StatusCode);
 
                     return;
                 }
@@ -68,19 +68,24 @@ namespace WizardTea.Generator {
                 var doc = XDocument.Parse(newXml);
                 GenerateCode(doc);
             } catch (HttpRequestException ex) {
-                Log.Error($"http request failed: {ex.Message}");
+                Log.Fatal("http request failed: {error}", ex.Message);
             } catch (Exception ex) {
-                Log.Error($"an error occurred: {ex.Message}");
+                Log.Fatal("an error occurred: {error}", ex.Message);
             }
         }
 
         private static void GenerateCode(XDocument xml) {
+            RegisterInjections();
+
             var enumParser = new EnumParser(xml);
             enumParser.Parse();
             enumParser.Generate();
             Log.Information("generated enums");
 
-            RegisterInjections();
+            var flagParser = new FlagParser(xml);
+            flagParser.Parse();
+            flagParser.Generate();
+            Log.Information("generated flags");
 
             var structParser = new StructParser(xml);
             structParser.Parse();
@@ -94,7 +99,6 @@ namespace WizardTea.Generator {
             InjectionRegistry.Register(
                 Use(NormbyteToByte),
                 Use(HFloatToHalf),
-                
                 Use(SystemVector3ToXYZ).For("ByteVector3"),
                 Use(XYZToSystemVector3).For("ByteVector3")
             );
