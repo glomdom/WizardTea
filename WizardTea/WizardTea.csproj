@@ -10,8 +10,7 @@
 
     <ItemGroup>
       <Compile Include="Generated\*.g.cs" />
-      <Compile Include="Overrides\Ptr.cs" />
-      <Compile Include="Overrides\Ref.cs" />
+      <Compile Include="Overrides\*.cs" />
     </ItemGroup>
     
     <Target Name="GenerateFiles" BeforeTargets="BeforeBuild">
