@@ -99,6 +99,9 @@ namespace WizardTea.Generator {
             InjectionRegistry.Register(
                 Use(NormbyteToByte),
                 Use(HFloatToHalf),
+                Use(FloatMaxTokenToValue),
+                Use(CPUToNxDeviceCode).For("NxCompartmentDescMap"),
+                Use(SCT_RigidBodyToNxCompartmentType).For("NxCompartmentDescMap"),
                 Use(SystemVector3ToXYZ).For("ByteVector3"),
                 Use(XYZToSystemVector3).For("ByteVector3")
             );

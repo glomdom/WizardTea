@@ -33,6 +33,20 @@ public static class DefaultInjections {
                    """);
     }
 
+    public static void CPUToNxDeviceCode(Injector injector) {
+        injector.Register(
+            InjectionPoint.FieldOverride,
+            ctx => ctx.CurrentSource.Replace("CPU", "NxDeviceCode.CPU")
+        );
+    }
+
+    public static void SCT_RigidBodyToNxCompartmentType(Injector injector) {
+        injector.Register(
+            InjectionPoint.FieldOverride,
+            ctx => ctx.CurrentSource.Replace("SCT_RIGIDBODY", "NxCompartmentType.SCT_RIGIDBODY")
+        );
+    }
+
     #endregion
 
     #region global injectors
@@ -48,6 +62,21 @@ public static class DefaultInjections {
         injector.Register(
             InjectionPoint.FieldOverride,
             ctx => ctx.CurrentSource.Replace("hfloat", "Half")
+        );
+    }
+    
+    public static void FloatMaxTokenToValue(Injector injector) {
+        injector.Register(
+            InjectionPoint.FieldOverride,
+            ctx => {
+                if (ctx.CurrentSource.Contains("#FLT_MAX#")) {
+                    ctx.CurrentSource = ctx.CurrentSource[..^2] + ctx.CurrentSource[^1..];
+
+                    return ctx.CurrentSource.Replace("#FLT_MAX#", "float.MaxValue");
+                }
+
+                return ctx.CurrentSource;
+            }
         );
     }
 
