@@ -6,10 +6,12 @@ namespace WizardTea.Generator.Parsers;
 
 public class StructParser : BaseParser {
     private List<string> BlacklistedTypes { get; }
+    private List<string> BlacklistedFields { get; }
     private Dictionary<string, string> Data { get; } = [];
 
     public StructParser(XDocument xml) : base(xml) {
-        BlacklistedTypes = ["string", "Vector3", "Vector2"];
+        BlacklistedTypes = ["string", "Vector3", "Vector2", "hkSubPartData"];
+        BlacklistedFields = [];
     }
 
     public override void Parse() {
@@ -41,8 +43,18 @@ public class StructParser : BaseParser {
                 ? $"public struct {structName} {{"
                 : $"public struct {structName}<T> {{"); // TODO: Support more than one type, depending on fields (haven't confirmed this case exists)
 
+            var seenFields = new List<string>();
+
             foreach (var structFieldElem in structElem.Elements("field")) {
-                var fieldName = XmlHelper.GetRequiredAttributeValue(structFieldElem, "name").Replace(" ", "_");
+                var rawFieldName = XmlHelper.GetRequiredAttributeValue(structFieldElem, "name");
+
+                if (seenFields.Contains(rawFieldName) || BlacklistedFields.Contains(rawFieldName) || rawFieldName.StartsWith("BS")) {
+                    continue;
+                }
+
+                seenFields.Add(rawFieldName);
+
+                var fieldName = rawFieldName.Replace(" ", "_");
                 var fieldType = XmlHelper.GetRequiredAttributeValue(structFieldElem, "type");
                 var defaultValue = XmlHelper.GetOptionalAttributeValue(structFieldElem, "default");
 

@@ -33,6 +33,13 @@ public static class DefaultInjections {
                    """);
     }
 
+    public static void EndianLittleToEndianType(Injector injector) {
+        injector.Register(
+            InjectionPoint.FieldOverride,
+            ctx => ctx.CurrentSource.Replace("ENDIAN_LITTLE", "EndianType.ENDIAN_LITTLE")
+        );
+    }
+
     public static void CPUToNxDeviceCode(Injector injector) {
         injector.Register(
             InjectionPoint.FieldOverride,
@@ -62,6 +69,27 @@ public static class DefaultInjections {
         injector.Register(
             InjectionPoint.FieldOverride,
             ctx => ctx.CurrentSource.Replace("hfloat", "Half")
+        );
+    }
+
+    public static void BlockTypeIndexToUint(Injector injector) {
+        injector.Register(
+            InjectionPoint.FieldOverride,
+            ctx => ctx.CurrentSource.Replace("BlockTypeIndex", "short")
+        );
+    }
+
+    public static void Ulittle32ToUint(Injector injector) {
+        injector.Register(
+            InjectionPoint.FieldOverride,
+            ctx => ctx.CurrentSource.Replace("ulittle32", "uint")
+        );
+    }
+
+    public static void FileVersionToInt(Injector injector) {
+        injector.Register(
+            InjectionPoint.FieldOverride,
+            ctx => ctx.CurrentSource.Replace("FileVersion", "int")
         );
     }
     

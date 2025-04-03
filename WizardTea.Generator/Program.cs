@@ -99,7 +99,11 @@ namespace WizardTea.Generator {
             InjectionRegistry.Register(
                 Use(NormbyteToByte),
                 Use(HFloatToHalf),
+                Use(BlockTypeIndexToUint),
+                Use(Ulittle32ToUint),
+                Use(FileVersionToInt),
                 Use(FloatMaxTokenToValue),
+                Use(EndianLittleToEndianType).For("Header"),
                 Use(CPUToNxDeviceCode).For("NxCompartmentDescMap"),
                 Use(SCT_RigidBodyToNxCompartmentType).For("NxCompartmentDescMap"),
                 Use(SystemVector3ToXYZ).For("ByteVector3"),
