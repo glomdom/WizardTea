@@ -23,7 +23,7 @@ public class StructParser : BaseParser {
                 out var result
             ) && result;
 
-            if (BlacklistedTypes.Contains(structName) || structName.StartsWith("bhk") || structName.StartsWith("BS")) {
+            if (BlacklistedTypes.Contains(structName) || structName.StartsWith("bhk") || structName.StartsWith("BS") || structName.StartsWith("Havok")) {
                 continue;
             }
 
@@ -39,7 +39,7 @@ public class StructParser : BaseParser {
             sb.AppendLine(injector.Execute(InjectionPoint.StructStart, structStartContext));
             sb.AppendLine(!isGeneric
                 ? $"public struct {structName} {{"
-                : $"public struct {structName}<T> {{"); // TODO: Support more than one type, depending on fields
+                : $"public struct {structName}<T> {{"); // TODO: Support more than one type, depending on fields (haven't confirmed this case exists)
 
             foreach (var structFieldElem in structElem.Elements("field")) {
                 var fieldName = XmlHelper.GetRequiredAttributeValue(structFieldElem, "name").Replace(" ", "_");
