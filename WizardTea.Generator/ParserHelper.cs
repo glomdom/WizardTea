@@ -1,13 +1,17 @@
 ﻿namespace WizardTea.Generator;
 
 public static class ParserHelper {
-    public static void RewriteValueBasedOnType(ref string value, string type) {
+    public static void RewriteValueBasedOnType(ref string val, string type) {
         switch (type) {
             case "float": {
-                value += "f";
+                val += "f";
 
                 break;
             }
+        }
+
+        if (type.ToLower().EndsWith("flag")) {
+            val = $"({type}){val}";
         }
     }
 }
