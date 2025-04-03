@@ -1,47 +1,41 @@
 ﻿namespace WizardTea.Generator.Injection;
 
 public static class InjectionRegistry {
-    private static readonly Dictionary<string, Lazy<Injector>> _structInjectors = [];
-    private static readonly List<StructInjection> _globalInjectors = [];
+    private static readonly List<Action<Injector>> _globalInjections = new();
+    private static readonly Dictionary<string, List<Action<Injector>>> _structInjections = new();
 
     public static void Register(params StructInjection[] injections) {
         foreach (var injection in injections) {
             if (injection.IsGlobal) {
-                _globalInjectors.Add(injection);
+                _globalInjections.Add(injection.Apply);
+            } else {
+                foreach (var structName in injection.StructNames) {
+                    if (!_structInjections.ContainsKey(structName)) {
+                        _structInjections[structName] = new List<Action<Injector>>();
+                    }
 
-                continue;
-            }
-            
-            foreach (var structName in injection.StructNames) {
-                if (!_structInjectors.TryGetValue(structName, out var oldLazy)) {
-                    _structInjectors[structName] = new Lazy<Injector>(() => {
-                        var injector = new Injector();
-                        injection.Apply(injector);
-
-                        return injector;
-                    });
-                } else {
-                    _structInjectors[structName] = new Lazy<Injector>(() => {
-                        var injector = oldLazy.Value;
-                        injection.Apply(injector);
-
-                        return injector;
-                    });
+                    _structInjections[structName].Add(injection.Apply);
                 }
             }
         }
     }
 
-    public static Injector? GetForStruct(string structName) {
-        var structInjector = _structInjectors.TryGetValue(structName, out var lazy) ? lazy.Value : null;
+    public static Injector GetForStruct(string structName) {
+        // Create a new Injector.
+        var injector = new Injector();
 
-        if (_globalInjectors.Count == 0) return structInjector;
-
-        var globalInjector = new Injector();
-        foreach (var global in _globalInjectors) {
-            global.Apply(globalInjector);
+        // Apply all global injections.
+        foreach (var global in _globalInjections) {
+            global(injector);
         }
 
-        return structInjector == null ? globalInjector : Injector.Merge(globalInjector, structInjector);
+        // Apply all injections specific for the given struct.
+        if (_structInjections.TryGetValue(structName, out var actions)) {
+            foreach (var action in actions) {
+                action(injector);
+            }
+        }
+
+        return injector;
     }
 }

@@ -18,6 +18,21 @@ public static class DefaultInjections {
                    """);
     }
 
+    public static void XYZToSystemVector3(Injector injector) {
+        injector.Register(
+            InjectionPoint.StructEnd,
+            ctx => """
+                   public static implicit operator System.Numerics.Vector3(ByteVector3 v) {
+                       var temp = new System.Numerics.Vector3();
+                       temp.X = v.x;
+                       temp.Y = v.y;
+                       temp.Z = v.z;
+                       
+                       return temp;
+                   }
+                   """);
+    }
+
     #endregion
 
     #region global injectors

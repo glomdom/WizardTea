@@ -91,9 +91,11 @@ public class StructParser : BaseParser {
 
                 sb.AppendLine(finalLine);
 
-                var after = injector.Execute(InjectionPoint.AfterField, fieldContext);
-                if (!string.IsNullOrWhiteSpace(after) && after != fieldFinal) {
-                    sb.AppendLine("    " + after + " // injection: AfterField");
+                if (injector.HasAny(InjectionPoint.AfterField)) {
+                    var after = injector.Execute(InjectionPoint.AfterField, fieldContext);
+                    if (!string.IsNullOrWhiteSpace(after) && after != fieldFinal) {
+                        sb.AppendLine("    " + after + " // injection: AfterField");
+                    }
                 }
             }
 
