@@ -1,17 +1,21 @@
 ﻿using System.Text;
 using System.Xml.Linq;
+using Serilog;
 using WizardTea.Generator.Injection;
 
 namespace WizardTea.Generator.Parsers;
 
 public class StructParser : BaseParser {
     private List<string> BlacklistedTypes { get; }
-    private List<string> BlacklistedFields { get; }
+
+    // private List<string> BlacklistedFields { get; }
+    private List<string> BlacklistedModules { get; }
     private Dictionary<string, string> Data { get; } = [];
 
     public StructParser(XDocument xml) : base(xml) {
         BlacklistedTypes = ["string", "Vector3", "Vector2", "hkSubPartData"];
-        BlacklistedFields = [];
+        // BlacklistedFields = [];
+        BlacklistedModules = ["BSHavok", "BSMain"];
     }
 
     public override void Parse() {
@@ -20,17 +24,23 @@ public class StructParser : BaseParser {
 
         foreach (var structElem in structElements) {
             var structName = XmlHelper.GetRequiredAttributeValue(structElem, "name");
+            var module = XmlHelper.GetOptionalAttributeValue(structElem, "module");
+
+            if (module is not null && BlacklistedModules.Contains(module)) {
+                continue;
+            }
+
             var isGeneric = bool.TryParse(
                 XmlHelper.GetOptionalAttributeValue(structElem, "generic"),
                 out var result
             ) && result;
 
-            if (BlacklistedTypes.Contains(structName) || structName.StartsWith("bhk") || structName.StartsWith("BS") || structName.StartsWith("Havok")) {
+            if (BlacklistedTypes.Contains(structName)) {
                 continue;
             }
 
             var sb = new StringBuilder();
-            var injector = InjectionRegistry.GetForStruct(structName) ?? new Injector();
+            var injector = InjectionRegistry.GetForStruct(structName);
 
             var structStartContext = new InjectionContext {
                 StructName = structName,
@@ -41,14 +51,13 @@ public class StructParser : BaseParser {
             sb.AppendLine(injector.Execute(InjectionPoint.StructStart, structStartContext));
             sb.AppendLine(!isGeneric
                 ? $"public struct {structName} {{"
-                : $"public struct {structName}<T> {{"); // TODO: Support more than one type, depending on fields (haven't confirmed this case exists)
+                : $"public struct {structName}<T> {{"); // nif spec doesn't have more than 2 generics, so this is fine.
 
             var seenFields = new List<string>();
 
             foreach (var structFieldElem in structElem.Elements("field")) {
                 var rawFieldName = XmlHelper.GetRequiredAttributeValue(structFieldElem, "name");
-
-                if (seenFields.Contains(rawFieldName) || BlacklistedFields.Contains(rawFieldName) || rawFieldName.StartsWith("BS")) {
+                if (seenFields.Contains(rawFieldName)) {
                     continue;
                 }
 
@@ -57,9 +66,22 @@ public class StructParser : BaseParser {
                 var fieldName = rawFieldName.Replace(" ", "_");
                 var fieldType = XmlHelper.GetRequiredAttributeValue(structFieldElem, "type");
                 var defaultValue = XmlHelper.GetOptionalAttributeValue(structFieldElem, "default");
+                var template = XmlHelper.GetOptionalAttributeValue(structFieldElem, "template");
+
+                if (fieldType.StartsWith("bhk") || fieldType.StartsWith("BS")) {
+                    continue;
+                }
 
                 if (fieldType == "#T#") {
                     fieldType = "T";
+                }
+
+                if (template is not null && template == "#T#") {
+                    fieldType += "<T>";
+                } else if (template is not null && template != "#T#" && fieldType != "Ref" && fieldType != "Ptr") {
+                    // TODO: Support Ref & Ptr generics. Correct overwrite.
+                    Log.Information("generic of {template} applied for {fieldName} of {fieldType}", template, fieldName, fieldType);
+                    fieldType += $"<{template}>";
                 }
 
                 if (defaultValue is not null) {

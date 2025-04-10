@@ -17,7 +17,7 @@ namespace WizardTea.Generator {
                 .MinimumLevel.Verbose()
                 .WriteTo.Console()
                 .CreateLogger();
-
+            
             Directory.CreateDirectory(Path.GetDirectoryName(XmlCachePath)!);
             Directory.CreateDirectory(GeneratedOutputPath);
 
@@ -103,11 +103,18 @@ namespace WizardTea.Generator {
                 Use(Ulittle32ToUint),
                 Use(FileVersionToInt),
                 Use(FloatMaxTokenToValue),
+                Use(XAxisTokenToValue),
+                Use(Vec2OneTokenToValue),
                 Use(EndianLittleToEndianType).For("Header"),
+                Use(SystemVector3ToXYZ).For("ByteVector3"),
+                Use(XYZToSystemVector3).For("ByteVector3"),
+                Use(MIP_FMT_DEFAULTToMipMapFormat).For("FormatPrefs"),
+                Use(ALPHA_DEFAULTToAlphaFormat).For("FormatPrefs"),
                 Use(CPUToNxDeviceCode).For("NxCompartmentDescMap"),
                 Use(SCT_RigidBodyToNxCompartmentType).For("NxCompartmentDescMap"),
-                Use(SystemVector3ToXYZ).For("ByteVector3"),
-                Use(XYZToSystemVector3).For("ByteVector3")
+                Use(WRAP_S_WRAP_TToTexClampMode).For("TexDesc"),
+                Use(FILTER_TRILERPToTexFilterMode).For("TexDesc"),
+                Use(Vector2ToTexCoord).For("TexCoord")
             );
 
             Log.Information("registered injections");
