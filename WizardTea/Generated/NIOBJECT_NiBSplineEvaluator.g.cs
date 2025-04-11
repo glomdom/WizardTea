@@ -16,6 +16,6 @@ public class NiBSplineEvaluator : NiEvaluator {
     public Ref Data { get; set; }
     public Ref Basis_Data { get; set; }
 
-    public NiBSplineEvaluator() { }
+    public NiBSplineEvaluator() : base() { }
 
 }

@@ -21,6 +21,6 @@ public class NiStencilProperty : NiProperty {
     public StencilAction Pass_Action { get; set; }
     public StencilDrawMode Draw_Mode { get; set; }
 
-    public NiStencilProperty() { }
+    public NiStencilProperty() : base() { }
 
 }

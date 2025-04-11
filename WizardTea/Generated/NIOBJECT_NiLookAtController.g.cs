@@ -14,6 +14,6 @@ public class NiLookAtController : NiTimeController {
     public LookAtFlags Look_At_Flags { get; set; }
     public Ptr Look_At { get; set; }
 
-    public NiLookAtController() { }
+    public NiLookAtController() : base() { }
 
 }

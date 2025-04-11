@@ -16,6 +16,6 @@ public class NiTriStripsData : NiTriBasedGeomData {
     public bool Has_Points { get; set; }
     public ushort Points { get; set; }
 
-    public NiTriStripsData() { }
+    public NiTriStripsData() : base() { }
 
 }

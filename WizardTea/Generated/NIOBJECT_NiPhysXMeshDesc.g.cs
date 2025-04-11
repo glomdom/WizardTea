@@ -21,6 +21,6 @@ public class NiPhysXMeshDesc : NiObject {
     public bool Is_Hardware { get; set; }
     public byte Flags { get; set; }
 
-    public NiPhysXMeshDesc() { }
+    public NiPhysXMeshDesc() : base() { }
 
 }

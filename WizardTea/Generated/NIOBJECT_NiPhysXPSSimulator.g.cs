@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPhysXPSSimulator : NiPSSimulator {
 
-    public NiPhysXPSSimulator() { }
+    public NiPhysXPSSimulator() : base() { }
 
 }

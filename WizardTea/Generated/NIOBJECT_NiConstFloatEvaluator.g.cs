@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiConstFloatEvaluator : NiEvaluator {
     public float Value { get; set; }
 
-    public NiConstFloatEvaluator() { }
+    public NiConstFloatEvaluator() : base() { }
 
 }

@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiPSysModifierActiveCtlr : NiPSysModifierBoolCtlr {
     public Ref Data { get; set; }
 
-    public NiPSysModifierActiveCtlr() { }
+    public NiPSysModifierActiveCtlr() : base() { }
 
 }

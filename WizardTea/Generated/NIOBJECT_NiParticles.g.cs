@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiParticles : NiGeometry {
 
-    public NiParticles() { }
+    public NiParticles() : base() { }
 
 }

@@ -15,6 +15,6 @@ public class NiParticleRotation : NiParticleModifier {
     public Vector3 Initial_Axis { get; set; }
     public float Rotation_Speed { get; set; }
 
-    public NiParticleRotation() { }
+    public NiParticleRotation() : base() { }
 
 }

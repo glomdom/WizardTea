@@ -24,6 +24,6 @@ public class NiSequenceData : NiObject {
     public NiFixedString Accum_Root_Name { get; set; }
     public AccumFlags Accum_Flags { get; set; }
 
-    public NiSequenceData() { }
+    public NiSequenceData() : base() { }
 
 }

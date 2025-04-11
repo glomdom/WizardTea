@@ -19,6 +19,6 @@ public class NiPathInterpolator : NiKeyBasedInterpolator {
     public Ref Path_Data { get; set; }
     public Ref Percent_Data { get; set; }
 
-    public NiPathInterpolator() { }
+    public NiPathInterpolator() : base() { }
 
 }

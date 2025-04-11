@@ -23,6 +23,6 @@ public class NiPhysXPropDesc : NiObject {
     public NiTFixedStringMap<uint> State_Names { get; set; }
     public byte Flags { get; set; }
 
-    public NiPhysXPropDesc() { }
+    public NiPhysXPropDesc() : base() { }
 
 }

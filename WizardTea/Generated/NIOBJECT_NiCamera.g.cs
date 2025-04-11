@@ -29,6 +29,6 @@ public class NiCamera : NiAVObject {
     public uint Num_Screen_Textures { get; set; }
     public uint Unknown_Int_3 { get; set; }
 
-    public NiCamera() { }
+    public NiCamera() : base() { }
 
 }

@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiDirectionalLight : NiLight {
 
-    public NiDirectionalLight() { }
+    public NiDirectionalLight() : base() { }
 
 }

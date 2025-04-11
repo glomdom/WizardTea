@@ -15,6 +15,6 @@ public class NiVertexColorProperty : NiProperty {
     public SourceVertexMode Vertex_Mode { get; set; }
     public LightingMode Lighting_Mode { get; set; }
 
-    public NiVertexColorProperty() { }
+    public NiVertexColorProperty() : base() { }
 
 }

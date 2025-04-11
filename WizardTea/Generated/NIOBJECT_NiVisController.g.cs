@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiVisController : NiBoolInterpController {
     public Ref Data { get; set; }
 
-    public NiVisController() { }
+    public NiVisController() : base() { }
 
 }

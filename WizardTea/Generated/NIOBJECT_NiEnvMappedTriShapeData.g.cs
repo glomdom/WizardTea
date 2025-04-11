@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiEnvMappedTriShapeData : NiTriShapeData {
 
-    public NiEnvMappedTriShapeData() { }
+    public NiEnvMappedTriShapeData() : base() { }
 
 }

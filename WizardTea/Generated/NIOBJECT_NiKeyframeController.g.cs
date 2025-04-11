@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiKeyframeController : NiSingleInterpController {
     public Ref Data { get; set; }
 
-    public NiKeyframeController() { }
+    public NiKeyframeController() : base() { }
 
 }

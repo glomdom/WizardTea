@@ -14,6 +14,6 @@ public class NiBSplineCompPoint3Interpolator : NiBSplinePoint3Interpolator {
     public float Position_Offset { get; set; }
     public float Position_Half_Range { get; set; }
 
-    public NiBSplineCompPoint3Interpolator() { }
+    public NiBSplineCompPoint3Interpolator() : base() { }
 
 }

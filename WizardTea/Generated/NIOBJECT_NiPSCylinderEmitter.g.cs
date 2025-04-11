@@ -14,6 +14,6 @@ public class NiPSCylinderEmitter : NiPSVolumeEmitter {
     public float Emitter_Radius { get; set; }
     public float Emitter_Height { get; set; }
 
-    public NiPSCylinderEmitter() { }
+    public NiPSCylinderEmitter() : base() { }
 
 }

@@ -20,6 +20,6 @@ public class NiSourceTexture : NiTexture {
     public bool Direct_Render { get; set; }
     public bool Persist_Render_Data { get; set; }
 
-    public NiSourceTexture() { }
+    public NiSourceTexture() : base() { }
 
 }

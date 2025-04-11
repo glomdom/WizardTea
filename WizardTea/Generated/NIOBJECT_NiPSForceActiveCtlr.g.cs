@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSForceActiveCtlr : NiPSForceBoolCtlr {
 
-    public NiPSForceActiveCtlr() { }
+    public NiPSForceActiveCtlr() : base() { }
 
 }

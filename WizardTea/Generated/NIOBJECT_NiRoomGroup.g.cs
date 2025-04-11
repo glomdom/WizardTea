@@ -15,6 +15,6 @@ public class NiRoomGroup : NiNode {
     public uint Num_Rooms { get; set; }
     public Ptr Rooms { get; set; }
 
-    public NiRoomGroup() { }
+    public NiRoomGroup() : base() { }
 
 }

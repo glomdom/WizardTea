@@ -21,6 +21,6 @@ public class NiPhysXPSParticleSystem : NiPSParticleSystem {
     public Vector3 Actor_Pool_Dimensions { get; set; }
     public Ptr Actor { get; set; }
 
-    public NiPhysXPSParticleSystem() { }
+    public NiPhysXPSParticleSystem() : base() { }
 
 }

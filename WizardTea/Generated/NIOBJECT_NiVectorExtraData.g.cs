@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiVectorExtraData : NiExtraData {
     public Vector4 Vector_Data { get; set; }
 
-    public NiVectorExtraData() { }
+    public NiVectorExtraData() : base() { }
 
 }

@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiBoolEvaluator : NiKeyBasedEvaluator {
     public Ref Data { get; set; }
 
-    public NiBoolEvaluator() { }
+    public NiBoolEvaluator() : base() { }
 
 }

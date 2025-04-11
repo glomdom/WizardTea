@@ -22,6 +22,6 @@ public class NiPersistentSrcTextureRendererData : NiPixelFormat {
     public RendererID Renderer { get; set; }
     public byte Pixel_Data { get; set; }
 
-    public NiPersistentSrcTextureRendererData() { }
+    public NiPersistentSrcTextureRendererData() : base() { }
 
 }

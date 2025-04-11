@@ -16,6 +16,6 @@ public class BSStripPSysData : NiPSysData {
     public float End_Cap_Size { get; set; }
     public bool Do_Z_Prepass { get; set; }
 
-    public BSStripPSysData() { }
+    public BSStripPSysData() : base() { }
 
 }

@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPhysXPSSimulatorInitialStep : NiPSSimulatorStep {
 
-    public NiPhysXPSSimulatorInitialStep() { }
+    public NiPhysXPSSimulatorInitialStep() : base() { }
 
 }

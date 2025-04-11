@@ -22,6 +22,6 @@ public class NiPhysXProp : NiObjectNET {
     public bool Keep_Meshes { get; set; }
     public Ref Snapshot { get; set; }
 
-    public NiPhysXProp() { }
+    public NiPhysXProp() : base() { }
 
 }

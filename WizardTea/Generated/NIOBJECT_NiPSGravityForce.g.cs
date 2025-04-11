@@ -19,6 +19,6 @@ public class NiPSGravityForce : NiPSForce {
     public float Turbulence_Scale { get; set; }
     public Ptr Gravity_Object { get; set; }
 
-    public NiPSGravityForce() { }
+    public NiPSGravityForce() : base() { }
 
 }

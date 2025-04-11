@@ -15,6 +15,6 @@ public class RibbonParticleSystem : NiPSParticleSystem {
     public float EM_Unknown_Float_1 { get; set; }
     public byte EM_Unknown_Bytes_2 { get; set; }
 
-    public RibbonParticleSystem() { }
+    public RibbonParticleSystem() : base() { }
 
 }

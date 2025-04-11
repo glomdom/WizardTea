@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiStringExtraData : NiExtraData {
     public string String_Data { get; set; }
 
-    public NiStringExtraData() { }
+    public NiStringExtraData() : base() { }
 
 }

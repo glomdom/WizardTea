@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSysInitialRotAngleCtlr : NiPSysModifierFloatCtlr {
 
-    public NiPSysInitialRotAngleCtlr() { }
+    public NiPSysInitialRotAngleCtlr() : base() { }
 
 }

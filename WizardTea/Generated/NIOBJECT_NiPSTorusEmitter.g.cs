@@ -14,6 +14,6 @@ public class NiPSTorusEmitter : NiPSVolumeEmitter {
     public float Emitter_Radius { get; set; }
     public float Emitter_Section_Radius { get; set; }
 
-    public NiPSTorusEmitter() { }
+    public NiPSTorusEmitter() : base() { }
 
 }

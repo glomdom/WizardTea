@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiMorphController : NiInterpController {
 
-    public NiMorphController() { }
+    public NiMorphController() : base() { }
 
 }

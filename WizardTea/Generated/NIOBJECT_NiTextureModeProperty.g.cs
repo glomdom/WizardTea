@@ -16,6 +16,6 @@ public class NiTextureModeProperty : NiProperty {
     public short PS2_L { get; set; }
     public short PS2_K { get; set; }
 
-    public NiTextureModeProperty() { }
+    public NiTextureModeProperty() : base() { }
 
 }

@@ -21,6 +21,6 @@ public class NiPSysRotationModifier : NiPSysModifier {
     public bool Random_Axis { get; set; }
     public Vector3 Axis { get; set; }
 
-    public NiPSysRotationModifier() { }
+    public NiPSysRotationModifier() : base() { }
 
 }

@@ -20,6 +20,6 @@ public class NiPSysData : NiParticlesData {
     public ushort Added_Particles_Base { get; set; }
     public byte Unknown_QQSpeed_Byte_2 { get; set; }
 
-    public NiPSysData() { }
+    public NiPSysData() : base() { }
 
 }

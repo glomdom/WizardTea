@@ -19,6 +19,6 @@ public class NiPSysTrailEmitter : NiPSysSphereEmitter {
     public float Turbulence { get; set; }
     public float Repeat_Time { get; set; }
 
-    public NiPSysTrailEmitter() { }
+    public NiPSysTrailEmitter() : base() { }
 
 }

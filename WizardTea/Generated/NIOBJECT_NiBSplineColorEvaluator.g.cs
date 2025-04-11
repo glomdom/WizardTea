@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiBSplineColorEvaluator : NiBSplineEvaluator {
     public uint Handle { get; set; }
 
-    public NiBSplineColorEvaluator() { }
+    public NiBSplineColorEvaluator() : base() { }
 
 }

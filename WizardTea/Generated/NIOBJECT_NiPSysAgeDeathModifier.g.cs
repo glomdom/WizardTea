@@ -14,6 +14,6 @@ public class NiPSysAgeDeathModifier : NiPSysModifier {
     public bool Spawn_on_Death { get; set; }
     public Ref Spawn_Modifier { get; set; }
 
-    public NiPSysAgeDeathModifier() { }
+    public NiPSysAgeDeathModifier() : base() { }
 
 }

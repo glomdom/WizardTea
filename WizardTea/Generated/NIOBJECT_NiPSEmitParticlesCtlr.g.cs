@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiPSEmitParticlesCtlr : NiPSEmitterCtlr {
     public Ref Emitter_Active_Interpolator { get; set; }
 
-    public NiPSEmitParticlesCtlr() { }
+    public NiPSEmitParticlesCtlr() : base() { }
 
 }

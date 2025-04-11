@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSysGravityStrengthCtlr : NiPSysModifierFloatCtlr {
 
-    public NiPSysGravityStrengthCtlr() { }
+    public NiPSysGravityStrengthCtlr() : base() { }
 
 }

@@ -62,6 +62,6 @@ public class NiPhysXSceneDesc : NiObject {
     public uint Num_Compartments { get; set; }
     public NxCompartmentDescMap Compartments { get; set; }
 
-    public NiPhysXSceneDesc() { }
+    public NiPhysXSceneDesc() : base() { }
 
 }

@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSysEmitterPlanarAngleVarCtlr : NiPSysModifierFloatCtlr {
 
-    public NiPSysEmitterPlanarAngleVarCtlr() { }
+    public NiPSysEmitterPlanarAngleVarCtlr() : base() { }
 
 }

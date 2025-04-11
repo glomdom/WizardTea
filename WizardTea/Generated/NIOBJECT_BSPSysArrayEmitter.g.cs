@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class BSPSysArrayEmitter : NiPSysVolumeEmitter {
 
-    public BSPSysArrayEmitter() { }
+    public BSPSysArrayEmitter() : base() { }
 
 }

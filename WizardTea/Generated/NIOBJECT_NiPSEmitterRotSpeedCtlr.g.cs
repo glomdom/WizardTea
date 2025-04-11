@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSEmitterRotSpeedCtlr : NiPSEmitterFloatCtlr {
 
-    public NiPSEmitterRotSpeedCtlr() { }
+    public NiPSEmitterRotSpeedCtlr() : base() { }
 
 }

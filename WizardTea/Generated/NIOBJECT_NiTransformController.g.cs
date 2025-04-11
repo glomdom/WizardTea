@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiTransformController : NiKeyframeController {
 
-    public NiTransformController() { }
+    public NiTransformController() : base() { }
 
 }

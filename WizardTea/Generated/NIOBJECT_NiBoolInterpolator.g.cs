@@ -14,6 +14,6 @@ public class NiBoolInterpolator : NiKeyBasedInterpolator {
     public bool Value { get; set; }
     public Ref Data { get; set; }
 
-    public NiBoolInterpolator() { }
+    public NiBoolInterpolator() : base() { }
 
 }

@@ -17,6 +17,6 @@ public class NiSkinInstance : NiObject {
     public uint Num_Bones { get; set; }
     public Ptr Bones { get; set; }
 
-    public NiSkinInstance() { }
+    public NiSkinInstance() : base() { }
 
 }

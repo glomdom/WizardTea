@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiAmbientLight : NiLight {
 
-    public NiAmbientLight() { }
+    public NiAmbientLight() : base() { }
 
 }

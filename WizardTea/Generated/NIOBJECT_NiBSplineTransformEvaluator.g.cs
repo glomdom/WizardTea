@@ -16,6 +16,6 @@ public class NiBSplineTransformEvaluator : NiBSplineEvaluator {
     public uint Rotation_Handle { get; set; }
     public uint Scale_Handle { get; set; }
 
-    public NiBSplineTransformEvaluator() { }
+    public NiBSplineTransformEvaluator() : base() { }
 
 }

@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiUVData : NiObject {
     public KeyGroup<float> UV_Groups { get; set; }
 
-    public NiUVData() { }
+    public NiUVData() : base() { }
 
 }

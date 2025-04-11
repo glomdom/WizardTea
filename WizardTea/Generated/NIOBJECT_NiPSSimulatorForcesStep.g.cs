@@ -14,6 +14,6 @@ public class NiPSSimulatorForcesStep : NiPSSimulatorStep {
     public uint Num_Forces { get; set; }
     public Ref Forces { get; set; }
 
-    public NiPSSimulatorForcesStep() { }
+    public NiPSSimulatorForcesStep() : base() { }
 
 }

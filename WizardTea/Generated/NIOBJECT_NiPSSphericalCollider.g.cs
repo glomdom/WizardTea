@@ -14,6 +14,6 @@ public class NiPSSphericalCollider : NiPSCollider {
     public float Radius { get; set; }
     public Ptr Collider_Object { get; set; }
 
-    public NiPSSphericalCollider() { }
+    public NiPSSphericalCollider() : base() { }
 
 }

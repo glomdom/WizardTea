@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSResetOnLoopCtlr : NiTimeController {
 
-    public NiPSResetOnLoopCtlr() { }
+    public NiPSResetOnLoopCtlr() : base() { }
 
 }

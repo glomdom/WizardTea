@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiBlendBoolInterpolator : NiBlendInterpolator {
     public byte Value { get; set; }
 
-    public NiBlendBoolInterpolator() { }
+    public NiBlendBoolInterpolator() : base() { }
 
 }

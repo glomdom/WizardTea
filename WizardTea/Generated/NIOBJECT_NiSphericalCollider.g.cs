@@ -14,6 +14,6 @@ public class NiSphericalCollider : NiParticleCollider {
     public float Radius { get; set; }
     public Vector3 Position { get; set; }
 
-    public NiSphericalCollider() { }
+    public NiSphericalCollider() : base() { }
 
 }

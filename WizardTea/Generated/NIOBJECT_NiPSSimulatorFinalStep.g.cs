@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSSimulatorFinalStep : NiPSSimulatorStep {
 
-    public NiPSSimulatorFinalStep() { }
+    public NiPSSimulatorFinalStep() : base() { }
 
 }

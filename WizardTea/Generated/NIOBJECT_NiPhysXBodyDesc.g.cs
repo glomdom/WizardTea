@@ -29,6 +29,6 @@ public class NiPhysXBodyDesc : NiObject {
     public float Sleep_Damping { get; set; }
     public float Contact_Report_Threshold { get; set; }
 
-    public NiPhysXBodyDesc() { }
+    public NiPhysXBodyDesc() : base() { }
 
 }

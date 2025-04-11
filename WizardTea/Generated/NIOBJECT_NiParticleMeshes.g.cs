@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiParticleMeshes : NiParticles {
 
-    public NiParticleMeshes() { }
+    public NiParticleMeshes() : base() { }
 
 }

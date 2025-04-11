@@ -14,6 +14,6 @@ public class NiPSysMeshUpdateModifier : NiPSysModifier {
     public uint Num_Meshes { get; set; }
     public Ref Meshes { get; set; }
 
-    public NiPSysMeshUpdateModifier() { }
+    public NiPSysMeshUpdateModifier() : base() { }
 
 }

@@ -14,6 +14,6 @@ public class NiBSplineCompColorEvaluator : NiBSplineColorEvaluator {
     public float Offset { get; set; }
     public float Half_Range { get; set; }
 
-    public NiBSplineCompColorEvaluator() { }
+    public NiBSplineCompColorEvaluator() : base() { }
 
 }

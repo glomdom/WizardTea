@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiPSysBoundUpdateModifier : NiPSysModifier {
     public ushort Update_Skip { get; set; }
 
-    public NiPSysBoundUpdateModifier() { }
+    public NiPSysBoundUpdateModifier() : base() { }
 
 }

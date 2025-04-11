@@ -15,6 +15,6 @@ public class NiParticleCollider : NiParticleModifier {
     public bool Spawn_On_Collide { get; set; }
     public bool Die_On_Collide { get; set; }
 
-    public NiParticleCollider() { }
+    public NiParticleCollider() : base() { }
 
 }

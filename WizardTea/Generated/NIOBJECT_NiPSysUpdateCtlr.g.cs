@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSysUpdateCtlr : NiTimeController {
 
-    public NiPSysUpdateCtlr() { }
+    public NiPSysUpdateCtlr() : base() { }
 
 }

@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiAlphaController : NiFloatInterpController {
     public Ref Data { get; set; }
 
-    public NiAlphaController() { }
+    public NiAlphaController() : base() { }
 
 }

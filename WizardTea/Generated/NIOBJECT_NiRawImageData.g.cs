@@ -17,6 +17,6 @@ public class NiRawImageData : NiObject {
     public ByteColor3 RGB_Image_Data { get; set; }
     public ByteColor4 RGBA_Image_Data { get; set; }
 
-    public NiRawImageData() { }
+    public NiRawImageData() : base() { }
 
 }

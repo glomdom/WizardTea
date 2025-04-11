@@ -19,6 +19,6 @@ public class NiGravity : NiParticleModifier {
     public float Unknown_01 { get; set; }
     public float Unknown_02 { get; set; }
 
-    public NiGravity() { }
+    public NiGravity() : base() { }
 
 }

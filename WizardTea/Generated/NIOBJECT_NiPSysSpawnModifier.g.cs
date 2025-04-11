@@ -21,6 +21,6 @@ public class NiPSysSpawnModifier : NiPSysModifier {
     public float Life_Span_Variation { get; set; }
     public float WorldShift_Spawn_Speed_Addition { get; set; }
 
-    public NiPSysSpawnModifier() { }
+    public NiPSysSpawnModifier() : base() { }
 
 }

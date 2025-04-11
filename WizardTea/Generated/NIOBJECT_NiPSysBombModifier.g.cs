@@ -18,6 +18,6 @@ public class NiPSysBombModifier : NiPSysModifier {
     public DecayType Decay_Type { get; set; }
     public SymmetryType Symmetry_Type { get; set; }
 
-    public NiPSysBombModifier() { }
+    public NiPSysBombModifier() : base() { }
 
 }

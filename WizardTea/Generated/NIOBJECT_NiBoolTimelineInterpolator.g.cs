@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiBoolTimelineInterpolator : NiBoolInterpolator {
 
-    public NiBoolTimelineInterpolator() { }
+    public NiBoolTimelineInterpolator() : base() { }
 
 }

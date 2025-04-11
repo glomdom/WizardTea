@@ -14,6 +14,6 @@ public class NiBSplineCompPoint3Evaluator : NiBSplinePoint3Evaluator {
     public float Offset { get; set; }
     public float Half_Range { get; set; }
 
-    public NiBSplineCompPoint3Evaluator() { }
+    public NiBSplineCompPoint3Evaluator() : base() { }
 
 }

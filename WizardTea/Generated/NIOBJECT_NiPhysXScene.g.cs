@@ -28,6 +28,6 @@ public class NiPhysXScene : NiObjectNET {
     public Ref Snapshot { get; set; }
     public ushort Flags { get; set; }
 
-    public NiPhysXScene() { }
+    public NiPhysXScene() : base() { }
 
 }

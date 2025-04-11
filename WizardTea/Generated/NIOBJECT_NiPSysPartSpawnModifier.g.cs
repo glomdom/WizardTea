@@ -15,6 +15,6 @@ public class NiPSysPartSpawnModifier : NiPSysModifier {
     public float Time { get; set; }
     public Ref Spawner { get; set; }
 
-    public NiPSysPartSpawnModifier() { }
+    public NiPSysPartSpawnModifier() : base() { }
 
 }

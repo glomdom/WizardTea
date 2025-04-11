@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiBone : NiNode {
 
-    public NiBone() { }
+    public NiBone() : base() { }
 
 }

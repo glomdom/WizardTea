@@ -14,6 +14,6 @@ public class NiPSSimulatorCollidersStep : NiPSSimulatorStep {
     public uint Num_Colliders { get; set; }
     public Ref Colliders { get; set; }
 
-    public NiPSSimulatorCollidersStep() { }
+    public NiPSSimulatorCollidersStep() : base() { }
 
 }

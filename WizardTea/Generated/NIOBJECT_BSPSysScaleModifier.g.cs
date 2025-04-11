@@ -14,6 +14,6 @@ public class BSPSysScaleModifier : NiPSysModifier {
     public uint Num_Scales { get; set; }
     public float Scales { get; set; }
 
-    public BSPSysScaleModifier() { }
+    public BSPSysScaleModifier() : base() { }
 
 }

@@ -16,6 +16,6 @@ public class NiBSplineData : NiObject {
     public uint Num_Compact_Control_Points { get; set; }
     public short Compact_Control_Points { get; set; }
 
-    public NiBSplineData() { }
+    public NiBSplineData() : base() { }
 
 }

@@ -17,6 +17,6 @@ public class NiPSPlanarCollider : NiPSCollider {
     public Vector3 Y_Axis { get; set; }
     public Ptr Collider_Object { get; set; }
 
-    public NiPSPlanarCollider() { }
+    public NiPSPlanarCollider() : base() { }
 
 }

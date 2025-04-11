@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSysEmitterDeclinationVarCtlr : NiPSysModifierFloatCtlr {
 
-    public NiPSysEmitterDeclinationVarCtlr() { }
+    public NiPSysEmitterDeclinationVarCtlr() : base() { }
 
 }

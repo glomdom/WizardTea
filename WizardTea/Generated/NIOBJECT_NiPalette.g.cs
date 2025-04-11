@@ -15,6 +15,6 @@ public class NiPalette : NiObject {
     public uint Num_Entries { get; set; }
     public ByteColor4 Palette { get; set; }
 
-    public NiPalette() { }
+    public NiPalette() : base() { }
 
 }

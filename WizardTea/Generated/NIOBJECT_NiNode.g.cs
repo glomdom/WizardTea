@@ -16,6 +16,6 @@ public class NiNode : NiAVObject {
     public uint Num_Effects { get; set; }
     public Ref Effects { get; set; }
 
-    public NiNode() { }
+    public NiNode() : base() { }
 
 }

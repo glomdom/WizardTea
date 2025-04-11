@@ -14,6 +14,6 @@ public class NiPSysEmitterCtlr : NiPSysModifierCtlr {
     public Ref Data { get; set; }
     public Ref Visibility_Interpolator { get; set; }
 
-    public NiPSysEmitterCtlr() { }
+    public NiPSysEmitterCtlr() : base() { }
 
 }

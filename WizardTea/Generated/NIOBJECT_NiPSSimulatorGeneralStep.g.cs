@@ -26,6 +26,6 @@ public class NiPSSimulatorGeneralStep : NiPSSimulatorStep {
     public ushort Shrink_Generation { get; set; }
     public byte DEM_Unknown_Byte { get; set; }
 
-    public NiPSSimulatorGeneralStep() { }
+    public NiPSSimulatorGeneralStep() : base() { }
 
 }

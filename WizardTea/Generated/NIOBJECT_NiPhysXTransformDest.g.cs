@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiPhysXTransformDest : NiPhysXRigidBodyDest {
     public Ptr Target { get; set; }
 
-    public NiPhysXTransformDest() { }
+    public NiPhysXTransformDest() : base() { }
 
 }

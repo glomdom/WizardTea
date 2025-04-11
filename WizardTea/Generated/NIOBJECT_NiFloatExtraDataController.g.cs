@@ -16,6 +16,6 @@ public class NiFloatExtraDataController : NiExtraDataController {
     public byte Unknown_Extra_Bytes { get; set; }
     public Ref Data { get; set; }
 
-    public NiFloatExtraDataController() { }
+    public NiFloatExtraDataController() : base() { }
 
 }

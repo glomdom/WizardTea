@@ -17,6 +17,6 @@ public class NiPSysMeshEmitter : NiPSysEmitter {
     public EmitFrom Emission_Type { get; set; }
     public Vector3 Emission_Axis { get; set; }
 
-    public NiPSysMeshEmitter() { }
+    public NiPSysMeshEmitter() : base() { }
 
 }

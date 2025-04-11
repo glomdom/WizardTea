@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiPhysXPSParticleSystemDest : NiPhysXDest {
     public Ptr Target { get; set; }
 
-    public NiPhysXPSParticleSystemDest() { }
+    public NiPhysXPSParticleSystemDest() : base() { }
 
 }

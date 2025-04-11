@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class CsNiNode : NiNode {
 
-    public CsNiNode() { }
+    public CsNiNode() : base() { }
 
 }

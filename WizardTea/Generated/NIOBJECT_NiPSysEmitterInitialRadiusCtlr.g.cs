@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSysEmitterInitialRadiusCtlr : NiPSysModifierFloatCtlr {
 
-    public NiPSysEmitterInitialRadiusCtlr() { }
+    public NiPSysEmitterInitialRadiusCtlr() : base() { }
 
 }

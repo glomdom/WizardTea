@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class FxButton : FxWidget {
 
-    public FxButton() { }
+    public FxButton() : base() { }
 
 }

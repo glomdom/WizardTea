@@ -20,6 +20,6 @@ public class Ni3dsAnimationNode : NiObject {
     public uint Count { get; set; }
     public byte Unknown_Array { get; set; }
 
-    public Ni3dsAnimationNode() { }
+    public Ni3dsAnimationNode() : base() { }
 
 }

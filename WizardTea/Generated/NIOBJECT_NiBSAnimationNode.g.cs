@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiBSAnimationNode : NiNode {
 
-    public NiBSAnimationNode() { }
+    public NiBSAnimationNode() : base() { }
 
 }

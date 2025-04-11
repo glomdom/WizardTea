@@ -28,6 +28,6 @@ public class NiPhysXActorDesc : NiObject {
     public Ref Source { get; set; }
     public Ref Dest { get; set; }
 
-    public NiPhysXActorDesc() { }
+    public NiPhysXActorDesc() : base() { }
 
 }

@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSysAirFieldInheritVelocityCtlr : NiPSysModifierFloatCtlr {
 
-    public NiPSysAirFieldInheritVelocityCtlr() { }
+    public NiPSysAirFieldInheritVelocityCtlr() : base() { }
 
 }

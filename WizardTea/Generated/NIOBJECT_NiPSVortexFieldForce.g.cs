@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiPSVortexFieldForce : NiPSFieldForce {
     public Vector3 Direction { get; set; }
 
-    public NiPSVortexFieldForce() { }
+    public NiPSVortexFieldForce() : base() { }
 
 }

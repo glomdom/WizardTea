@@ -15,6 +15,6 @@ public class BSPSysRecycleBoundModifier : NiPSysModifier {
     public Vector3 Bound_Extent { get; set; }
     public Ptr Bound_Object { get; set; }
 
-    public BSPSysRecycleBoundModifier() { }
+    public BSPSysRecycleBoundModifier() : base() { }
 
 }

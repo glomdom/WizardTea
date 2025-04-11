@@ -16,6 +16,6 @@ public class NiScreenLODData : NiLODData {
     public uint Num_Proportions { get; set; }
     public float Proportion_Levels { get; set; }
 
-    public NiScreenLODData() { }
+    public NiScreenLODData() : base() { }
 
 }

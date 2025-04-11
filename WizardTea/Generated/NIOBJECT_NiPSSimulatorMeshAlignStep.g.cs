@@ -15,6 +15,6 @@ public class NiPSSimulatorMeshAlignStep : NiPSSimulatorStep {
     public QuatKey<Quaternion> Rotation_Keys { get; set; }
     public PSLoopBehavior Rotation_Loop_Behavior { get; set; }
 
-    public NiPSSimulatorMeshAlignStep() { }
+    public NiPSSimulatorMeshAlignStep() : base() { }
 
 }

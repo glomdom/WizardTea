@@ -14,6 +14,6 @@ public class NiMaterialColorController : NiPoint3InterpController {
     public MaterialColor Target_Color { get; set; }
     public Ref Data { get; set; }
 
-    public NiMaterialColorController() { }
+    public NiMaterialColorController() : base() { }
 
 }

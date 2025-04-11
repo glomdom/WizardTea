@@ -17,6 +17,6 @@ public class NiImage : NiObject {
     public uint Unknown_Int { get; set; }
     public float Unknown_Float { get; set; }
 
-    public NiImage() { }
+    public NiImage() : base() { }
 
 }

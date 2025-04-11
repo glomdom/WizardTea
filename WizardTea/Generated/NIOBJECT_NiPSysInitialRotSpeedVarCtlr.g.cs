@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSysInitialRotSpeedVarCtlr : NiPSysModifierFloatCtlr {
 
-    public NiPSysInitialRotSpeedVarCtlr() { }
+    public NiPSysInitialRotSpeedVarCtlr() : base() { }
 
 }

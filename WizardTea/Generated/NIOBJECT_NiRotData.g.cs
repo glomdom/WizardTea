@@ -16,6 +16,6 @@ public class NiRotData : NiObject {
     public QuatKey<Quaternion> Quaternion_Keys { get; set; }
     public KeyGroup<float> XYZ_Rotations { get; set; }
 
-    public NiRotData() { }
+    public NiRotData() : base() { }
 
 }

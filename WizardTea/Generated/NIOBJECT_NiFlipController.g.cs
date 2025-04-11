@@ -18,6 +18,6 @@ public class NiFlipController : NiFloatInterpController {
     public Ref Sources { get; set; }
     public Ref Images { get; set; }
 
-    public NiFlipController() { }
+    public NiFlipController() : base() { }
 
 }

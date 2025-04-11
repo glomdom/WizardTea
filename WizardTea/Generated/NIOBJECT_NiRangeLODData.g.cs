@@ -15,6 +15,6 @@ public class NiRangeLODData : NiLODData {
     public uint Num_LOD_Levels { get; set; }
     public LODRange LOD_Levels { get; set; }
 
-    public NiRangeLODData() { }
+    public NiRangeLODData() : base() { }
 
 }

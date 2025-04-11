@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiShadeProperty : NiProperty {
     public ShadeFlags Flags { get; set; }
 
-    public NiShadeProperty() { }
+    public NiShadeProperty() : base() { }
 
 }

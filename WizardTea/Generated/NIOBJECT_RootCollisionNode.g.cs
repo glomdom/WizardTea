@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class RootCollisionNode : NiNode {
 
-    public RootCollisionNode() { }
+    public RootCollisionNode() : base() { }
 
 }

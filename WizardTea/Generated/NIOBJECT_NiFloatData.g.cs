@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiFloatData : NiObject {
     public KeyGroup<float> Data { get; set; }
 
-    public NiFloatData() { }
+    public NiFloatData() : base() { }
 
 }

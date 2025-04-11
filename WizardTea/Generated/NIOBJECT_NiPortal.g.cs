@@ -17,6 +17,6 @@ public class NiPortal : NiAVObject {
     public Vector3 Vertices { get; set; }
     public Ptr Adjoiner { get; set; }
 
-    public NiPortal() { }
+    public NiPortal() : base() { }
 
 }

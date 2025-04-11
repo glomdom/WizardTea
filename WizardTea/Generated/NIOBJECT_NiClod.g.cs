@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiClod : NiTriBasedGeom {
 
-    public NiClod() { }
+    public NiClod() : base() { }
 
 }

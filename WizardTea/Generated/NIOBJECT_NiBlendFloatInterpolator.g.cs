@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiBlendFloatInterpolator : NiBlendInterpolator {
     public float Value { get; set; }
 
-    public NiBlendFloatInterpolator() { }
+    public NiBlendFloatInterpolator() : base() { }
 
 }

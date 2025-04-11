@@ -17,6 +17,6 @@ public class CStreamableAssetData : NiObject {
     public uint Num_Refs { get; set; }
     public Ref Refs { get; set; }
 
-    public CStreamableAssetData() { }
+    public CStreamableAssetData() : base() { }
 
 }

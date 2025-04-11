@@ -15,6 +15,6 @@ public class NiPSBoxEmitter : NiPSVolumeEmitter {
     public float Emitter_Height { get; set; }
     public float Emitter_Depth { get; set; }
 
-    public NiPSBoxEmitter() { }
+    public NiPSBoxEmitter() : base() { }
 
 }

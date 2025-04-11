@@ -19,6 +19,6 @@ public class BSPSysSubTexModifier : NiPSysModifier {
     public float Frame_Count { get; set; }
     public float Frame_Count_Fudge { get; set; }
 
-    public BSPSysSubTexModifier() { }
+    public BSPSysSubTexModifier() : base() { }
 
 }

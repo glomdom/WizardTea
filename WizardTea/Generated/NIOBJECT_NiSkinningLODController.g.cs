@@ -19,6 +19,6 @@ public class NiSkinningLODController : NiTimeController {
     public uint Num_LOD_Levels { get; set; }
     public LODInfo LODs { get; set; }
 
-    public NiSkinningLODController() { }
+    public NiSkinningLODController() : base() { }
 
 }

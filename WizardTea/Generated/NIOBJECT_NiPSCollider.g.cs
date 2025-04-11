@@ -18,6 +18,6 @@ public class NiPSCollider : NiObject {
     public bool Spawn_on_Collide { get; set; }
     public bool Die_on_Collide { get; set; }
 
-    public NiPSCollider() { }
+    public NiPSCollider() : base() { }
 
 }

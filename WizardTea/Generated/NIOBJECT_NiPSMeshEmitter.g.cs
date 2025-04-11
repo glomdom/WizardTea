@@ -18,6 +18,6 @@ public class NiPSMeshEmitter : NiPSEmitter {
     public EmitFrom Mesh_Emission_Type { get; set; }
     public VelocityType Initial_Velocity_Type { get; set; }
 
-    public NiPSMeshEmitter() { }
+    public NiPSMeshEmitter() : base() { }
 
 }

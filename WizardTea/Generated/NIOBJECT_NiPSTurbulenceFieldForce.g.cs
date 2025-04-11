@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiPSTurbulenceFieldForce : NiPSFieldForce {
     public float Frequency { get; set; }
 
-    public NiPSTurbulenceFieldForce() { }
+    public NiPSTurbulenceFieldForce() : base() { }
 
 }

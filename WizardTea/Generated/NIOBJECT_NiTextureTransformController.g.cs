@@ -16,6 +16,6 @@ public class NiTextureTransformController : NiFloatInterpController {
     public TransformMember Operation { get; set; }
     public Ref Data { get; set; }
 
-    public NiTextureTransformController() { }
+    public NiTextureTransformController() : base() { }
 
 }

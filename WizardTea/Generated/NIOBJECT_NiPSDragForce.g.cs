@@ -17,6 +17,6 @@ public class NiPSDragForce : NiPSForce {
     public float Range_Falloff { get; set; }
     public Ptr Drag_Object { get; set; }
 
-    public NiPSDragForce() { }
+    public NiPSDragForce() : base() { }
 
 }

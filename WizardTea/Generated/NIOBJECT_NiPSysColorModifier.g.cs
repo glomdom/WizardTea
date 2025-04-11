@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiPSysColorModifier : NiPSysModifier {
     public Ref Data { get; set; }
 
-    public NiPSysColorModifier() { }
+    public NiPSysColorModifier() : base() { }
 
 }

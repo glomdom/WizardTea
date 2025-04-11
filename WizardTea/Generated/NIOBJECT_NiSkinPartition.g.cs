@@ -16,6 +16,6 @@ public class NiSkinPartition : NiObject {
     public uint Vertex_Size { get; set; }
     public SkinPartition Partitions { get; set; }
 
-    public NiSkinPartition() { }
+    public NiSkinPartition() : base() { }
 
 }

@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiBlendTransformInterpolator : NiBlendInterpolator {
     public NiQuatTransform Value { get; set; }
 
-    public NiBlendTransformInterpolator() { }
+    public NiBlendTransformInterpolator() : base() { }
 
 }

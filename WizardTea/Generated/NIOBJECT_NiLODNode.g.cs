@@ -16,6 +16,6 @@ public class NiLODNode : NiSwitchNode {
     public LODRange LOD_Levels { get; set; }
     public Ref LOD_Level_Data { get; set; }
 
-    public NiLODNode() { }
+    public NiLODNode() : base() { }
 
 }

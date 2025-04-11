@@ -16,6 +16,6 @@ public class NiPSCurveEmitter : NiPSEmitter {
     public Ptr Curve_Parent { get; set; }
     public Ptr Emitter_Object { get; set; }
 
-    public NiPSCurveEmitter() { }
+    public NiPSCurveEmitter() : base() { }
 
 }

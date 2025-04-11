@@ -16,6 +16,6 @@ public class BSPSysInheritVelocityModifier : NiPSysModifier {
     public float Velocity_Multiplier { get; set; }
     public float Velocity_Variation { get; set; }
 
-    public BSPSysInheritVelocityModifier() { }
+    public BSPSysInheritVelocityModifier() : base() { }
 
 }

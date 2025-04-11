@@ -15,6 +15,6 @@ public class NiPhysXMaterialDesc : NiObject {
     public uint Num_States { get; set; }
     public NxMaterialDesc Material_Descs { get; set; }
 
-    public NiPhysXMaterialDesc() { }
+    public NiPhysXMaterialDesc() : base() { }
 
 }

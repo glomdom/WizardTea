@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiPSysTurbulenceFieldModifier : NiPSysFieldModifier {
     public float Frequency { get; set; }
 
-    public NiPSysTurbulenceFieldModifier() { }
+    public NiPSysTurbulenceFieldModifier() : base() { }
 
 }

@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSFacingQuadGenerator : NiMeshModifier {
 
-    public NiPSFacingQuadGenerator() { }
+    public NiPSFacingQuadGenerator() : base() { }
 
 }

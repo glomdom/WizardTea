@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiExtraTextKeyExtraData : NiTextKeyExtraData {
 
-    public NiExtraTextKeyExtraData() { }
+    public NiExtraTextKeyExtraData() : base() { }
 
 }

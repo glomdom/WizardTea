@@ -16,6 +16,6 @@ public class NiPSMeshParticleSystem : NiPSParticleSystem {
     public uint Pool_Size { get; set; }
     public bool Auto_Fill_Pools { get; set; }
 
-    public NiPSMeshParticleSystem() { }
+    public NiPSMeshParticleSystem() : base() { }
 
 }

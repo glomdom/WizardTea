@@ -45,6 +45,6 @@ public class NiTexturingProperty : NiProperty {
     public uint Num_Shader_Textures { get; set; }
     public ShaderTexDesc Shader_Textures { get; set; }
 
-    public NiTexturingProperty() { }
+    public NiTexturingProperty() : base() { }
 
 }

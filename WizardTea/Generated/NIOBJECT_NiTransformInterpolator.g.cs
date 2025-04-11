@@ -14,6 +14,6 @@ public class NiTransformInterpolator : NiKeyBasedInterpolator {
     public NiQuatTransform Transform { get; set; }
     public Ref Data { get; set; }
 
-    public NiTransformInterpolator() { }
+    public NiTransformInterpolator() : base() { }
 
 }

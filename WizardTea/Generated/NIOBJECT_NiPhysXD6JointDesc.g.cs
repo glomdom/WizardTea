@@ -38,6 +38,6 @@ public class NiPhysXD6JointDesc : NiPhysXJointDesc {
     public float Gear_Ratio { get; set; }
     public uint Flags { get; set; }
 
-    public NiPhysXD6JointDesc() { }
+    public NiPhysXD6JointDesc() : base() { }
 
 }

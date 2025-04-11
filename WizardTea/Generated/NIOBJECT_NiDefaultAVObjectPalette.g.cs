@@ -15,6 +15,6 @@ public class NiDefaultAVObjectPalette : NiAVObjectPalette {
     public uint Num_Objs { get; set; }
     public AVObject Objs { get; set; }
 
-    public NiDefaultAVObjectPalette() { }
+    public NiDefaultAVObjectPalette() : base() { }
 
 }

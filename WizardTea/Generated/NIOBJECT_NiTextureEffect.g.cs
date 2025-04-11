@@ -26,6 +26,6 @@ public class NiTextureEffect : NiDynamicEffect {
     public short PS2_K { get; set; }
     public ushort Unknown_Short { get; set; }
 
-    public NiTextureEffect() { }
+    public NiTextureEffect() : base() { }
 
 }

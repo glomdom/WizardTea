@@ -17,6 +17,6 @@ public class NiSkinData : NiObject {
     public bool Has_Vertex_Weights { get; set; }
     public BoneData Bone_List { get; set; }
 
-    public NiSkinData() { }
+    public NiSkinData() : base() { }
 
 }

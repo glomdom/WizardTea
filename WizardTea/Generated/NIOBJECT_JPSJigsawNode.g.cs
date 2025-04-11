@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class JPSJigsawNode : NiNode {
 
-    public JPSJigsawNode() { }
+    public JPSJigsawNode() : base() { }
 
 }

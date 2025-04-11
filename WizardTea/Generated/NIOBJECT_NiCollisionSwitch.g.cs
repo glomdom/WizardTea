@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiCollisionSwitch : NiNode {
 
-    public NiCollisionSwitch() { }
+    public NiCollisionSwitch() : base() { }
 
 }

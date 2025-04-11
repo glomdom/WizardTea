@@ -45,13 +45,14 @@ public class NiObjectParser : BaseParser {
             foreach (var field in fields) {
                 var rawFieldName = XmlHelper.GetRequiredAttributeValue(field, "name");
                 var fieldName = rawFieldName.RemoveAfter(':').Replace(" ", "_");
-                
+
                 if (seenFields.Contains(fieldName)) continue;
+
                 seenFields.Add(fieldName);
-                
+
                 var fieldType = XmlHelper.GetRequiredAttributeValue(field, "type");
                 if (BlacklistedTypes.Contains(fieldType)) continue;
-                
+
                 var template = XmlHelper.GetOptionalAttributeValue(field, "template");
                 var length = XmlHelper.GetOptionalAttributeValue(field, "length");
 
@@ -107,7 +108,7 @@ public class NiObjectParser : BaseParser {
             }
 
             sb.AppendLine();
-            sb.AppendLine(isAbstract ? $"    public {className}() : base() {{ }}" : $"    public {className}() {{ }}");
+            sb.AppendLine(string.IsNullOrEmpty(inherit) ? $"    public {className}() {{ }}" : $"    public {className}() : base() {{ }}");
             sb.AppendLine();
 
             var classEndContext = new InjectionContext {

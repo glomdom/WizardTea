@@ -14,6 +14,6 @@ public class NiTransformEvaluator : NiKeyBasedEvaluator {
     public NiQuatTransform Value { get; set; }
     public Ref Data { get; set; }
 
-    public NiTransformEvaluator() { }
+    public NiTransformEvaluator() : base() { }
 
 }

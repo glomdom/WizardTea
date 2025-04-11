@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPhysXDynamicSrc : NiPhysXRigidBodySrc {
 
-    public NiPhysXDynamicSrc() { }
+    public NiPhysXDynamicSrc() : base() { }
 
 }

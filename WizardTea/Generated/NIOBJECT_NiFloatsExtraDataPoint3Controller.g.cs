@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiFloatsExtraDataPoint3Controller : NiExtraDataController {
     public int Floats_Extra_Data_Index { get; set; }
 
-    public NiFloatsExtraDataPoint3Controller() { }
+    public NiFloatsExtraDataPoint3Controller() : base() { }
 
 }

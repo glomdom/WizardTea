@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiPosData : NiObject {
     public KeyGroup<Vector3> Data { get; set; }
 
-    public NiPosData() { }
+    public NiPosData() : base() { }
 
 }

@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiTransparentProperty : NiProperty {
     public byte Unknown { get; set; }
 
-    public NiTransparentProperty() { }
+    public NiTransparentProperty() : base() { }
 
 }

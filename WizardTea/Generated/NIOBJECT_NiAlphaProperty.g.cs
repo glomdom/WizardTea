@@ -16,6 +16,6 @@ public class NiAlphaProperty : NiProperty {
     public ushort Unknown_Short_1 { get; set; }
     public uint Unknown_Int_2 { get; set; }
 
-    public NiAlphaProperty() { }
+    public NiAlphaProperty() : base() { }
 
 }

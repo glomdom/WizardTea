@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiBoolData : NiObject {
     public KeyGroup<byte> Data { get; set; }
 
-    public NiBoolData() { }
+    public NiBoolData() : base() { }
 
 }

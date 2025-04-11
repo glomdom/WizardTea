@@ -16,6 +16,6 @@ public class NiTriShapeSkinController : NiTimeController {
     public Ptr Bones { get; set; }
     public OldSkinData Bone_Data { get; set; }
 
-    public NiTriShapeSkinController() { }
+    public NiTriShapeSkinController() : base() { }
 
 }

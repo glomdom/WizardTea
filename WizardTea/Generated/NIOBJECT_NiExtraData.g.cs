@@ -16,6 +16,6 @@ public class NiExtraData : NiObject {
     public ByteArray Extra_Data { get; set; }
     public uint Num_Bytes { get; set; }
 
-    public NiExtraData() { }
+    public NiExtraData() : base() { }
 
 }

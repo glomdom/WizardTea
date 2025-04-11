@@ -14,6 +14,6 @@ public class NiMeshHWInstance : NiAVObject {
     public Ref Master_Mesh { get; set; }
     public Ref Mesh_Modifier { get; set; }
 
-    public NiMeshHWInstance() { }
+    public NiMeshHWInstance() : base() { }
 
 }

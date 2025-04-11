@@ -15,6 +15,6 @@ public class BSMasterParticleSystem : NiNode {
     public uint Num_Particle_Systems { get; set; }
     public Ref Particle_Systems { get; set; }
 
-    public BSMasterParticleSystem() { }
+    public BSMasterParticleSystem() : base() { }
 
 }

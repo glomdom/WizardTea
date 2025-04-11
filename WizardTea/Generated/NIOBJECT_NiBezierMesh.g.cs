@@ -23,6 +23,6 @@ public class NiBezierMesh : NiAVObject {
     public ushort Count_2 { get; set; }
     public ushort Data_2 { get; set; }
 
-    public NiBezierMesh() { }
+    public NiBezierMesh() : base() { }
 
 }

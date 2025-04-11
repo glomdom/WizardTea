@@ -18,6 +18,6 @@ public class NiPlanarCollider : NiParticleCollider {
     public Vector3 Y_Vector { get; set; }
     public NiPlane Plane { get; set; }
 
-    public NiPlanarCollider() { }
+    public NiPlanarCollider() : base() { }
 
 }

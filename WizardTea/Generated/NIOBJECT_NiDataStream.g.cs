@@ -22,6 +22,6 @@ public class NiDataStream : NiObject {
     public DataStreamData Data { get; set; }
     public bool Streamable { get; set; }
 
-    public NiDataStream() { }
+    public NiDataStream() : base() { }
 
 }

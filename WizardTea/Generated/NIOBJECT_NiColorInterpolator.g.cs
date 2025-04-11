@@ -14,6 +14,6 @@ public class NiColorInterpolator : NiKeyBasedInterpolator {
     public Color4 Value { get; set; }
     public Ref Data { get; set; }
 
-    public NiColorInterpolator() { }
+    public NiColorInterpolator() : base() { }
 
 }

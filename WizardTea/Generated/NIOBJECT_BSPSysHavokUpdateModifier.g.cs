@@ -13,6 +13,6 @@ namespace WizardTea;
 public class BSPSysHavokUpdateModifier : NiPSysMeshUpdateModifier {
     public Ref Modifier { get; set; }
 
-    public BSPSysHavokUpdateModifier() { }
+    public BSPSysHavokUpdateModifier() : base() { }
 
 }

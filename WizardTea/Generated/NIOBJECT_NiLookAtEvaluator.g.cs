@@ -16,6 +16,6 @@ public class NiLookAtEvaluator : NiEvaluator {
     public NiFixedString Driven_Name { get; set; }
     public Ref Interpolator { get; set; }
 
-    public NiLookAtEvaluator() { }
+    public NiLookAtEvaluator() : base() { }
 
 }

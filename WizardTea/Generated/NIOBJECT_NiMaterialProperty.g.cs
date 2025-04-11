@@ -20,6 +20,6 @@ public class NiMaterialProperty : NiProperty {
     public float Alpha { get; set; }
     public float Emissive_Mult { get; set; }
 
-    public NiMaterialProperty() { }
+    public NiMaterialProperty() : base() { }
 
 }

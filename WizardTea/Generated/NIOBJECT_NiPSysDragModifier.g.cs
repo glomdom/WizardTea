@@ -17,6 +17,6 @@ public class NiPSysDragModifier : NiPSysModifier {
     public float Range { get; set; }
     public float Range_Falloff { get; set; }
 
-    public NiPSysDragModifier() { }
+    public NiPSysDragModifier() : base() { }
 
 }

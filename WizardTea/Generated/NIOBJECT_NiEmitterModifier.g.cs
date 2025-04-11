@@ -14,6 +14,6 @@ public class NiEmitterModifier : NiObject {
     public Ref Next_Modifier { get; set; }
     public Ptr Controller { get; set; }
 
-    public NiEmitterModifier() { }
+    public NiEmitterModifier() : base() { }
 
 }

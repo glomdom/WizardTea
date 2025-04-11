@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSysAirFieldAirFrictionCtlr : NiPSysModifierFloatCtlr {
 
-    public NiPSysAirFieldAirFrictionCtlr() { }
+    public NiPSysAirFieldAirFrictionCtlr() : base() { }
 
 }

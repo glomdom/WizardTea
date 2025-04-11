@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSysEmitterLifeSpanCtlr : NiPSysModifierFloatCtlr {
 
-    public NiPSysEmitterLifeSpanCtlr() { }
+    public NiPSysEmitterLifeSpanCtlr() : base() { }
 
 }

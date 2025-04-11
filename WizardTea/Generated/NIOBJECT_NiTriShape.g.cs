@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiTriShape : NiTriBasedGeom {
 
-    public NiTriShape() { }
+    public NiTriShape() : base() { }
 
 }

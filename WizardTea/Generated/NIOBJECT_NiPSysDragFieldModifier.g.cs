@@ -14,6 +14,6 @@ public class NiPSysDragFieldModifier : NiPSysFieldModifier {
     public bool Use_Direction { get; set; }
     public Vector3 Direction { get; set; }
 
-    public NiPSysDragFieldModifier() { }
+    public NiPSysDragFieldModifier() : base() { }
 
 }

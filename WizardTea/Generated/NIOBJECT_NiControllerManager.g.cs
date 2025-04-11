@@ -16,6 +16,6 @@ public class NiControllerManager : NiTimeController {
     public Ref Controller_Sequences { get; set; }
     public Ref Object_Palette { get; set; }
 
-    public NiControllerManager() { }
+    public NiControllerManager() : base() { }
 
 }

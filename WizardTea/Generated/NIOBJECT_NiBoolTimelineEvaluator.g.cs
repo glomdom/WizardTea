@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiBoolTimelineEvaluator : NiBoolEvaluator {
 
-    public NiBoolTimelineEvaluator() { }
+    public NiBoolTimelineEvaluator() : base() { }
 
 }

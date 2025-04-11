@@ -16,6 +16,6 @@ public class NiCollisionData : NiCollisionObject {
     public byte Use_ABV { get; set; }
     public BoundingVolume Bounding_Volume { get; set; }
 
-    public NiCollisionData() { }
+    public NiCollisionData() : base() { }
 
 }

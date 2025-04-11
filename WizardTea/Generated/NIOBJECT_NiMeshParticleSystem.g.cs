@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiMeshParticleSystem : NiParticleSystem {
 
-    public NiMeshParticleSystem() { }
+    public NiMeshParticleSystem() : base() { }
 
 }

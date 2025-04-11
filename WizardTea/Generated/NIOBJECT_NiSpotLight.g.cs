@@ -15,6 +15,6 @@ public class NiSpotLight : NiPointLight {
     public float Inner_Spot_Angle { get; set; }
     public float Exponent { get; set; }
 
-    public NiSpotLight() { }
+    public NiSpotLight() : base() { }
 
 }

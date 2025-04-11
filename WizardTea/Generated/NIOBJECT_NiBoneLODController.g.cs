@@ -20,6 +20,6 @@ public class NiBoneLODController : NiTimeController {
     public uint Num_Shape_Groups_2 { get; set; }
     public Ref Shape_Groups_2 { get; set; }
 
-    public NiBoneLODController() { }
+    public NiBoneLODController() : base() { }
 
 }

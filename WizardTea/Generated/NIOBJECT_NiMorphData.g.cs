@@ -16,6 +16,6 @@ public class NiMorphData : NiObject {
     public byte Relative_Targets { get; set; }
     public Morph Morphs { get; set; }
 
-    public NiMorphData() { }
+    public NiMorphData() : base() { }
 
 }

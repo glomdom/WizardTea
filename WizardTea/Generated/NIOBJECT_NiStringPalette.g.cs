@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiStringPalette : NiObject {
     public StringPalette Palette { get; set; }
 
-    public NiStringPalette() { }
+    public NiStringPalette() : base() { }
 
 }

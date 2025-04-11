@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSFieldMagnitudeCtlr : NiPSForceFloatCtlr {
 
-    public NiPSFieldMagnitudeCtlr() { }
+    public NiPSFieldMagnitudeCtlr() : base() { }
 
 }

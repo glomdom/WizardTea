@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiSpecularProperty : NiProperty {
     public SpecularFlags Flags { get; set; }
 
-    public NiSpecularProperty() { }
+    public NiSpecularProperty() : base() { }
 
 }

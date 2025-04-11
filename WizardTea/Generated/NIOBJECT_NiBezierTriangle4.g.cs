@@ -21,6 +21,6 @@ public class NiBezierTriangle4 : NiObject {
     public uint Unknown_5 { get; set; }
     public short Unknown_6 { get; set; }
 
-    public NiBezierTriangle4() { }
+    public NiBezierTriangle4() : base() { }
 
 }

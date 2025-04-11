@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public abstract class NiObject {
 
-    public NiObject() : base() { }
+    public NiObject() { }
 
 }

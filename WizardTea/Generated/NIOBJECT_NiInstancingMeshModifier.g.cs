@@ -19,6 +19,6 @@ public class NiInstancingMeshModifier : NiMeshModifier {
     public uint Num_Instance_Nodes { get; set; }
     public Ref Instance_Nodes { get; set; }
 
-    public NiInstancingMeshModifier() { }
+    public NiInstancingMeshModifier() : base() { }
 
 }

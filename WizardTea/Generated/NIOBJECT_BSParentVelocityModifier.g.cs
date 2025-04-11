@@ -13,6 +13,6 @@ namespace WizardTea;
 public class BSParentVelocityModifier : NiPSysModifier {
     public float Damping { get; set; }
 
-    public BSParentVelocityModifier() { }
+    public BSParentVelocityModifier() : base() { }
 
 }

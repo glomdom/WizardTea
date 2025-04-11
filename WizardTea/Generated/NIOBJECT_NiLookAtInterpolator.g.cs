@@ -17,6 +17,6 @@ public class NiLookAtInterpolator : NiInterpolator {
     public NiQuatTransform Transform { get; set; }
     public Ref Interpolator { get; set; }
 
-    public NiLookAtInterpolator() { }
+    public NiLookAtInterpolator() : base() { }
 
 }

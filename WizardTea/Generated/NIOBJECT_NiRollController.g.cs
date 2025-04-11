@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiRollController : NiSingleInterpController {
     public Ref Data { get; set; }
 
-    public NiRollController() { }
+    public NiRollController() : base() { }
 
 }

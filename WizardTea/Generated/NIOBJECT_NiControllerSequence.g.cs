@@ -27,6 +27,6 @@ public class NiControllerSequence : NiSequence {
     public ushort Num_Anim_Note_Arrays { get; set; }
     public Ref Anim_Note_Arrays { get; set; }
 
-    public NiControllerSequence() { }
+    public NiControllerSequence() : base() { }
 
 }

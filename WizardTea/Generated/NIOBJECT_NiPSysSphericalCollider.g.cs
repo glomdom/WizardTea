@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiPSysSphericalCollider : NiPSysCollider {
     public float Radius { get; set; }
 
-    public NiPSysSphericalCollider() { }
+    public NiPSysSphericalCollider() : base() { }
 
 }

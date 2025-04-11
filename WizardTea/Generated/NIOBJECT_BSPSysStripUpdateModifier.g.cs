@@ -13,6 +13,6 @@ namespace WizardTea;
 public class BSPSysStripUpdateModifier : NiPSysModifier {
     public float Update_Delta_Time { get; set; }
 
-    public BSPSysStripUpdateModifier() { }
+    public BSPSysStripUpdateModifier() : base() { }
 
 }

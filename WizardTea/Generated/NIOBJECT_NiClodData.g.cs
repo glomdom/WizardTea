@@ -21,6 +21,6 @@ public class NiClodData : NiTriBasedGeomData {
     public ushort Unknown_Clod_Shorts_2 { get; set; }
     public ushort Unknown_Clod_Shorts_3 { get; set; }
 
-    public NiClodData() { }
+    public NiClodData() : base() { }
 
 }

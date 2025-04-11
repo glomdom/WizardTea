@@ -13,6 +13,6 @@ namespace WizardTea;
 public class RibbonEmitter : NiPSEmitter {
     public byte EM_Unknown_Bytes { get; set; }
 
-    public RibbonEmitter() { }
+    public RibbonEmitter() : base() { }
 
 }

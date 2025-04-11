@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiSourceCubeMap : NiSourceTexture {
 
-    public NiSourceCubeMap() { }
+    public NiSourceCubeMap() : base() { }
 
 }

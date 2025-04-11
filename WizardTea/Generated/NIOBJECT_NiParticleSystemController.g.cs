@@ -55,6 +55,6 @@ public class NiParticleSystemController : NiTimeController {
     public float Unknown_Float_1 { get; set; }
     public float Unknown_Floats_2 { get; set; }
 
-    public NiParticleSystemController() { }
+    public NiParticleSystemController() : base() { }
 
 }

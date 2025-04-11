@@ -19,6 +19,6 @@ public class NiPathEvaluator : NiKeyBasedEvaluator {
     public Ref Path_Data { get; set; }
     public Ref Percent_Data { get; set; }
 
-    public NiPathEvaluator() { }
+    public NiPathEvaluator() : base() { }
 
 }

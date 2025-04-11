@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiWall : NiNode {
     public NiPlane Wall_Plane { get; set; }
 
-    public NiWall() { }
+    public NiWall() : base() { }
 
 }

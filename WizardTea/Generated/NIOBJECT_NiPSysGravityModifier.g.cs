@@ -20,6 +20,6 @@ public class NiPSysGravityModifier : NiPSysModifier {
     public float Turbulence_Scale { get; set; }
     public bool World_Aligned { get; set; }
 
-    public NiPSysGravityModifier() { }
+    public NiPSysGravityModifier() : base() { }
 
 }

@@ -35,6 +35,6 @@ public class NiPSParticleSystem : NiMesh {
     public uint DEM_Unknown_Int { get; set; }
     public byte DEM_Unknown_Byte { get; set; }
 
-    public NiPSParticleSystem() { }
+    public NiPSParticleSystem() : base() { }
 
 }

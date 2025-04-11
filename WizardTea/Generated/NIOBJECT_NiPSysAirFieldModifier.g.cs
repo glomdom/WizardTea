@@ -19,6 +19,6 @@ public class NiPSysAirFieldModifier : NiPSysFieldModifier {
     public bool Enable_Spread { get; set; }
     public float Spread { get; set; }
 
-    public NiPSysAirFieldModifier() { }
+    public NiPSysAirFieldModifier() : base() { }
 
 }

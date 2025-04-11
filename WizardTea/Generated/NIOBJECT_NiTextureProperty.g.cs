@@ -16,6 +16,6 @@ public class NiTextureProperty : NiProperty {
     public Ref Image { get; set; }
     public uint Unknown_Ints_2 { get; set; }
 
-    public NiTextureProperty() { }
+    public NiTextureProperty() : base() { }
 
 }

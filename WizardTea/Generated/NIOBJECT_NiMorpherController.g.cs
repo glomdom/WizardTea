@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiMorpherController : NiInterpController {
     public Ref Data { get; set; }
 
-    public NiMorpherController() { }
+    public NiMorpherController() : base() { }
 
 }

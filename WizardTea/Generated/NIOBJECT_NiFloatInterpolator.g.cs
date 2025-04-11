@@ -14,6 +14,6 @@ public class NiFloatInterpolator : NiKeyBasedInterpolator {
     public float Value { get; set; }
     public Ref Data { get; set; }
 
-    public NiFloatInterpolator() { }
+    public NiFloatInterpolator() : base() { }
 
 }

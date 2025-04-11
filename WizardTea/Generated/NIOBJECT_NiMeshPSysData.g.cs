@@ -17,6 +17,6 @@ public class NiMeshPSysData : NiPSysData {
     public uint Generations { get; set; }
     public Ref Particle_Meshes { get; set; }
 
-    public NiMeshPSysData() { }
+    public NiMeshPSysData() : base() { }
 
 }

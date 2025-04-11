@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiPSysVortexFieldModifier : NiPSysFieldModifier {
     public Vector3 Direction { get; set; }
 
-    public NiPSysVortexFieldModifier() { }
+    public NiPSysVortexFieldModifier() : base() { }
 
 }

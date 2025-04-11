@@ -22,6 +22,6 @@ public class NiBinaryVoxelData : NiObject {
     public byte Unknown_Bytes_2 { get; set; }
     public uint Unknown_5_Ints { get; set; }
 
-    public NiBinaryVoxelData() { }
+    public NiBinaryVoxelData() : base() { }
 
 }

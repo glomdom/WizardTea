@@ -20,6 +20,6 @@ public class BSPSysSimpleColorModifier : NiPSysModifier {
     public Color4 Colors { get; set; }
     public ushort Unknown_Shorts { get; set; }
 
-    public BSPSysSimpleColorModifier() { }
+    public BSPSysSimpleColorModifier() : base() { }
 
 }

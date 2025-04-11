@@ -33,6 +33,6 @@ public class NiParticlesData : NiGeometryData {
     public float Speed_to_Aspect_Speed_1 { get; set; }
     public float Speed_to_Aspect_Speed_2 { get; set; }
 
-    public NiParticlesData() { }
+    public NiParticlesData() : base() { }
 
 }

@@ -17,6 +17,6 @@ public class FxRadioButton : FxWidget {
     public uint Num_Buttons { get; set; }
     public Ptr Buttons { get; set; }
 
-    public FxRadioButton() { }
+    public FxRadioButton() : base() { }
 
 }

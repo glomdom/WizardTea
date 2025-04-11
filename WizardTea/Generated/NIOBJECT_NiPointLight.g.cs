@@ -15,6 +15,6 @@ public class NiPointLight : NiLight {
     public float Linear_Attenuation { get; set; }
     public float Quadratic_Attenuation { get; set; }
 
-    public NiPointLight() { }
+    public NiPointLight() : base() { }
 
 }

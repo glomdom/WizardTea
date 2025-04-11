@@ -24,6 +24,6 @@ public class NiShadowGenerator : NiObject {
     public float Far_Clipping_Distance { get; set; }
     public float Directional_Light_Frustum_Width { get; set; }
 
-    public NiShadowGenerator() { }
+    public NiShadowGenerator() : base() { }
 
 }

@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiColorExtraDataController : NiExtraDataController {
 
-    public NiColorExtraDataController() { }
+    public NiColorExtraDataController() : base() { }
 
 }

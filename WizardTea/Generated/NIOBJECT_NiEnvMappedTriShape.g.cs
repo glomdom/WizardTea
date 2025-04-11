@@ -18,6 +18,6 @@ public class NiEnvMappedTriShape : NiObjectNET {
     public Ref Child_2 { get; set; }
     public Ref Child_3 { get; set; }
 
-    public NiEnvMappedTriShape() { }
+    public NiEnvMappedTriShape() : base() { }
 
 }

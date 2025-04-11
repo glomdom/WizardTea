@@ -19,6 +19,6 @@ public class NiKeyframeData : NiObject {
     public KeyGroup<Vector3> Translations { get; set; }
     public KeyGroup<float> Scales { get; set; }
 
-    public NiKeyframeData() { }
+    public NiKeyframeData() : base() { }
 
 }

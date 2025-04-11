@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiSequenceStreamHelper : NiObjectNET {
 
-    public NiSequenceStreamHelper() { }
+    public NiSequenceStreamHelper() : base() { }
 
 }

@@ -30,6 +30,6 @@ public class NiPSAlignedQuadGenerator : NiMeshModifier {
     public float Initial_Time { get; set; }
     public float Final_Time { get; set; }
 
-    public NiPSAlignedQuadGenerator() { }
+    public NiPSAlignedQuadGenerator() : base() { }
 
 }

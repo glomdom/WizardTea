@@ -15,6 +15,6 @@ public class NiPSGravityFieldForce : NiPSFieldForce {
     public Vector3 Direction { get; set; }
     public byte DEM_Unknown_Byte { get; set; }
 
-    public NiPSGravityFieldForce() { }
+    public NiPSGravityFieldForce() : base() { }
 
 }

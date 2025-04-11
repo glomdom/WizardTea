@@ -15,6 +15,6 @@ public class NiPSysEmitterCtlrData : NiObject {
     public uint Num_Active_Keys { get; set; }
     public Key<byte> Active_Keys { get; set; }
 
-    public NiPSysEmitterCtlrData() { }
+    public NiPSysEmitterCtlrData() : base() { }
 
 }

@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiBooleanExtraData : NiExtraData {
     public byte Boolean_Data { get; set; }
 
-    public NiBooleanExtraData() { }
+    public NiBooleanExtraData() : base() { }
 
 }

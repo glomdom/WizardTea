@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiColorEvaluator : NiKeyBasedEvaluator {
     public Ref Data { get; set; }
 
-    public NiColorEvaluator() { }
+    public NiColorEvaluator() : base() { }
 
 }

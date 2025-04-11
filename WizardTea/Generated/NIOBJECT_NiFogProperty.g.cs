@@ -15,6 +15,6 @@ public class NiFogProperty : NiProperty {
     public float Fog_Depth { get; set; }
     public Color3 Fog_Color { get; set; }
 
-    public NiFogProperty() { }
+    public NiFogProperty() : base() { }
 
 }

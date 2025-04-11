@@ -28,6 +28,6 @@ public class NiPhysXShapeDesc : NiObject {
     public NxCapsule Capsule { get; set; }
     public Ref Mesh { get; set; }
 
-    public NiPhysXShapeDesc() { }
+    public NiPhysXShapeDesc() : base() { }
 
 }

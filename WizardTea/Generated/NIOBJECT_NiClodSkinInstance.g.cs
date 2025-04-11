@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiClodSkinInstance : NiSkinInstance {
 
-    public NiClodSkinInstance() { }
+    public NiClodSkinInstance() : base() { }
 
 }

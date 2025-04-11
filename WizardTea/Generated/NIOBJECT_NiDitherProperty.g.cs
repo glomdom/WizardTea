@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiDitherProperty : NiProperty {
     public DitherFlags Flags { get; set; }
 
-    public NiDitherProperty() { }
+    public NiDitherProperty() : base() { }
 
 }

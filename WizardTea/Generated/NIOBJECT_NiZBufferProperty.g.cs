@@ -14,6 +14,6 @@ public class NiZBufferProperty : NiProperty {
     public ZBufferFlags Flags { get; set; }
     public TestFunction Function { get; set; }
 
-    public NiZBufferProperty() { }
+    public NiZBufferProperty() : base() { }
 
 }

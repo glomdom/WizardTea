@@ -14,6 +14,6 @@ public class NiPoint3Interpolator : NiKeyBasedInterpolator {
     public Vector3 Value { get; set; }
     public Ref Data { get; set; }
 
-    public NiPoint3Interpolator() { }
+    public NiPoint3Interpolator() : base() { }
 
 }

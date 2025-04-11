@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiLines : NiTriBasedGeom {
 
-    public NiLines() { }
+    public NiLines() : base() { }
 
 }

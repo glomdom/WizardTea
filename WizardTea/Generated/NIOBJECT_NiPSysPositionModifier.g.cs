@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSysPositionModifier : NiPSysModifier {
 
-    public NiPSysPositionModifier() { }
+    public NiPSysPositionModifier() : base() { }
 
 }

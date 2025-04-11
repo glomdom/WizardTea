@@ -17,6 +17,6 @@ public class NiMorphWeightsController : NiInterpController {
     public uint Num_Targets { get; set; }
     public NiFixedString Target_Names { get; set; }
 
-    public NiMorphWeightsController() { }
+    public NiMorphWeightsController() : base() { }
 
 }

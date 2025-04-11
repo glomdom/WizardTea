@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiConstQuaternionEvaluator : NiEvaluator {
     public Quaternion Value { get; set; }
 
-    public NiConstQuaternionEvaluator() { }
+    public NiConstQuaternionEvaluator() : base() { }
 
 }

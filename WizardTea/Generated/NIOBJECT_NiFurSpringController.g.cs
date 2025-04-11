@@ -18,6 +18,6 @@ public class NiFurSpringController : NiTimeController {
     public uint Num_Bones_2 { get; set; }
     public Ptr Bones_2 { get; set; }
 
-    public NiFurSpringController() { }
+    public NiFurSpringController() : base() { }
 
 }

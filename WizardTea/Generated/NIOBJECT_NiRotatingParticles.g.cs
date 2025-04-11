@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiRotatingParticles : NiParticles {
 
-    public NiRotatingParticles() { }
+    public NiRotatingParticles() : base() { }
 
 }

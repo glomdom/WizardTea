@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiWireframeProperty : NiProperty {
     public WireframeFlags Flags { get; set; }
 
-    public NiWireframeProperty() { }
+    public NiWireframeProperty() : base() { }
 
 }

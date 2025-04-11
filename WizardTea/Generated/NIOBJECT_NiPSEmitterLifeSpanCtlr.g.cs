@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSEmitterLifeSpanCtlr : NiPSEmitterFloatCtlr {
 
-    public NiPSEmitterLifeSpanCtlr() { }
+    public NiPSEmitterLifeSpanCtlr() : base() { }
 
 }

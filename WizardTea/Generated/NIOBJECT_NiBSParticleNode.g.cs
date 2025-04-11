@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiBSParticleNode : NiNode {
 
-    public NiBSParticleNode() { }
+    public NiBSParticleNode() : base() { }
 
 }

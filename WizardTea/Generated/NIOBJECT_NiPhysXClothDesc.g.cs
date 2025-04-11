@@ -51,6 +51,6 @@ public class NiPhysXClothDesc : NiObject {
     public Ref Dest { get; set; }
     public Ref Target_Mesh { get; set; }
 
-    public NiPhysXClothDesc() { }
+    public NiPhysXClothDesc() : base() { }
 
 }

@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiLightIntensityController : NiFloatInterpController {
 
-    public NiLightIntensityController() { }
+    public NiLightIntensityController() : base() { }
 
 }

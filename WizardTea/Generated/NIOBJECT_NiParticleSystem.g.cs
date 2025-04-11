@@ -20,6 +20,6 @@ public class NiParticleSystem : NiParticles {
     public uint Num_Modifiers { get; set; }
     public Ref Modifiers { get; set; }
 
-    public NiParticleSystem() { }
+    public NiParticleSystem() : base() { }
 
 }

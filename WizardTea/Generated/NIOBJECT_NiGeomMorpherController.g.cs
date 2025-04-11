@@ -20,6 +20,6 @@ public class NiGeomMorpherController : NiInterpController {
     public uint Num_Unknown_Ints { get; set; }
     public uint Unknown_Ints { get; set; }
 
-    public NiGeomMorpherController() { }
+    public NiGeomMorpherController() : base() { }
 
 }

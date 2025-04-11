@@ -23,6 +23,6 @@ public class NiMesh : NiRenderObject {
     public bool Has_Extra_EM_Data { get; set; }
     public ExtraMeshDataEpicMickey Extra_EM_Data { get; set; }
 
-    public NiMesh() { }
+    public NiMesh() : base() { }
 
 }

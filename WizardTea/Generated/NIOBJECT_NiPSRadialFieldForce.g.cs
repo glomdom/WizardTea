@@ -14,6 +14,6 @@ public class NiPSRadialFieldForce : NiPSFieldForce {
     public float Radial_Factor { get; set; }
     public uint DEM_Unknown_Int { get; set; }
 
-    public NiPSRadialFieldForce() { }
+    public NiPSRadialFieldForce() : base() { }
 
 }

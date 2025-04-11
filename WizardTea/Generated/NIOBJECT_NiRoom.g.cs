@@ -21,6 +21,6 @@ public class NiRoom : NiNode {
     public uint Num_Fixtures { get; set; }
     public Ptr Fixtures { get; set; }
 
-    public NiRoom() { }
+    public NiRoom() : base() { }
 
 }

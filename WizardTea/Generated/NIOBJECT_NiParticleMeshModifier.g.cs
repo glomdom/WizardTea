@@ -14,6 +14,6 @@ public class NiParticleMeshModifier : NiParticleModifier {
     public uint Num_Particle_Meshes { get; set; }
     public Ref Particle_Meshes { get; set; }
 
-    public NiParticleMeshModifier() { }
+    public NiParticleMeshModifier() : base() { }
 
 }

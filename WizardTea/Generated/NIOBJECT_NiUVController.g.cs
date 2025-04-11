@@ -14,6 +14,6 @@ public class NiUVController : NiTimeController {
     public ushort Texture_Set { get; set; }
     public Ref Data { get; set; }
 
-    public NiUVController() { }
+    public NiUVController() : base() { }
 
 }

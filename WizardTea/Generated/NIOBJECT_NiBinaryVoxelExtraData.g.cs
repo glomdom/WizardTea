@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiBinaryVoxelExtraData : NiExtraData {
     public Ref Data { get; set; }
 
-    public NiBinaryVoxelExtraData() { }
+    public NiBinaryVoxelExtraData() : base() { }
 
 }

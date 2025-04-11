@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class BSStripParticleSystem : NiParticleSystem {
 
-    public BSStripParticleSystem() { }
+    public BSStripParticleSystem() : base() { }
 
 }

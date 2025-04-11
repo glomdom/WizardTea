@@ -18,6 +18,6 @@ public class NiBSplineCompTransformEvaluator : NiBSplineTransformEvaluator {
     public float Scale_Offset { get; set; }
     public float Scale_Half_Range { get; set; }
 
-    public NiBSplineCompTransformEvaluator() { }
+    public NiBSplineCompTransformEvaluator() : base() { }
 
 }

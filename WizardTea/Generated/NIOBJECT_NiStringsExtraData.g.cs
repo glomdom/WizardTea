@@ -14,6 +14,6 @@ public class NiStringsExtraData : NiExtraData {
     public uint Num_Strings { get; set; }
     public SizedString Data { get; set; }
 
-    public NiStringsExtraData() { }
+    public NiStringsExtraData() : base() { }
 
 }

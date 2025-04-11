@@ -18,6 +18,6 @@ public class NiPSAirFieldForce : NiPSFieldForce {
     public bool Enable_Spread { get; set; }
     public float Spread { get; set; }
 
-    public NiPSAirFieldForce() { }
+    public NiPSAirFieldForce() : base() { }
 
 }

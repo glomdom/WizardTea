@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiAutoNormalParticlesData : NiParticlesData {
 
-    public NiAutoNormalParticlesData() { }
+    public NiAutoNormalParticlesData() : base() { }
 
 }

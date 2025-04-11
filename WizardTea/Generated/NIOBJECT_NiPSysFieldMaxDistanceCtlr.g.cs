@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSysFieldMaxDistanceCtlr : NiPSysModifierFloatCtlr {
 
-    public NiPSysFieldMaxDistanceCtlr() { }
+    public NiPSysFieldMaxDistanceCtlr() : base() { }
 
 }

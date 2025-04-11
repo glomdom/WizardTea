@@ -15,6 +15,6 @@ public class NiYAMaterialProperty : NiProperty {
     public float Unknown_Float { get; set; }
     public byte Unknown_Bytes_2 { get; set; }
 
-    public NiYAMaterialProperty() { }
+    public NiYAMaterialProperty() : base() { }
 
 }

@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSFieldMaxDistanceCtlr : NiPSForceFloatCtlr {
 
-    public NiPSFieldMaxDistanceCtlr() { }
+    public NiPSFieldMaxDistanceCtlr() : base() { }
 
 }

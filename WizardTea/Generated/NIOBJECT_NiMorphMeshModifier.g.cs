@@ -16,6 +16,6 @@ public class NiMorphMeshModifier : NiMeshModifier {
     public uint Num_Elements { get; set; }
     public ElementReference Elements { get; set; }
 
-    public NiMorphMeshModifier() { }
+    public NiMorphMeshModifier() : base() { }
 
 }

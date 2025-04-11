@@ -21,6 +21,6 @@ public class NiScreenElementsData : NiTriShapeData {
     public ushort Max_Indices { get; set; }
     public ushort Indices_Grow_By { get; set; }
 
-    public NiScreenElementsData() { }
+    public NiScreenElementsData() : base() { }
 
 }

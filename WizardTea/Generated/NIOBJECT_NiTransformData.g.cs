@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiTransformData : NiKeyframeData {
 
-    public NiTransformData() { }
+    public NiTransformData() : base() { }
 
 }

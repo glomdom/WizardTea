@@ -14,6 +14,6 @@ public class NiPSDragFieldForce : NiPSFieldForce {
     public bool Use_Direction { get; set; }
     public Vector3 Direction { get; set; }
 
-    public NiPSDragFieldForce() { }
+    public NiPSDragFieldForce() : base() { }
 
 }

@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiColorExtraData : NiExtraData {
     public Color4 Data { get; set; }
 
-    public NiColorExtraData() { }
+    public NiColorExtraData() : base() { }
 
 }

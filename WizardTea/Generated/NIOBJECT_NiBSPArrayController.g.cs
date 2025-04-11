@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiBSPArrayController : NiParticleSystemController {
 
-    public NiBSPArrayController() { }
+    public NiBSPArrayController() : base() { }
 
 }

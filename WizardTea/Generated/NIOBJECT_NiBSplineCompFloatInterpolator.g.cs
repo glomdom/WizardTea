@@ -14,6 +14,6 @@ public class NiBSplineCompFloatInterpolator : NiBSplineFloatInterpolator {
     public float Float_Offset { get; set; }
     public float Float_Half_Range { get; set; }
 
-    public NiBSplineCompFloatInterpolator() { }
+    public NiBSplineCompFloatInterpolator() : base() { }
 
 }

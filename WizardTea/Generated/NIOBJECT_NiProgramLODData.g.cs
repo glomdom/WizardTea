@@ -15,6 +15,6 @@ public class NiProgramLODData : NiLODData {
     public uint Num_LOD_Entries { get; set; }
     public QQSpeedLODEntry LOD_Entries { get; set; }
 
-    public NiProgramLODData() { }
+    public NiProgramLODData() : base() { }
 
 }

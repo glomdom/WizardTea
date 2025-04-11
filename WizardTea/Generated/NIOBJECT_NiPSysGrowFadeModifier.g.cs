@@ -17,6 +17,6 @@ public class NiPSysGrowFadeModifier : NiPSysModifier {
     public ushort Fade_Generation { get; set; }
     public float Base_Scale { get; set; }
 
-    public NiPSysGrowFadeModifier() { }
+    public NiPSysGrowFadeModifier() : base() { }
 
 }

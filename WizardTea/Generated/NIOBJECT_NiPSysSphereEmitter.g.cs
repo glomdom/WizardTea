@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiPSysSphereEmitter : NiPSysVolumeEmitter {
     public float Radius { get; set; }
 
-    public NiPSysSphereEmitter() { }
+    public NiPSysSphereEmitter() : base() { }
 
 }

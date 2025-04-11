@@ -17,6 +17,6 @@ public class Ni3dsAlphaAnimator : NiObject {
     public uint Num_2 { get; set; }
     public uint Unknown_2 { get; set; }
 
-    public Ni3dsAlphaAnimator() { }
+    public Ni3dsAlphaAnimator() : base() { }
 
 }

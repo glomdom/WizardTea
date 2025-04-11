@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiScreenElements : NiTriShape {
 
-    public NiScreenElements() { }
+    public NiScreenElements() : base() { }
 
 }

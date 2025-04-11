@@ -17,6 +17,6 @@ public class NiTriShapeData : NiTriBasedGeomData {
     public ushort Num_Match_Groups { get; set; }
     public MatchGroup Match_Groups { get; set; }
 
-    public NiTriShapeData() { }
+    public NiTriShapeData() : base() { }
 
 }

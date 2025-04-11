@@ -18,6 +18,6 @@ public class NiBSplineCompTransformInterpolator : NiBSplineTransformInterpolator
     public float Scale_Offset { get; set; }
     public float Scale_Half_Range { get; set; }
 
-    public NiBSplineCompTransformInterpolator() { }
+    public NiBSplineCompTransformInterpolator() : base() { }
 
 }

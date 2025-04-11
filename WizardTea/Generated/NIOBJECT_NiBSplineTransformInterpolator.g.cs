@@ -16,6 +16,6 @@ public class NiBSplineTransformInterpolator : NiBSplineInterpolator {
     public uint Rotation_Handle { get; set; }
     public uint Scale_Handle { get; set; }
 
-    public NiBSplineTransformInterpolator() { }
+    public NiBSplineTransformInterpolator() : base() { }
 
 }

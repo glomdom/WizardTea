@@ -21,6 +21,6 @@ public class NiSequence : NiObject {
     public uint Array_Grow_By { get; set; }
     public ControlledBlock Controlled_Blocks { get; set; }
 
-    public NiSequence() { }
+    public NiSequence() : base() { }
 
 }

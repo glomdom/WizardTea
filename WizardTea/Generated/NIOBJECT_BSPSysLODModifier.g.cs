@@ -16,6 +16,6 @@ public class BSPSysLODModifier : NiPSysModifier {
     public float End_Emit_Scale { get; set; }
     public float End_Size { get; set; }
 
-    public BSPSysLODModifier() { }
+    public BSPSysLODModifier() : base() { }
 
 }

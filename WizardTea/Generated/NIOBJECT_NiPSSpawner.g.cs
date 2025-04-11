@@ -22,6 +22,6 @@ public class NiPSSpawner : NiObject {
     public uint Min_to_Spawn { get; set; }
     public uint Max_to_Spawn { get; set; }
 
-    public NiPSSpawner() { }
+    public NiPSSpawner() : base() { }
 
 }

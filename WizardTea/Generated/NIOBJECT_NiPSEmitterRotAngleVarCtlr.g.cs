@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiPSEmitterRotAngleVarCtlr : NiPSEmitterFloatCtlr {
 
-    public NiPSEmitterRotAngleVarCtlr() { }
+    public NiPSEmitterRotAngleVarCtlr() : base() { }
 
 }

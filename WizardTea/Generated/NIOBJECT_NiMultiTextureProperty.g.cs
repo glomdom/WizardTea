@@ -12,6 +12,6 @@ namespace WizardTea;
 
 public class NiMultiTextureProperty : NiTexturingProperty {
 
-    public NiMultiTextureProperty() { }
+    public NiMultiTextureProperty() : base() { }
 
 }

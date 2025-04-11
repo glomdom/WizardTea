@@ -20,6 +20,6 @@ public class NiParticleBomb : NiParticleModifier {
     public Vector3 Position { get; set; }
     public Vector3 Direction { get; set; }
 
-    public NiParticleBomb() { }
+    public NiParticleBomb() : base() { }
 
 }

@@ -19,6 +19,6 @@ public class NiSkinningMeshModifier : NiMeshModifier {
     public NiTransform Bone_Transforms { get; set; }
     public NiBound Bone_Bounds { get; set; }
 
-    public NiSkinningMeshModifier() { }
+    public NiSkinningMeshModifier() : base() { }
 
 }

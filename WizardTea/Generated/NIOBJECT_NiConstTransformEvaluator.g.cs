@@ -13,6 +13,6 @@ namespace WizardTea;
 public class NiConstTransformEvaluator : NiEvaluator {
     public NiQuatTransform Value { get; set; }
 
-    public NiConstTransformEvaluator() { }
+    public NiConstTransformEvaluator() : base() { }
 
 }

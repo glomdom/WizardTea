@@ -18,6 +18,6 @@ public class NiPSBombForce : NiPSForce {
     public SymmetryType Symmetry_Type { get; set; }
     public Ptr Bomb_Object { get; set; }
 
-    public NiPSBombForce() { }
+    public NiPSBombForce() : base() { }
 
 }

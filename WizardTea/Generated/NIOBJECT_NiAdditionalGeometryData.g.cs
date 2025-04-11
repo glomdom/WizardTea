@@ -17,6 +17,6 @@ public class NiAdditionalGeometryData : AbstractAdditionalGeometryData {
     public uint Num_Blocks { get; set; }
     public NiAGDDataBlocks Blocks { get; set; }
 
-    public NiAdditionalGeometryData() { }
+    public NiAdditionalGeometryData() : base() { }
 
 }
