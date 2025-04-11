@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiAlphaProperty {
+public class NiAlphaProperty : NiProperty {
 }

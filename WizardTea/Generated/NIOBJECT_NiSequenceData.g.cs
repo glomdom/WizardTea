@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiSequenceData {
+public class NiSequenceData : NiObject {
 }

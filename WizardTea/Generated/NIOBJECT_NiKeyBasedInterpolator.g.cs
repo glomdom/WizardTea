@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiKeyBasedInterpolator {
+public abstract class NiKeyBasedInterpolator : NiInterpolator {
 }

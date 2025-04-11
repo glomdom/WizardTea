@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiTransformController {
+public class NiTransformController : NiKeyframeController {
 }

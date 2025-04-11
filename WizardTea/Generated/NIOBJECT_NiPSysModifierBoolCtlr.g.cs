@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiPSysModifierBoolCtlr {
+public abstract class NiPSysModifierBoolCtlr : NiPSysModifierCtlr {
 }

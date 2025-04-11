@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiPixelFormat {
+public abstract class NiPixelFormat : NiObject {
 }

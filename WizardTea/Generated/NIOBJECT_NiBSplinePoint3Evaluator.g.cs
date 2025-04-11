@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiBSplinePoint3Evaluator {
+public class NiBSplinePoint3Evaluator : NiBSplineEvaluator {
 }

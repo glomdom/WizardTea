@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiConstPoint3Evaluator {
+public class NiConstPoint3Evaluator : NiEvaluator {
 }

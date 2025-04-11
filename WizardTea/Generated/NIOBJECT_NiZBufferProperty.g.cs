@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiZBufferProperty {
+public class NiZBufferProperty : NiProperty {
 }

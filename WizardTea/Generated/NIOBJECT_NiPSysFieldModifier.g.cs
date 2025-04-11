@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiPSysFieldModifier {
+public abstract class NiPSysFieldModifier : NiPSysModifier {
 }

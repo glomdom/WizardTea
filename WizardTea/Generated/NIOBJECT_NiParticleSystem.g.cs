@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiParticleSystem {
+public class NiParticleSystem : NiParticles {
 }

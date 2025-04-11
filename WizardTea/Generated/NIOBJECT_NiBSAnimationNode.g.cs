@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiBSAnimationNode {
+public class NiBSAnimationNode : NiNode {
 }

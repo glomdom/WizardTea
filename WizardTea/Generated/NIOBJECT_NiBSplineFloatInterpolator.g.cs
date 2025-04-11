@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiBSplineFloatInterpolator {
+public abstract class NiBSplineFloatInterpolator : NiBSplineInterpolator {
 }

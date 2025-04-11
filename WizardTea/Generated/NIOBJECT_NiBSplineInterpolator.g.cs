@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiBSplineInterpolator {
+public abstract class NiBSplineInterpolator : NiInterpolator {
 }

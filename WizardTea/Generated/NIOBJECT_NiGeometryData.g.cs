@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiGeometryData {
+public abstract class NiGeometryData : NiObject {
 }

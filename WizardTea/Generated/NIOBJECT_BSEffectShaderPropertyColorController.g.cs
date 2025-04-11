@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class BSEffectShaderPropertyColorController {
+public class BSEffectShaderPropertyColorController : NiPoint3InterpController {
 }

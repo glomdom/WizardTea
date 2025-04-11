@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiKeyBasedEvaluator {
+public abstract class NiKeyBasedEvaluator : NiEvaluator {
 }

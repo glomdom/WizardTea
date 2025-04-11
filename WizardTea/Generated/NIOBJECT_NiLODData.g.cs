@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiLODData {
+public abstract class NiLODData : NiObject {
 }

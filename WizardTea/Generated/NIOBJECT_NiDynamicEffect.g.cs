@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiDynamicEffect {
+public abstract class NiDynamicEffect : NiAVObject {
 }

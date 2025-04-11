@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiLightColorController {
+public class NiLightColorController : NiPoint3InterpController {
 }

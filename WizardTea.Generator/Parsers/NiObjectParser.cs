@@ -9,7 +9,7 @@ public class NiObjectParser : BaseParser {
     private List<string> BlacklistedModules { get; set; }
 
     public NiObjectParser(XDocument xml) : base(xml) {
-        BlacklistedModules = ["BSHavok", "BSMain", "NiLegacy"];
+        BlacklistedModules = ["BSHavok", "BSMain"];
     }
 
     public override void Parse() {
@@ -21,16 +21,17 @@ public class NiObjectParser : BaseParser {
 
             var module = XmlHelper.GetOptionalAttributeValue(niobjectElement, "module");
             if (module is not null && BlacklistedModules.Contains(module)) continue;
-            if (name.StartsWith("MdlMan")) continue; // we don't want divinity stuff. no clue why it isnt in its own module but meh
+            if (name.StartsWith("MdlMan")) continue; // we don't want divinity stuff. no clue why it isn't in its own module but meh
 
             var isAbstract = XmlHelper.GetOptionalAttributeValue(niobjectElement, "abstract") is not null;
+            var inherit = XmlHelper.GetOptionalAttributeValue(niobjectElement, "inherit");
+
+            var classType = isAbstract ? "abstract class" : "class";
+            var baseClass = !string.IsNullOrWhiteSpace(inherit) ? $" : {inherit}" : "";
 
             var sb = new StringBuilder();
             sb.AppendLine(Prelude());
-            sb.AppendLine(isAbstract
-                ? $"public class {name} {{"
-                : $"public abstract class {name} {{"
-            );
+            sb.AppendLine($"public {classType} {name}{baseClass} {{");
 
             sb.AppendLine("}");
             Data.Add(name, sb.ToString());

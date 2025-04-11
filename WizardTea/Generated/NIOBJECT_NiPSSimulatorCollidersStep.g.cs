@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiPSSimulatorCollidersStep {
+public class NiPSSimulatorCollidersStep : NiPSSimulatorStep {
 }

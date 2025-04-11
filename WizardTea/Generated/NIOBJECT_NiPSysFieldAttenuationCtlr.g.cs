@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiPSysFieldAttenuationCtlr {
+public class NiPSysFieldAttenuationCtlr : NiPSysModifierFloatCtlr {
 }

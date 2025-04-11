@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiPhysXSrc {
+public abstract class NiPhysXSrc : NiObject {
 }

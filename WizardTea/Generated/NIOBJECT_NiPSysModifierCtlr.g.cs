@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiPSysModifierCtlr {
+public abstract class NiPSysModifierCtlr : NiSingleInterpController {
 }

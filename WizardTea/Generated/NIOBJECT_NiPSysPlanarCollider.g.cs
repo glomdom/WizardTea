@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiPSysPlanarCollider {
+public class NiPSysPlanarCollider : NiPSysCollider {
 }

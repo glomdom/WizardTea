@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiPhysXD6JointDesc {
+public class NiPhysXD6JointDesc : NiPhysXJointDesc {
 }

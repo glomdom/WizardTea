@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiAVObject {
+public abstract class NiAVObject : NiObjectNET {
 }

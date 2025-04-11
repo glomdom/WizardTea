@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiTimeController {
+public abstract class NiTimeController : NiObject {
 }

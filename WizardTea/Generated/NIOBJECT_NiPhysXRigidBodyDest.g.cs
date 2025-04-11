@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiPhysXRigidBodyDest {
+public abstract class NiPhysXRigidBodyDest : NiPhysXDest {
 }

@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class FxButton {
+public class FxButton : FxWidget {
 }

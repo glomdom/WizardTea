@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiBillboardNode {
+public class NiBillboardNode : NiNode {
 }

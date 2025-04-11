@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiMeshModifier {
+public abstract class NiMeshModifier : NiObject {
 }

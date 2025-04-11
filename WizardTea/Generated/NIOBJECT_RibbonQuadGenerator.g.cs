@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class RibbonQuadGenerator {
+public class RibbonQuadGenerator : NiPSFacingQuadGenerator {
 }

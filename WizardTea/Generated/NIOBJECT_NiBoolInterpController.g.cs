@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiBoolInterpController {
+public abstract class NiBoolInterpController : NiSingleInterpController {
 }

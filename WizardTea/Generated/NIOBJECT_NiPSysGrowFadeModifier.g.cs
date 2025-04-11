@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiPSysGrowFadeModifier {
+public class NiPSysGrowFadeModifier : NiPSysModifier {
 }

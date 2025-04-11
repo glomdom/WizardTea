@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiVertWeightsExtraData {
+public class NiVertWeightsExtraData : NiExtraData {
 }

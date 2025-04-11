@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiPSSimulatorStep {
+public abstract class NiPSSimulatorStep : NiObject {
 }

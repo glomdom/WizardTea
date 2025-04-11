@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiPersistentSrcTextureRendererData {
+public class NiPersistentSrcTextureRendererData : NiPixelFormat {
 }

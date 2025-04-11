@@ -13,7 +13,7 @@ public class StructParser : BaseParser {
 
     public StructParser(XDocument xml) : base(xml) {
         BlacklistedTypes = ["string", "Vector3", "Vector2", "hkSubPartData"];
-        BlacklistedModules = ["BSHavok", "BSMain", "NiLegacy"];
+        BlacklistedModules = ["BSHavok", "BSMain"];
     }
 
     public override void Parse() {

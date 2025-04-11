@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiLookAtInterpolator {
+public class NiLookAtInterpolator : NiInterpolator {
 }

@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class BSRefractionFirePeriodController {
+public class BSRefractionFirePeriodController : NiTimeController {
 }

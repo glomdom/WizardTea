@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiRenderObject {
+public abstract class NiRenderObject : NiAVObject {
 }

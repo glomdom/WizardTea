@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiAccumulator {
+public abstract class NiAccumulator : NiObject {
 }

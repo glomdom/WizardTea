@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiTriBasedGeom {
+public abstract class NiTriBasedGeom : NiGeometry {
 }

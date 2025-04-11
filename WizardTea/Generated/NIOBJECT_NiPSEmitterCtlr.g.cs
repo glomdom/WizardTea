@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiPSEmitterCtlr {
+public abstract class NiPSEmitterCtlr : NiSingleInterpController {
 }

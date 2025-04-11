@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiVectorExtraData {
+public class NiVectorExtraData : NiExtraData {
 }

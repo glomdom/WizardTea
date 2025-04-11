@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public abstract class NiBSplineCompPoint3Interpolator {
+public class NiBSplineCompPoint3Interpolator : NiBSplinePoint3Interpolator {
 }

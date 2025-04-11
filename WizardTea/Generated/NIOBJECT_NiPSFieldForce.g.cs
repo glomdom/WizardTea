@@ -10,5 +10,5 @@ using System.Numerics;
 
 namespace WizardTea;
 
-public class NiPSFieldForce {
+public abstract class NiPSFieldForce : NiPSForce {
 }
