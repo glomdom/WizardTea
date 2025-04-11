@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPersistentSrcTextureRendererData : NiPixelFormat {
-    public Ref Palette { get; set; }
+    public Ref<NiPalette> Palette { get; set; }
     public uint Num_Mipmaps { get; set; }
     public uint Bytes_Per_Pixel { get; set; }
     public MipMap Mipmaps { get; set; }

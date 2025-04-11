@@ -14,18 +14,18 @@ public class NiPhysXScene : NiObjectNET {
     public NiTransform Scene_Transform { get; set; }
     public float PhysX_to_World_Scale { get; set; }
     public uint Num_Props { get; set; }
-    public Ref Props { get; set; }
+    public Ref<NiPhysXProp> Props { get; set; }
     public uint Num_Sources { get; set; }
-    public Ref Sources { get; set; }
+    public Ref<NiPhysXSrc> Sources { get; set; }
     public uint Num_Dests { get; set; }
-    public Ref Dests { get; set; }
+    public Ref<NiPhysXDest> Dests { get; set; }
     public uint Num_Modified_Meshes { get; set; }
-    public Ref Modified_Meshes { get; set; }
+    public Ref<NiMesh> Modified_Meshes { get; set; }
     public float Time_Step { get; set; }
     public bool Keep_Meshes { get; set; }
     public uint Num_Sub_Steps { get; set; }
     public uint Max_Sub_Steps { get; set; }
-    public Ref Snapshot { get; set; }
+    public Ref<NiPhysXSceneDesc> Snapshot { get; set; }
     public ushort Flags { get; set; }
 
     public NiPhysXScene() : base() { }

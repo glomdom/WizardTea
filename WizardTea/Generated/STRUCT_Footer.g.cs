@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public struct Footer {
     public uint Num_Roots { get; set; }
-    public Ref[] Roots { get; set; }
+    public Ref<NiObject>[] Roots { get; set; }
 
     public Footer() { }
 

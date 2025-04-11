@@ -12,9 +12,9 @@ namespace WizardTea;
 
 public struct ControlledBlock {
     public SizedString Target_Name { get; set; }
-    public Ref Interpolator { get; set; }
-    public Ref Controller { get; set; }
-    public Ref Blend_Interpolator { get; set; }
+    public Ref<NiInterpolator> Interpolator { get; set; }
+    public Ref<NiTimeController> Controller { get; set; }
+    public Ref<NiBlendInterpolator> Blend_Interpolator { get; set; }
     public ushort Blend_Index { get; set; }
     public byte Priority { get; set; }
     public string Node_Name { get; set; }
@@ -22,7 +22,7 @@ public struct ControlledBlock {
     public string Controller_Type { get; set; }
     public string Controller_ID { get; set; }
     public string Interpolator_ID { get; set; }
-    public Ref String_Palette { get; set; }
+    public Ref<NiStringPalette> String_Palette { get; set; }
     public StringOffset Node_Name_Offset { get; set; }
     public StringOffset Property_Type_Offset { get; set; }
     public StringOffset Controller_Type_Offset { get; set; }

@@ -12,9 +12,9 @@ namespace WizardTea;
 
 public class NiPSMeshEmitter : NiPSEmitter {
     public uint Num_Mesh_Emitters { get; set; }
-    public Ptr Mesh_Emitters { get; set; }
+    public Ptr<NiMesh> Mesh_Emitters { get; set; }
     public Vector3 Emit_Axis { get; set; }
-    public Ptr Emitter_Object { get; set; }
+    public Ptr<NiAVObject> Emitter_Object { get; set; }
     public EmitFrom Mesh_Emission_Type { get; set; }
     public VelocityType Initial_Velocity_Type { get; set; }
 

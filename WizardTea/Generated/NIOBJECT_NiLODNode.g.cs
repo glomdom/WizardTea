@@ -14,7 +14,7 @@ public class NiLODNode : NiSwitchNode {
     public Vector3 LOD_Center { get; set; }
     public uint Num_LOD_Levels { get; set; }
     public LODRange LOD_Levels { get; set; }
-    public Ref LOD_Level_Data { get; set; }
+    public Ref<NiLODData> LOD_Level_Data { get; set; }
 
     public NiLODNode() : base() { }
 

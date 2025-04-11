@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysGravityModifier : NiPSysModifier {
-    public Ptr Gravity_Object { get; set; }
+    public Ptr<NiAVObject> Gravity_Object { get; set; }
     public Vector3 Gravity_Axis { get; set; }
     public float Decay { get; set; }
     public float Strength { get; set; }

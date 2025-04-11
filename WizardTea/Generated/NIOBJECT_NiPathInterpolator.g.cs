@@ -16,8 +16,8 @@ public class NiPathInterpolator : NiKeyBasedInterpolator {
     public float Max_Bank_Angle { get; set; }
     public float Smoothing { get; set; }
     public short Follow_Axis { get; set; }
-    public Ref Path_Data { get; set; }
-    public Ref Percent_Data { get; set; }
+    public Ref<NiPosData> Path_Data { get; set; }
+    public Ref<NiFloatData> Percent_Data { get; set; }
 
     public NiPathInterpolator() : base() { }
 

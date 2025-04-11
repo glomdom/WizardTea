@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiBezierMesh : NiAVObject {
     public uint Num_Bezier_Triangles { get; set; }
-    public Ref Bezier_Triangle { get; set; }
+    public Ref<NiBezierTriangle4> Bezier_Triangle { get; set; }
     public uint Unknown_3 { get; set; }
     public ushort Count_1 { get; set; }
     public ushort Unknown_4 { get; set; }

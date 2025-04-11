@@ -18,7 +18,7 @@ public class NiBoneLODController : NiTimeController {
     public uint Num_Shape_Groups { get; set; }
     public SkinInfoSet Shape_Groups_1 { get; set; }
     public uint Num_Shape_Groups_2 { get; set; }
-    public Ref Shape_Groups_2 { get; set; }
+    public Ref<NiTriBasedGeom> Shape_Groups_2 { get; set; }
 
     public NiBoneLODController() : base() { }
 

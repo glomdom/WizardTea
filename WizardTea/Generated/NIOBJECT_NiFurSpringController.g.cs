@@ -14,9 +14,9 @@ public class NiFurSpringController : NiTimeController {
     public float Unknown_Float { get; set; }
     public float Unknown_Float_2 { get; set; }
     public uint Num_Bones { get; set; }
-    public Ptr Bones { get; set; }
+    public Ptr<NiNode> Bones { get; set; }
     public uint Num_Bones_2 { get; set; }
-    public Ptr Bones_2 { get; set; }
+    public Ptr<NiNode> Bones_2 { get; set; }
 
     public NiFurSpringController() : base() { }
 

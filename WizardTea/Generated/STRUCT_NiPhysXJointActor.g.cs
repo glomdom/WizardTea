@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public struct NiPhysXJointActor {
-    public Ref Actor { get; set; }
+    public Ref<NiPhysXActorDesc> Actor { get; set; }
     public Vector3 Local_Normal { get; set; }
     public Vector3 Local_Axis { get; set; }
     public Vector3 Local_Anchor { get; set; }

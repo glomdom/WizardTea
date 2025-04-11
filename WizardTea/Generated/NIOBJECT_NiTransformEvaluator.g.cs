@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiTransformEvaluator : NiKeyBasedEvaluator {
     public NiQuatTransform Value { get; set; }
-    public Ref Data { get; set; }
+    public Ref<NiTransformData> Data { get; set; }
 
     public NiTransformEvaluator() : base() { }
 

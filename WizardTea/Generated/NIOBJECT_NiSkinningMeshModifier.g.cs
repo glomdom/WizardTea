@@ -12,10 +12,10 @@ namespace WizardTea;
 
 public class NiSkinningMeshModifier : NiMeshModifier {
     public ushort Flags { get; set; }
-    public Ptr Skeleton_Root { get; set; }
+    public Ptr<NiAVObject> Skeleton_Root { get; set; }
     public NiTransform Skeleton_Transform { get; set; }
     public uint Num_Bones { get; set; }
-    public Ptr Bones { get; set; }
+    public Ptr<NiAVObject> Bones { get; set; }
     public NiTransform Bone_Transforms { get; set; }
     public NiBound Bone_Bounds { get; set; }
 

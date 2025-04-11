@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSEmitParticlesCtlr : NiPSEmitterCtlr {
-    public Ref Emitter_Active_Interpolator { get; set; }
+    public Ref<NiInterpolator> Emitter_Active_Interpolator { get; set; }
 
     public NiPSEmitParticlesCtlr() : base() { }
 

@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSCollider : NiObject {
-    public Ref Spawner { get; set; }
+    public Ref<NiPSSpawner> Spawner { get; set; }
     public ColliderType Type { get; set; }
     public bool Active { get; set; }
     public float Bounce { get; set; }

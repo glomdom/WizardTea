@@ -14,10 +14,10 @@ public abstract class NiPSysCollider : NiObject {
     public float Bounce { get; set; }
     public bool Spawn_on_Collide { get; set; }
     public bool Die_on_Collide { get; set; }
-    public Ref Spawn_Modifier { get; set; }
-    public Ptr Parent { get; set; }
-    public Ref Next_Collider { get; set; }
-    public Ptr Collider_Object { get; set; }
+    public Ref<NiPSysSpawnModifier> Spawn_Modifier { get; set; }
+    public Ptr<NiPSysColliderManager> Parent { get; set; }
+    public Ref<NiPSysCollider> Next_Collider { get; set; }
+    public Ptr<NiAVObject> Collider_Object { get; set; }
 
     public NiPSysCollider() : base() { }
 

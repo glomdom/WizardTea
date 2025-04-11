@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiBinaryVoxelExtraData : NiExtraData {
-    public Ref Data { get; set; }
+    public Ref<NiBinaryVoxelData> Data { get; set; }
 
     public NiBinaryVoxelExtraData() : base() { }
 

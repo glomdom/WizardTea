@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPoint3Evaluator : NiKeyBasedEvaluator {
-    public Ref Data { get; set; }
+    public Ref<NiPosData> Data { get; set; }
 
     public NiPoint3Evaluator() : base() { }
 

@@ -15,7 +15,7 @@ public class NiMeshPSysData : NiPSysData {
     public bool Fill_Pools_On_Load { get; set; }
     public uint Num_Generations { get; set; }
     public uint Generations { get; set; }
-    public Ref Particle_Meshes { get; set; }
+    public Ref<NiNode> Particle_Meshes { get; set; }
 
     public NiMeshPSysData() : base() { }
 

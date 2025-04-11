@@ -24,7 +24,7 @@ public class NiCamera : NiAVObject {
     public float Viewport_Top { get; set; }
     public float Viewport_Bottom { get; set; }
     public float LOD_Adjust { get; set; }
-    public Ref Scene { get; set; }
+    public Ref<NiAVObject> Scene { get; set; }
     public uint Num_Screen_Polygons { get; set; }
     public uint Num_Screen_Textures { get; set; }
     public uint Unknown_Int_3 { get; set; }

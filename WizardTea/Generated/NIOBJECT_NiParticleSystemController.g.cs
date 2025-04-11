@@ -31,7 +31,7 @@ public class NiParticleSystemController : NiTimeController {
     public byte Use_Birth_Rate { get; set; }
     public byte Spawn_On_Death { get; set; }
     public Vector3 Emitter_Dimensions { get; set; }
-    public Ptr Emitter { get; set; }
+    public Ptr<NiAVObject> Emitter { get; set; }
     public ushort Num_Spawn_Generations { get; set; }
     public float Percentage_Spawned { get; set; }
     public ushort Spawn_Multiplier { get; set; }
@@ -40,18 +40,18 @@ public class NiParticleSystemController : NiTimeController {
     public Vector3 Particle_Velocity { get; set; }
     public Vector3 Particle_Unknown_Vector { get; set; }
     public float Particle_Lifetime { get; set; }
-    public Ref Particle_Link { get; set; }
+    public Ref<NiObject> Particle_Link { get; set; }
     public uint Particle_Timestamp { get; set; }
     public ushort Particle_Unknown_Short { get; set; }
     public ushort Particle_Vertex_Id { get; set; }
     public ushort Num_Particles { get; set; }
     public ushort Num_Valid { get; set; }
     public NiParticleInfo Particles { get; set; }
-    public Ref Emitter_Modifier { get; set; }
-    public Ref Particle_Modifier { get; set; }
-    public Ref Particle_Collider { get; set; }
+    public Ref<NiEmitterModifier> Emitter_Modifier { get; set; }
+    public Ref<NiParticleModifier> Particle_Modifier { get; set; }
+    public Ref<NiParticleCollider> Particle_Collider { get; set; }
     public byte Static_Target_Bound { get; set; }
-    public Ref Color_Data { get; set; }
+    public Ref<NiColorData> Color_Data { get; set; }
     public float Unknown_Float_1 { get; set; }
     public float Unknown_Floats_2 { get; set; }
 

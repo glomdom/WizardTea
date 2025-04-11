@@ -11,8 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiEmitterModifier : NiObject {
-    public Ref Next_Modifier { get; set; }
-    public Ptr Controller { get; set; }
+    public Ref<NiEmitterModifier> Next_Modifier { get; set; }
+    public Ptr<NiParticleSystemController> Controller { get; set; }
 
     public NiEmitterModifier() : base() { }
 

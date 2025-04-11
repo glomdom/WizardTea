@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiPSSimulator : NiMeshModifier {
     public uint Num_Simulation_Steps { get; set; }
-    public Ref Simulation_Steps { get; set; }
+    public Ref<NiPSSimulatorStep> Simulation_Steps { get; set; }
 
     public NiPSSimulator() : base() { }
 

@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiBoolInterpolator : NiKeyBasedInterpolator {
     public bool Value { get; set; }
-    public Ref Data { get; set; }
+    public Ref<NiBoolData> Data { get; set; }
 
     public NiBoolInterpolator() : base() { }
 

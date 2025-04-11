@@ -11,11 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public class CStreamableAssetData : NiObject {
-    public Ref Root { get; set; }
+    public Ref<NiNode> Root { get; set; }
     public bool Has_Data { get; set; }
     public ByteArray Data { get; set; }
     public uint Num_Refs { get; set; }
-    public Ref Refs { get; set; }
+    public Ref<NiObject> Refs { get; set; }
 
     public CStreamableAssetData() : base() { }
 

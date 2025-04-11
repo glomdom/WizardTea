@@ -11,8 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiMeshHWInstance : NiAVObject {
-    public Ref Master_Mesh { get; set; }
-    public Ref Mesh_Modifier { get; set; }
+    public Ref<NiMesh> Master_Mesh { get; set; }
+    public Ref<NiInstancingMeshModifier> Mesh_Modifier { get; set; }
 
     public NiMeshHWInstance() : base() { }
 

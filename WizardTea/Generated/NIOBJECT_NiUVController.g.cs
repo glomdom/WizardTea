@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiUVController : NiTimeController {
     public ushort Texture_Set { get; set; }
-    public Ref Data { get; set; }
+    public Ref<NiUVData> Data { get; set; }
 
     public NiUVController() : base() { }
 

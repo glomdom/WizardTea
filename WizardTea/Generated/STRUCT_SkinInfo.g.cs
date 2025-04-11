@@ -11,8 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public struct SkinInfo {
-    public Ptr Shape { get; set; }
-    public Ref Skin_Instance { get; set; }
+    public Ptr<NiTriBasedGeom> Shape { get; set; }
+    public Ref<NiSkinInstance> Skin_Instance { get; set; }
 
     public SkinInfo() { }
 

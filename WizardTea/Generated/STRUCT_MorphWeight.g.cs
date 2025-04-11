@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public struct MorphWeight {
-    public Ref Interpolator { get; set; }
+    public Ref<NiInterpolator> Interpolator { get; set; }
     public float Weight { get; set; }
 
     public MorphWeight() { }

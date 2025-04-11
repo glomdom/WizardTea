@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiPSMeshParticleSystem : NiPSParticleSystem {
     public uint Num_Generations { get; set; }
-    public Ref Master_Particles { get; set; }
+    public Ref<NiAVObject> Master_Particles { get; set; }
     public uint Pool_Size { get; set; }
     public bool Auto_Fill_Pools { get; set; }
 

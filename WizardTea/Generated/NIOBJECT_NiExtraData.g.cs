@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiExtraData : NiObject {
     public string Name { get; set; }
-    public Ref Next_Extra_Data { get; set; }
+    public Ref<NiExtraData> Next_Extra_Data { get; set; }
     public ByteArray Extra_Data { get; set; }
     public uint Num_Bytes { get; set; }
 

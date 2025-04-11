@@ -15,7 +15,7 @@ public class NiPSPlanarCollider : NiPSCollider {
     public float Height { get; set; }
     public Vector3 X_Axis { get; set; }
     public Vector3 Y_Axis { get; set; }
-    public Ptr Collider_Object { get; set; }
+    public Ptr<NiAVObject> Collider_Object { get; set; }
 
     public NiPSPlanarCollider() : base() { }
 

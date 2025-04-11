@@ -33,7 +33,7 @@ public abstract class NiGeometryData : NiObject {
     public bool Has_UV { get; set; }
     public TexCoord UV_Sets { get; set; }
     public ConsistencyType Consistency_Flags { get; set; }
-    public Ref Additional_Data { get; set; }
+    public Ref<AbstractAdditionalGeometryData> Additional_Data { get; set; }
 
     public NiGeometryData() : base() { }
 

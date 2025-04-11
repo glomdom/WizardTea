@@ -15,7 +15,7 @@ public class Ni3dsAnimationNode : NiObject {
     public bool Has_Data { get; set; }
     public float Unknown_Floats_1 { get; set; }
     public ushort Unknown_Short { get; set; }
-    public Ref Child { get; set; }
+    public Ref<NiObject> Child { get; set; }
     public float Unknown_Floats_2 { get; set; }
     public uint Count { get; set; }
     public byte Unknown_Array { get; set; }

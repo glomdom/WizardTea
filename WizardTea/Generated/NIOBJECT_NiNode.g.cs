@@ -12,9 +12,9 @@ namespace WizardTea;
 
 public class NiNode : NiAVObject {
     public uint Num_Children { get; set; }
-    public Ref Children { get; set; }
+    public Ref<NiAVObject> Children { get; set; }
     public uint Num_Effects { get; set; }
-    public Ref Effects { get; set; }
+    public Ref<NiDynamicEffect> Effects { get; set; }
 
     public NiNode() : base() { }
 

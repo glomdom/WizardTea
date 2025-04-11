@@ -15,7 +15,7 @@ public class NiPSDragForce : NiPSForce {
     public float Percentage { get; set; }
     public float Range { get; set; }
     public float Range_Falloff { get; set; }
-    public Ptr Drag_Object { get; set; }
+    public Ptr<NiAVObject> Drag_Object { get; set; }
 
     public NiPSDragForce() : base() { }
 

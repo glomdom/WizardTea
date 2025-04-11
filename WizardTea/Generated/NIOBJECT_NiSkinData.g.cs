@@ -13,7 +13,7 @@ namespace WizardTea;
 public class NiSkinData : NiObject {
     public NiTransform Skin_Transform { get; set; }
     public uint Num_Bones { get; set; }
-    public Ref Skin_Partition { get; set; }
+    public Ref<NiSkinPartition> Skin_Partition { get; set; }
     public bool Has_Vertex_Weights { get; set; }
     public BoneData Bone_List { get; set; }
 

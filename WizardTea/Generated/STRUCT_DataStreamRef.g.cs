@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public struct DataStreamRef {
-    public Ref Stream { get; set; }
+    public Ref<NiDataStream> Stream { get; set; }
     public bool Is_Per_Instance { get; set; } = false;
     public ushort Num_Submeshes { get; set; } = 1;
     public ushort[] Submesh_To_Region_Map { get; set; }

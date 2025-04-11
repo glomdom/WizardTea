@@ -77,8 +77,7 @@ public class StructParser : BaseParser {
 
                 if (template is not null && template == "#T#") {
                     fieldType += "<T>";
-                } else if (template is not null && template != "#T#" && fieldType != "Ref" && fieldType != "Ptr") {
-                    // TODO: Support Ref & Ptr generics. Correct overwrite.
+                } else if (template is not null && template != "#T#") {
                     Log.Verbose("generic of {template} applied for {fieldName} of {fieldType}", template, fieldName, fieldType);
                     fieldType += $"<{template}>";
                 }

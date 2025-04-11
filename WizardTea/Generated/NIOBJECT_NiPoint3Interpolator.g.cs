@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiPoint3Interpolator : NiKeyBasedInterpolator {
     public Vector3 Value { get; set; }
-    public Ref Data { get; set; }
+    public Ref<NiPosData> Data { get; set; }
 
     public NiPoint3Interpolator() : base() { }
 

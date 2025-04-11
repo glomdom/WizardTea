@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiPSysModifierFloatCtlr : NiPSysModifierCtlr {
-    public Ref Data { get; set; }
+    public Ref<NiFloatData> Data { get; set; }
 
     public NiPSysModifierFloatCtlr() : base() { }
 

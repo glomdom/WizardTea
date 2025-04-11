@@ -12,10 +12,10 @@ namespace WizardTea;
 
 public class NiLookAtInterpolator : NiInterpolator {
     public LookAtFlags Flags { get; set; }
-    public Ptr Look_At { get; set; }
+    public Ptr<NiNode> Look_At { get; set; }
     public string Look_At_Name { get; set; }
     public NiQuatTransform Transform { get; set; }
-    public Ref Interpolator { get; set; }
+    public Ref<NiPoint3Interpolator> Interpolator { get; set; }
 
     public NiLookAtInterpolator() : base() { }
 

@@ -14,7 +14,7 @@ public class NiTextureTransformController : NiFloatInterpController {
     public bool Shader_Map { get; set; }
     public TexType Texture_Slot { get; set; }
     public TransformMember Operation { get; set; }
-    public Ref Data { get; set; }
+    public Ref<NiFloatData> Data { get; set; }
 
     public NiTextureTransformController() : base() { }
 

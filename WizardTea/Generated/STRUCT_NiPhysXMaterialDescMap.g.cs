@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public struct NiPhysXMaterialDescMap {
     public ushort Key { get; set; }
-    public Ref Material { get; set; }
+    public Ref<NiPhysXMaterialDesc> Material { get; set; }
 
     public NiPhysXMaterialDescMap() { }
 

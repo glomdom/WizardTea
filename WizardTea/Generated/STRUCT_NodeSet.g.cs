@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public struct NodeSet {
     public uint Num_Nodes { get; set; }
-    public Ptr[] Nodes { get; set; }
+    public Ptr<NiNode>[] Nodes { get; set; }
 
     public NodeSet() { }
 

@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiMorpherController : NiInterpController {
-    public Ref Data { get; set; }
+    public Ref<NiMorphData> Data { get; set; }
 
     public NiMorpherController() : base() { }
 

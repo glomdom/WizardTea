@@ -13,10 +13,10 @@ namespace WizardTea;
 public class NiSequence : NiObject {
     public string Name { get; set; }
     public string Accum_Root_Name { get; set; }
-    public Ref Text_Keys { get; set; }
+    public Ref<NiTextKeyExtraData> Text_Keys { get; set; }
     public uint Num_DIV2_Ints { get; set; }
     public int DIV2_Ints { get; set; }
-    public Ref DIV2_Ref { get; set; }
+    public Ref<NiObject> DIV2_Ref { get; set; }
     public uint Num_Controlled_Blocks { get; set; }
     public uint Array_Grow_By { get; set; }
     public ControlledBlock Controlled_Blocks { get; set; }

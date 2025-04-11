@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiPhysXClothDesc : NiObject {
     public NiFixedString Name { get; set; }
-    public Ref Mesh { get; set; }
+    public Ref<NiPhysXMeshDesc> Mesh { get; set; }
     public Matrix34 Pose { get; set; }
     public float Thickness { get; set; }
     public float Self_Collision_Thickness { get; set; }
@@ -47,9 +47,9 @@ public class NiPhysXClothDesc : NiObject {
     public PhysXClothState States { get; set; }
     public uint Num_Attachments { get; set; }
     public PhysXClothAttachment Attachments { get; set; }
-    public Ref Parent_Actor { get; set; }
-    public Ref Dest { get; set; }
-    public Ref Target_Mesh { get; set; }
+    public Ref<NiPhysXActorDesc> Parent_Actor { get; set; }
+    public Ref<NiPhysXDest> Dest { get; set; }
+    public Ref<NiMesh> Target_Mesh { get; set; }
 
     public NiPhysXClothDesc() : base() { }
 

@@ -13,7 +13,7 @@ namespace WizardTea;
 public class NiPSysPartSpawnModifier : NiPSysModifier {
     public float Particles_Per_Second { get; set; }
     public float Time { get; set; }
-    public Ref Spawner { get; set; }
+    public Ref<NiPSysSpawnModifier> Spawner { get; set; }
 
     public NiPSysPartSpawnModifier() : base() { }
 

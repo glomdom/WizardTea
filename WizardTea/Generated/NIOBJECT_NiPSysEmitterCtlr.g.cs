@@ -11,8 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysEmitterCtlr : NiPSysModifierCtlr {
-    public Ref Data { get; set; }
-    public Ref Visibility_Interpolator { get; set; }
+    public Ref<NiPSysEmitterCtlrData> Data { get; set; }
+    public Ref<NiInterpolator> Visibility_Interpolator { get; set; }
 
     public NiPSysEmitterCtlr() : base() { }
 

@@ -13,8 +13,8 @@ namespace WizardTea;
 public class NiPSCurveEmitter : NiPSEmitter {
     public bool Has_Curve { get; set; }
     public NiCurve3 Curve { get; set; }
-    public Ptr Curve_Parent { get; set; }
-    public Ptr Emitter_Object { get; set; }
+    public Ptr<NiAVObject> Curve_Parent { get; set; }
+    public Ptr<NiAVObject> Emitter_Object { get; set; }
 
     public NiPSCurveEmitter() : base() { }
 

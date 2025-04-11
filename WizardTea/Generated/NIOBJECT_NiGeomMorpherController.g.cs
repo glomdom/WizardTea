@@ -12,10 +12,10 @@ namespace WizardTea;
 
 public class NiGeomMorpherController : NiInterpController {
     public GeomMorpherFlags Morpher_Flags { get; set; }
-    public Ref Data { get; set; }
+    public Ref<NiMorphData> Data { get; set; }
     public byte Always_Update { get; set; }
     public uint Num_Interpolators { get; set; }
-    public Ref Interpolators { get; set; }
+    public Ref<NiInterpolator> Interpolators { get; set; }
     public MorphWeight Interpolator_Weights { get; set; }
     public uint Num_Unknown_Ints { get; set; }
     public uint Unknown_Ints { get; set; }

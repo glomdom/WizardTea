@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiPhysXPSParticleSystemProp : NiPhysXProp {
     public uint Num_Systems { get; set; }
-    public Ptr Systems { get; set; }
+    public Ptr<NiPhysXPSParticleSystem> Systems { get; set; }
 
     public NiPhysXPSParticleSystemProp() : base() { }
 

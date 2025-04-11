@@ -13,12 +13,11 @@ namespace WizardTea;
 public abstract class NiGeometry : NiAVObject {
     public NiBound Bounding_Sphere { get; set; }
     public float Bound_Min_Max { get; set; }
-    public Ref Skin { get; set; }
-    public Ref Data { get; set; }
-    public Ref Skin_Instance { get; set; }
+    public Ref<NiObject> Skin { get; set; }
+    public Ref<NiGeometryData> Data { get; set; }
+    public Ref<NiSkinInstance> Skin_Instance { get; set; }
     public MaterialData Material_Data { get; set; }
-    public Ref Shader_Property { get; set; }
-    public Ref Alpha_Property { get; set; }
+    public Ref<NiAlphaProperty> Alpha_Property { get; set; }
 
     public NiGeometry() : base() { }
 

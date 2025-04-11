@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiRollController : NiSingleInterpController {
-    public Ref Data { get; set; }
+    public Ref<NiFloatData> Data { get; set; }
 
     public NiRollController() : base() { }
 

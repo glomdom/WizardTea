@@ -52,10 +52,11 @@ public class NiObjectParser : BaseParser {
                 if (BlacklistedTypes.Contains(fieldType)) continue;
 
                 var template = XmlHelper.GetOptionalAttributeValue(field, "template");
+                if (template is not null && template.StartsWith("BS")) continue;
+
                 var length = XmlHelper.GetOptionalAttributeValue(field, "length");
 
-                if (template is not null && fieldType != "Ref" && fieldType != "Ptr") {
-                    // TODO: Support Ref & Ptr. Same as Struct.
+                if (template is not null) {
                     Log.Verbose("generic of {template} applied for {fieldName} of {fieldType}", template, fieldName, fieldType);
                     fieldType += $"<{template}>";
                 }

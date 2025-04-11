@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public struct InterpBlendItem {
-    public Ref Interpolator { get; set; }
+    public Ref<NiInterpolator> Interpolator { get; set; }
     public float Weight { get; set; }
     public float Normalized_Weight { get; set; }
     public int Priority { get; set; }

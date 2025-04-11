@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiLightColorController : NiPoint3InterpController {
     public LightColor Target_Color { get; set; }
-    public Ref Data { get; set; }
+    public Ref<NiPosData> Data { get; set; }
 
     public NiLightColorController() : base() { }
 

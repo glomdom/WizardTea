@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiDefaultAVObjectPalette : NiAVObjectPalette {
-    public Ptr Scene { get; set; }
+    public Ptr<NiAVObject> Scene { get; set; }
     public uint Num_Objs { get; set; }
     public AVObject Objs { get; set; }
 

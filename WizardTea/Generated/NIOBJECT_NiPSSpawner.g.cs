@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSSpawner : NiObject {
-    public Ptr Master_Particle_System { get; set; }
+    public Ptr<NiPSParticleSystem> Master_Particle_System { get; set; }
     public float Percentage_Spawned { get; set; }
     public float Spawn_Speed_Factor { get; set; }
     public float Spawn_Speed_Factor_Var { get; set; }

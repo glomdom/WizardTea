@@ -16,7 +16,7 @@ public class NiPSBombForce : NiPSForce {
     public float Delta_V { get; set; }
     public DecayType Decay_Type { get; set; }
     public SymmetryType Symmetry_Type { get; set; }
-    public Ptr Bomb_Object { get; set; }
+    public Ptr<NiAVObject> Bomb_Object { get; set; }
 
     public NiPSBombForce() : base() { }
 

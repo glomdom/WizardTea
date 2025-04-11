@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPhysXPSParticleSystemDest : NiPhysXDest {
-    public Ptr Target { get; set; }
+    public Ptr<NiPSParticleSystem> Target { get; set; }
 
     public NiPhysXPSParticleSystemDest() : base() { }
 

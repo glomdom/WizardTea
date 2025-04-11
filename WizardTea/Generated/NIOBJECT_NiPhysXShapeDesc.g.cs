@@ -26,7 +26,7 @@ public class NiPhysXShapeDesc : NiObject {
     public float Sphere_Radius { get; set; }
     public Vector3 Box_Half_Extents { get; set; }
     public NxCapsule Capsule { get; set; }
-    public Ref Mesh { get; set; }
+    public Ref<NiPhysXMeshDesc> Mesh { get; set; }
 
     public NiPhysXShapeDesc() : base() { }
 

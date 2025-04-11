@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public struct PhysXClothAttachment {
-    public Ref Shape { get; set; }
+    public Ref<NiPhysXShapeDesc> Shape { get; set; }
     public uint Num_Vertices { get; set; }
     public uint Flags { get; set; }
     public PhysXClothAttachmentPosition[] Positions { get; set; }

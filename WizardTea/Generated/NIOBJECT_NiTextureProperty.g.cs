@@ -13,7 +13,7 @@ namespace WizardTea;
 public class NiTextureProperty : NiProperty {
     public uint Unknown_Ints_1 { get; set; }
     public ushort Flags { get; set; }
-    public Ref Image { get; set; }
+    public Ref<NiImage> Image { get; set; }
     public uint Unknown_Ints_2 { get; set; }
 
     public NiTextureProperty() : base() { }

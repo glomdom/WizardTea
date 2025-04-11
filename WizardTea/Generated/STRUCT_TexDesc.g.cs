@@ -11,8 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public struct TexDesc {
-    public Ref Image { get; set; }
-    public Ref Source { get; set; }
+    public Ref<NiImage> Image { get; set; }
+    public Ref<NiSourceTexture> Source { get; set; }
     public TexClampMode Clamp_Mode { get; set; } = TexClampMode.WRAP_S_WRAP_T; // injection: FieldOverride
     public TexFilterMode Filter_Mode { get; set; } = TexFilterMode.FILTER_TRILERP; // injection: FieldOverride
     public TexturingMapFlags Flags { get; set; }

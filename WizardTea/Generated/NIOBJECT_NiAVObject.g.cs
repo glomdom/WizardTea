@@ -17,12 +17,12 @@ public abstract class NiAVObject : NiObjectNET {
     public float Scale { get; set; }
     public Vector3 Velocity { get; set; }
     public uint Num_Properties { get; set; }
-    public Ref Properties { get; set; }
+    public Ref<NiProperty> Properties { get; set; }
     public uint Unknown_1 { get; set; }
     public byte Unknown_2 { get; set; }
     public bool Has_Bounding_Volume { get; set; }
     public BoundingVolume Bounding_Volume { get; set; }
-    public Ref Collision_Object { get; set; }
+    public Ref<NiCollisionObject> Collision_Object { get; set; }
 
     public NiAVObject() : base() { }
 

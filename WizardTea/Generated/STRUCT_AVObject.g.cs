@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public struct AVObject {
     public SizedString Name { get; set; }
-    public Ptr AV_Object { get; set; }
+    public Ptr<NiAVObject> AV_Object { get; set; }
 
     public AVObject() { }
 

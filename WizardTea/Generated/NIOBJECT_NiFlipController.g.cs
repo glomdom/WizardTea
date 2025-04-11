@@ -15,8 +15,8 @@ public class NiFlipController : NiFloatInterpController {
     public float Accum_Time { get; set; }
     public float Delta { get; set; }
     public uint Num_Sources { get; set; }
-    public Ref Sources { get; set; }
-    public Ref Images { get; set; }
+    public Ref<NiSourceTexture> Sources { get; set; }
+    public Ref<NiImage> Images { get; set; }
 
     public NiFlipController() : base() { }
 

@@ -11,8 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiParticleModifier : NiObject {
-    public Ref Next_Modifier { get; set; }
-    public Ptr Controller { get; set; }
+    public Ref<NiParticleModifier> Next_Modifier { get; set; }
+    public Ptr<NiParticleSystemController> Controller { get; set; }
 
     public NiParticleModifier() : base() { }
 

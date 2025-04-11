@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiTransformInterpolator : NiKeyBasedInterpolator {
     public NiQuatTransform Transform { get; set; }
-    public Ref Data { get; set; }
+    public Ref<NiTransformData> Data { get; set; }
 
     public NiTransformInterpolator() : base() { }
 

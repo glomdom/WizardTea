@@ -1,5 +1,5 @@
 ﻿namespace WizardTea;
 
-public class Ref {
+public class Ref<T> {
     
 }

@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiFloatInterpolator : NiKeyBasedInterpolator {
     public float Value { get; set; }
-    public Ref Data { get; set; }
+    public Ref<NiFloatData> Data { get; set; }
 
     public NiFloatInterpolator() : base() { }
 

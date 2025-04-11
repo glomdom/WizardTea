@@ -14,10 +14,10 @@ public class NiInstancingMeshModifier : NiMeshModifier {
     public bool Has_Instance_Nodes { get; set; }
     public bool Per_Instance_Culling { get; set; }
     public bool Has_Static_Bounds { get; set; }
-    public Ref Affected_Mesh { get; set; }
+    public Ref<NiMesh> Affected_Mesh { get; set; }
     public NiBound Bounding_Sphere { get; set; }
     public uint Num_Instance_Nodes { get; set; }
-    public Ref Instance_Nodes { get; set; }
+    public Ref<NiMeshHWInstance> Instance_Nodes { get; set; }
 
     public NiInstancingMeshModifier() : base() { }
 

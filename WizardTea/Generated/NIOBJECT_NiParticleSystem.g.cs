@@ -15,10 +15,10 @@ public class NiParticleSystem : NiParticles {
     public ushort Far_End { get; set; }
     public ushort Near_Begin { get; set; }
     public ushort Near_End { get; set; }
-    public Ref Data_Particle { get; set; } // injection: FieldOverride
+    public Ref<NiPSysData> Data_Particle { get; set; } // injection: FieldOverride
     public bool World_Space { get; set; }
     public uint Num_Modifiers { get; set; }
-    public Ref Modifiers { get; set; }
+    public Ref<NiPSysModifier> Modifiers { get; set; }
 
     public NiParticleSystem() : base() { }
 

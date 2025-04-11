@@ -13,7 +13,7 @@ namespace WizardTea;
 public abstract class NiDynamicEffect : NiAVObject {
     public bool Switch_State { get; set; }
     public uint Num_Affected_Nodes { get; set; }
-    public Ptr Affected_Nodes { get; set; }
+    public Ptr<NiNode> Affected_Nodes { get; set; }
     public uint Affected_Node_Pointers { get; set; }
 
     public NiDynamicEffect() : base() { }

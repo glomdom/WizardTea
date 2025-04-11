@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysDragModifier : NiPSysModifier {
-    public Ptr Drag_Object { get; set; }
+    public Ptr<NiAVObject> Drag_Object { get; set; }
     public Vector3 Drag_Axis { get; set; }
     public float Percentage { get; set; }
     public float Range { get; set; }

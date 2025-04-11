@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysColliderManager : NiPSysModifier {
-    public Ref Collider { get; set; }
+    public Ref<NiPSysCollider> Collider { get; set; }
 
     public NiPSysColliderManager() : base() { }
 

@@ -18,8 +18,8 @@ public class NiTextureEffect : NiDynamicEffect {
     public TexClampMode Texture_Clamping { get; set; }
     public TextureType Texture_Type { get; set; }
     public CoordGenType Coordinate_Generation_Type { get; set; }
-    public Ref Image { get; set; }
-    public Ref Source_Texture { get; set; }
+    public Ref<NiImage> Image { get; set; }
+    public Ref<NiSourceTexture> Source_Texture { get; set; }
     public byte Enable_Plane { get; set; }
     public NiPlane Plane { get; set; }
     public short PS2_L { get; set; }

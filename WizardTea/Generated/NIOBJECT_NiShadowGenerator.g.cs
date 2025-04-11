@@ -14,10 +14,10 @@ public class NiShadowGenerator : NiObject {
     public string Name { get; set; }
     public NiShadowGeneratorFlags Flags { get; set; }
     public uint Num_Shadow_Casters { get; set; }
-    public Ref Shadow_Casters { get; set; }
+    public Ref<NiNode> Shadow_Casters { get; set; }
     public uint Num_Shadow_Receivers { get; set; }
-    public Ref Shadow_Receivers { get; set; }
-    public Ptr Target { get; set; }
+    public Ref<NiNode> Shadow_Receivers { get; set; }
+    public Ptr<NiDynamicEffect> Target { get; set; }
     public float Depth_Bias { get; set; }
     public ushort Size_Hint { get; set; }
     public float Near_Clipping_Distance { get; set; }
