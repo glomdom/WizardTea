@@ -13,7 +13,7 @@ public class StructParser : BaseParser {
 
     public StructParser(XDocument xml) : base(xml) {
         BlacklistedTypes = ["string", "Vector3", "Vector2", "hkSubPartData"];
-        BlacklistedModules = ["BSHavok", "BSMain"];
+        BlacklistedModules = ["BSHavok", "BSMain", "BSAnimation"];
     }
 
     public override void Parse() {
@@ -38,11 +38,11 @@ public class StructParser : BaseParser {
             }
 
             var sb = new StringBuilder();
-            var injector = InjectionRegistry.GetForStruct(structName);
+            var injector = InjectionRegistry.GetForItem(structName);
 
             var structStartContext = new InjectionContext {
-                StructName = structName,
-                StructElement = structElem,
+                ItemName = structName,
+                ItemElement = structElem,
                 CurrentSource = Prelude()
             };
 
@@ -96,8 +96,8 @@ public class StructParser : BaseParser {
                     : $"public {fieldType} {fieldName} {{ get; set; }}";
 
                 var fieldContext = new InjectionContext {
-                    StructName = structName,
-                    StructElement = structElem,
+                    ItemName = structName,
+                    ItemElement = structElem,
                     FieldElement = structFieldElem,
                     FieldName = fieldName,
                     FieldType = fieldType,
@@ -141,14 +141,14 @@ public class StructParser : BaseParser {
             sb.AppendLine();
 
             var structEndContext = new InjectionContext {
-                StructName = structName,
-                StructElement = structElem,
+                ItemName = structName,
+                ItemElement = structElem,
                 CurrentSource = "",
             };
 
-            var structEndCode = injector.Execute(InjectionPoint.StructEnd, structEndContext);
+            var structEndCode = injector.Execute(InjectionPoint.ItemEnd, structEndContext);
             if (!string.IsNullOrWhiteSpace(structEndCode)) {
-                var indented = IndentLines(structEndCode, 4);
+                var indented = Utilities.IndentLines(structEndCode, 4);
                 sb.AppendLine(indented + " // injection: StructEnd");
             }
 
@@ -161,16 +161,5 @@ public class StructParser : BaseParser {
         foreach (var data in Data) {
             File.WriteAllText($"Generated/STRUCT_{data.Key}.g.cs", data.Value);
         }
-    }
-
-    private static string IndentLines(string input, int spaceCount) {
-        var indent = new string(' ', spaceCount);
-
-        return string.Join(
-            Environment.NewLine,
-            input
-                .Split(["\r\n", "\n"], StringSplitOptions.None)
-                .Select(line => indent + line)
-        );
     }
 }
