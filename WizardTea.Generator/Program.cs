@@ -82,10 +82,15 @@ namespace WizardTea.Generator {
             enumParser.Generate();
             Log.Information("generated enums");
 
-            var flagParser = new FlagParser(xml);
-            flagParser.Parse();
-            flagParser.Generate();
-            Log.Information("generated flags");
+            var bitflagParser = new BitflagParser(xml);
+            bitflagParser.Parse();
+            bitflagParser.Generate();
+            Log.Information("generated bitflags");
+
+            var bitfieldParser = new BitfieldParser(xml);
+            bitfieldParser.Parse();
+            bitfieldParser.Generate();
+            Log.Information("generated bitfields");
 
             var structParser = new StructParser(xml);
             structParser.Parse();

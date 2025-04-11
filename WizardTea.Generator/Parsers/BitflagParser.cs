@@ -3,10 +3,10 @@ using System.Xml.Linq;
 
 namespace WizardTea.Generator.Parsers;
 
-public class FlagParser : BaseParser {
+public class BitflagParser : BaseParser {
     private Dictionary<string, string> Data { get; } = [];
 
-    public FlagParser(XDocument xml) : base(xml) { }
+    public BitflagParser(XDocument xml) : base(xml) { }
 
     public override void Parse() {
         var root = Xml.Root ?? throw new InvalidDataException("cache.xml missing root element");

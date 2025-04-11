@@ -11,7 +11,7 @@ public abstract class BaseParser : IParser {
         Xml = xml;
     }
 
-    public XDocument Xml { get; set; }
+    protected XDocument Xml { get; }
 
     protected static string Prelude() {
         var sb = new StringBuilder();
