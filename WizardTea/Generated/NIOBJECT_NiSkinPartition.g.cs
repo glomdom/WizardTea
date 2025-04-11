@@ -14,8 +14,6 @@ public class NiSkinPartition : NiObject {
     public uint Num_Partitions { get; set; }
     public uint Data_Size { get; set; }
     public uint Vertex_Size { get; set; }
-    public BSVertexDesc Vertex_Desc { get; set; }
-    public BSVertexDataSSE Vertex_Data { get; set; }
     public SkinPartition Partitions { get; set; }
 
     public NiSkinPartition() { }

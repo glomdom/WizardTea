@@ -11,12 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiParticleSystem : NiParticles {
-    public BSVertexDesc Vertex_Desc { get; set; }
     public ushort Far_Begin { get; set; }
     public ushort Far_End { get; set; }
     public ushort Near_Begin { get; set; }
     public ushort Near_End { get; set; }
-    public Ref Data { get; set; }
+    public Ref Data_Particle { get; set; } // injection: FieldOverride
     public bool World_Space { get; set; }
     public uint Num_Modifiers { get; set; }
     public Ref Modifiers { get; set; }

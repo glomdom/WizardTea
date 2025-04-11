@@ -12,7 +12,6 @@ namespace WizardTea;
 
 public abstract class NiAVObject : NiObjectNET {
     public uint Flags { get; set; }
-    public ushort Flags { get; set; }
     public Vector3 Translation { get; set; }
     public Matrix33 Rotation { get; set; }
     public float Scale { get; set; }
