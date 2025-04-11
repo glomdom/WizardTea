@@ -34,10 +34,10 @@ public sealed class Injector {
             if (_injectors.TryGetValue(point, out var globalFuncs)) {
                 foreach (var func in globalFuncs) {
                     var localContext = new InjectionContext {
-                        StructName = context.StructName,
+                        ItemName = context.ItemName,
                         FieldName = context.FieldName,
                         FieldType = context.FieldType,
-                        StructElement = context.StructElement,
+                        ItemElement = context.ItemElement,
                         FieldElement = context.FieldElement,
                         CurrentSource = result
                     };
@@ -47,7 +47,7 @@ public sealed class Injector {
             }
 
             if (
-                !_structInjectors.TryGetValue(context.StructName, out var perStruct) ||
+                !_structInjectors.TryGetValue(context.ItemName, out var perStruct) ||
                 !perStruct.TryGetValue(point, out var structFuncs)
             ) {
                 return result;
@@ -56,10 +56,10 @@ public sealed class Injector {
             {
                 foreach (var func in structFuncs) {
                     var localContext = new InjectionContext {
-                        StructName = context.StructName,
+                        ItemName = context.ItemName,
                         FieldName = context.FieldName,
                         FieldType = context.FieldType,
-                        StructElement = context.StructElement,
+                        ItemElement = context.ItemElement,
                         FieldElement = context.FieldElement,
                         CurrentSource = result
                     };
@@ -80,7 +80,7 @@ public sealed class Injector {
             }
 
             if (
-                !_structInjectors.TryGetValue(context.StructName, out var perStruct) ||
+                !_structInjectors.TryGetValue(context.ItemName, out var perStruct) ||
                 !perStruct.TryGetValue(point, out var structFuncs)
             ) {
                 return string.Join(Environment.NewLine, outputs);

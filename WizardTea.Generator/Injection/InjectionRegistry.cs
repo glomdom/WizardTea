@@ -20,7 +20,7 @@ public static class InjectionRegistry {
         }
     }
 
-    public static Injector GetForStruct(string structName) {
+    public static Injector GetForItem(string structName) {
         // Create a new Injector.
         var injector = new Injector();
 

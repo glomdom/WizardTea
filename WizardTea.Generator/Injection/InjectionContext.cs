@@ -3,10 +3,10 @@
 namespace WizardTea.Generator.Injection;
 
 public class InjectionContext {
-    public required string StructName { get; init; }
+    public required string ItemName { get; init; }
     public string? FieldName { get; init; }
     public string? FieldType { get; init; }
     public required string CurrentSource { get; set; }
-    public required XElement StructElement { get; init; }
+    public required XElement ItemElement { get; init; }
     public XElement? FieldElement { get; init; }
 }

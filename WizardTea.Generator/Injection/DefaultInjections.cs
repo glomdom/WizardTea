@@ -5,7 +5,7 @@ public static class DefaultInjections {
     #region struct injectors
 
     public static void SystemVector3ToXYZ(Injector injector) {
-        injector.Register(InjectionPoint.StructEnd,
+        injector.Register(InjectionPoint.ItemEnd,
             ctx => """
                    public static implicit operator ByteVector3(System.Numerics.Vector3 v) {
                        var temp = new ByteVector3();
@@ -20,7 +20,7 @@ public static class DefaultInjections {
 
     public static void XYZToSystemVector3(Injector injector) {
         injector.Register(
-            InjectionPoint.StructEnd,
+            InjectionPoint.ItemEnd,
             ctx => """
                    public static implicit operator System.Numerics.Vector3(ByteVector3 v) {
                        var temp = new System.Numerics.Vector3();
@@ -141,7 +141,7 @@ public static class DefaultInjections {
     }
 
     private static void ValuesFromVec2ToProperties(Injector injector, string structName, string prop1, string prop2) {
-        injector.Register(InjectionPoint.StructEnd,
+        injector.Register(InjectionPoint.ItemEnd,
             ctx => $@"
                    public static implicit operator {structName}(System.Numerics.Vector2 v) {{
                        var temp = new {structName}();

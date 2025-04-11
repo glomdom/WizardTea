@@ -2,7 +2,7 @@
 
 public enum InjectionPoint {
     StructStart,
-    StructEnd,
+    ItemEnd,
     BeforeField,
     AfterField,
     FieldOverride
