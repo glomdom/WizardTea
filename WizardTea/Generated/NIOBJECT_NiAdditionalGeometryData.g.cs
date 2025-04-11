@@ -13,9 +13,9 @@ namespace WizardTea;
 public class NiAdditionalGeometryData : AbstractAdditionalGeometryData {
     public ushort Num_Vertices { get; set; }
     public uint Num_Block_Infos { get; set; }
-    public NiAGDDataStream Block_Infos { get; set; }
+    public NiAGDDataStream[] Block_Infos { get; set; }
     public uint Num_Blocks { get; set; }
-    public NiAGDDataBlocks Blocks { get; set; }
+    public NiAGDDataBlocks[] Blocks { get; set; }
 
     public NiAdditionalGeometryData() : base() { }
 

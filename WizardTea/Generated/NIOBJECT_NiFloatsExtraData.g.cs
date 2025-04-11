@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiFloatsExtraData : NiExtraData {
     public uint Num_Floats { get; set; }
-    public float Data { get; set; }
+    public float[] Data { get; set; }
 
     public NiFloatsExtraData() : base() { }
 

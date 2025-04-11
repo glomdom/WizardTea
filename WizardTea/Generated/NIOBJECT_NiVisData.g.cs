@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiVisData : NiObject {
     public uint Num_Keys { get; set; }
-    public Key<byte> Keys { get; set; }
+    public Key<byte>[] Keys { get; set; }
 
     public NiVisData() : base() { }
 

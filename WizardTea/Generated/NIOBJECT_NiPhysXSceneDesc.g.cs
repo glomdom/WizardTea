@@ -49,18 +49,18 @@ public class NiPhysXSceneDesc : NiObject {
     public uint Grid_Cells_X { get; set; }
     public uint Grid_Cells_Y { get; set; }
     public uint Num_Actors { get; set; }
-    public Ref<NiPhysXActorDesc> Actors { get; set; }
+    public Ref<NiPhysXActorDesc>[] Actors { get; set; }
     public uint Num_Joints { get; set; }
-    public Ref<NiPhysXJointDesc> Joints { get; set; }
+    public Ref<NiPhysXJointDesc>[] Joints { get; set; }
     public uint Num_Materials { get; set; }
-    public NiPhysXMaterialDescMap Materials { get; set; }
-    public bool Group_Collision_Flags { get; set; }
-    public NxFilterOp Filter_Ops { get; set; }
-    public uint Filter_Constants { get; set; }
+    public NiPhysXMaterialDescMap[] Materials { get; set; }
+    public bool[] Group_Collision_Flags { get; set; }
+    public NxFilterOp[] Filter_Ops { get; set; }
+    public uint[] Filter_Constants { get; set; }
     public bool Filter { get; set; }
     public uint Num_States { get; set; }
     public uint Num_Compartments { get; set; }
-    public NxCompartmentDescMap Compartments { get; set; }
+    public NxCompartmentDescMap[] Compartments { get; set; }
 
     public NiPhysXSceneDesc() : base() { }
 

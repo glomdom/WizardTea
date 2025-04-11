@@ -11,11 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysData : NiParticlesData {
-    public NiParticleInfo Particle_Info { get; set; }
+    public NiParticleInfo[] Particle_Info { get; set; }
     public Vector3 Unknown_Vector { get; set; }
     public byte Unknown_QQSpeed_Byte_1 { get; set; }
     public bool Has_Rotation_Speeds { get; set; }
-    public float Rotation_Speeds { get; set; }
+    public float[] Rotation_Speeds { get; set; }
     public ushort Num_Added_Particles { get; set; }
     public ushort Added_Particles_Base { get; set; }
     public byte Unknown_QQSpeed_Byte_2 { get; set; }

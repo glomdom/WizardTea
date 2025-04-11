@@ -17,21 +17,21 @@ public abstract class NiGeometryData : NiObject {
     public byte Keep_Flags { get; set; }
     public byte Compress_Flags { get; set; }
     public bool Has_Vertices { get; set; }
-    public Vector3 Vertices { get; set; }
+    public Vector3[] Vertices { get; set; }
     public NiGeometryDataFlags Data_Flags { get; set; }
     public BSGeometryDataFlags BS_Data_Flags { get; set; }
     public uint Material_CRC { get; set; }
     public bool Has_Normals { get; set; }
-    public Vector3 Normals { get; set; }
-    public Vector3 Tangents { get; set; }
-    public Vector3 Bitangents { get; set; }
+    public Vector3[] Normals { get; set; }
+    public Vector3[] Tangents { get; set; }
+    public Vector3[] Bitangents { get; set; }
     public bool Has_DIV2_Floats { get; set; }
-    public float DIV2_Floats { get; set; }
+    public float[] DIV2_Floats { get; set; }
     public NiBound Bounding_Sphere { get; set; }
     public bool Has_Vertex_Colors { get; set; }
-    public Color4 Vertex_Colors { get; set; }
+    public Color4[] Vertex_Colors { get; set; }
     public bool Has_UV { get; set; }
-    public TexCoord UV_Sets { get; set; }
+    public TexCoord[] UV_Sets { get; set; }
     public ConsistencyType Consistency_Flags { get; set; }
     public Ref<AbstractAdditionalGeometryData> Additional_Data { get; set; }
 

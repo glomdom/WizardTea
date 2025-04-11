@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiMultiTargetTransformController : NiInterpController {
     public ushort Num_Extra_Targets { get; set; }
-    public Ptr<NiAVObject> Extra_Targets { get; set; }
+    public Ptr<NiAVObject>[] Extra_Targets { get; set; }
 
     public NiMultiTargetTransformController() : base() { }
 

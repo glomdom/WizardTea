@@ -12,9 +12,9 @@ namespace WizardTea;
 
 public class NiTriStripsData : NiTriBasedGeomData {
     public ushort Num_Strips { get; set; }
-    public ushort Strip_Lengths { get; set; }
+    public ushort[] Strip_Lengths { get; set; }
     public bool Has_Points { get; set; }
-    public ushort Points { get; set; }
+    public ushort[] Points { get; set; }
 
     public NiTriStripsData() : base() { }
 

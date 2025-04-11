@@ -12,16 +12,16 @@ namespace WizardTea;
 
 public class NiBezierMesh : NiAVObject {
     public uint Num_Bezier_Triangles { get; set; }
-    public Ref<NiBezierTriangle4> Bezier_Triangle { get; set; }
+    public Ref<NiBezierTriangle4>[] Bezier_Triangle { get; set; }
     public uint Unknown_3 { get; set; }
     public ushort Count_1 { get; set; }
     public ushort Unknown_4 { get; set; }
-    public Vector3 Points_1 { get; set; }
+    public Vector3[] Points_1 { get; set; }
     public uint Unknown_5 { get; set; }
-    public float Points_2 { get; set; }
+    public float[] Points_2 { get; set; }
     public uint Unknown_6 { get; set; }
     public ushort Count_2 { get; set; }
-    public ushort Data_2 { get; set; }
+    public ushort[] Data_2 { get; set; }
 
     public NiBezierMesh() : base() { }
 

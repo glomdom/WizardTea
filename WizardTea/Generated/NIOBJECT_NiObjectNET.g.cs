@@ -16,7 +16,7 @@ public abstract class NiObjectNET : NiObject {
     public LegacyExtraData Legacy_Extra_Data { get; set; }
     public Ref<NiExtraData> Extra_Data { get; set; }
     public uint Num_Extra_Data_List { get; set; }
-    public Ref<NiExtraData> Extra_Data_List { get; set; }
+    public Ref<NiExtraData>[] Extra_Data_List { get; set; }
     public Ref<NiTimeController> Controller { get; set; }
 
     public NiObjectNET() : base() { }

@@ -14,13 +14,13 @@ public class NiPhysXScene : NiObjectNET {
     public NiTransform Scene_Transform { get; set; }
     public float PhysX_to_World_Scale { get; set; }
     public uint Num_Props { get; set; }
-    public Ref<NiPhysXProp> Props { get; set; }
+    public Ref<NiPhysXProp>[] Props { get; set; }
     public uint Num_Sources { get; set; }
-    public Ref<NiPhysXSrc> Sources { get; set; }
+    public Ref<NiPhysXSrc>[] Sources { get; set; }
     public uint Num_Dests { get; set; }
-    public Ref<NiPhysXDest> Dests { get; set; }
+    public Ref<NiPhysXDest>[] Dests { get; set; }
     public uint Num_Modified_Meshes { get; set; }
-    public Ref<NiMesh> Modified_Meshes { get; set; }
+    public Ref<NiMesh>[] Modified_Meshes { get; set; }
     public float Time_Step { get; set; }
     public bool Keep_Meshes { get; set; }
     public uint Num_Sub_Steps { get; set; }

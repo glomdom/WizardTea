@@ -13,9 +13,9 @@ namespace WizardTea;
 public class NiKeyframeData : NiObject {
     public uint Num_Rotation_Keys { get; set; }
     public KeyType Rotation_Type { get; set; }
-    public QuatKey<Quaternion> Quaternion_Keys { get; set; }
+    public QuatKey<Quaternion>[] Quaternion_Keys { get; set; }
     public float Order { get; set; }
-    public KeyGroup<float> XYZ_Rotations { get; set; }
+    public KeyGroup<float>[] XYZ_Rotations { get; set; }
     public KeyGroup<Vector3> Translations { get; set; }
     public KeyGroup<float> Scales { get; set; }
 

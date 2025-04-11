@@ -43,7 +43,7 @@ public class NiTexturingProperty : NiProperty {
     public bool Has_Decal_3_Texture { get; set; }
     public TexDesc Decal_3_Texture { get; set; }
     public uint Num_Shader_Textures { get; set; }
-    public ShaderTexDesc Shader_Textures { get; set; }
+    public ShaderTexDesc[] Shader_Textures { get; set; }
 
     public NiTexturingProperty() : base() { }
 

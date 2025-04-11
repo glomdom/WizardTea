@@ -14,7 +14,7 @@ public class NiPortal : NiAVObject {
     public ushort Portal_Flags { get; set; }
     public ushort Plane_Count { get; set; }
     public ushort Num_Vertices { get; set; }
-    public Vector3 Vertices { get; set; }
+    public Vector3[] Vertices { get; set; }
     public Ptr<NiNode> Adjoiner { get; set; }
 
     public NiPortal() : base() { }

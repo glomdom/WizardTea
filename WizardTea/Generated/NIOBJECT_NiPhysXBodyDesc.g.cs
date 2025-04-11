@@ -15,7 +15,7 @@ public class NiPhysXBodyDesc : NiObject {
     public Vector3 Space_Inertia { get; set; }
     public float Mass { get; set; }
     public uint Num_Vels { get; set; }
-    public PhysXBodyStoredVels Vels { get; set; }
+    public PhysXBodyStoredVels[] Vels { get; set; }
     public float Wake_Up_Counter { get; set; }
     public float Linear_Damping { get; set; }
     public float Angular_Damping { get; set; }

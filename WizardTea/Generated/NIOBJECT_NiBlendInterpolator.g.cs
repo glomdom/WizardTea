@@ -23,7 +23,7 @@ public abstract class NiBlendInterpolator : NiInterpolator {
     public float High_Weights_Sum { get; set; }
     public float Next_High_Weights_Sum { get; set; }
     public float High_Ease_Spinner { get; set; }
-    public InterpBlendItem Interp_Array_Items { get; set; }
+    public InterpBlendItem[] Interp_Array_Items { get; set; }
     public bool Manager_Controlled { get; set; }
     public bool Only_Use_Highest_Weight { get; set; }
     public Ref<NiInterpolator> Single_Interpolator { get; set; }

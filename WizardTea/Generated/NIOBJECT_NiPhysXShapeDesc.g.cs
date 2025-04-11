@@ -21,7 +21,7 @@ public class NiPhysXShapeDesc : NiObject {
     public float Skin_Width { get; set; }
     public NiFixedString Shape_Name { get; set; }
     public uint Non_Interacting_Compartment_Types { get; set; }
-    public uint Collision_Bits { get; set; }
+    public uint[] Collision_Bits { get; set; }
     public NxPlane Plane { get; set; }
     public float Sphere_Radius { get; set; }
     public Vector3 Box_Half_Extents { get; set; }

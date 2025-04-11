@@ -14,7 +14,7 @@ public class NiEnvMappedTriShape : NiObjectNET {
     public ushort Unknown_1 { get; set; }
     public Matrix44 Unknown_Matrix { get; set; }
     public uint Num_Children { get; set; }
-    public Ref<NiAVObject> Children { get; set; }
+    public Ref<NiAVObject>[] Children { get; set; }
     public Ref<NiObject> Child_2 { get; set; }
     public Ref<NiObject> Child_3 { get; set; }
 

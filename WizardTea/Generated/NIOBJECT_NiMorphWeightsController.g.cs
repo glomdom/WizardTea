@@ -13,9 +13,9 @@ namespace WizardTea;
 public class NiMorphWeightsController : NiInterpController {
     public uint Count { get; set; }
     public uint Num_Interpolators { get; set; }
-    public Ref<NiInterpolator> Interpolators { get; set; }
+    public Ref<NiInterpolator>[] Interpolators { get; set; }
     public uint Num_Targets { get; set; }
-    public NiFixedString Target_Names { get; set; }
+    public NiFixedString[] Target_Names { get; set; }
 
     public NiMorphWeightsController() : base() { }
 

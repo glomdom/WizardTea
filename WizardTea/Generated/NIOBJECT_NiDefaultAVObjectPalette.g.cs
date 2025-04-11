@@ -13,7 +13,7 @@ namespace WizardTea;
 public class NiDefaultAVObjectPalette : NiAVObjectPalette {
     public Ptr<NiAVObject> Scene { get; set; }
     public uint Num_Objs { get; set; }
-    public AVObject Objs { get; set; }
+    public AVObject[] Objs { get; set; }
 
     public NiDefaultAVObjectPalette() : base() { }
 

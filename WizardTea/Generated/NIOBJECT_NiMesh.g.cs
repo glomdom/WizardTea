@@ -17,9 +17,9 @@ public class NiMesh : NiRenderObject {
     public bool Instancing_Enabled { get; set; }
     public NiBound Bounding_Sphere { get; set; }
     public uint Num_Datastreams { get; set; }
-    public DataStreamRef Datastreams { get; set; }
+    public DataStreamRef[] Datastreams { get; set; }
     public uint Num_Modifiers { get; set; }
-    public Ref<NiMeshModifier> Modifiers { get; set; }
+    public Ref<NiMeshModifier>[] Modifiers { get; set; }
     public bool Has_Extra_EM_Data { get; set; }
     public ExtraMeshDataEpicMickey Extra_EM_Data { get; set; }
 

@@ -22,7 +22,7 @@ public abstract class NiPSysEmitter : NiPSysModifier {
     public float Radius_Variation { get; set; }
     public float Life_Span { get; set; }
     public float Life_Span_Variation { get; set; }
-    public float Unknown_QQSpeed_Floats { get; set; }
+    public float[] Unknown_QQSpeed_Floats { get; set; }
 
     public NiPSysEmitter() : base() { }
 

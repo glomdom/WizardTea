@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class RibbonQuadGenerator : NiPSFacingQuadGenerator {
-    public byte EM_Unknown_Bytes { get; set; }
+    public byte[] EM_Unknown_Bytes { get; set; }
     public float EM_Unknown_Float_1 { get; set; }
 
     public RibbonQuadGenerator() : base() { }

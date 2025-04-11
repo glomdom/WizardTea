@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class Ni3dsColorAnimator : NiObject {
-    public byte Unknown_1 { get; set; }
+    public byte[] Unknown_1 { get; set; }
 
     public Ni3dsColorAnimator() : base() { }
 

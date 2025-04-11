@@ -17,7 +17,7 @@ public class NiInstancingMeshModifier : NiMeshModifier {
     public Ref<NiMesh> Affected_Mesh { get; set; }
     public NiBound Bounding_Sphere { get; set; }
     public uint Num_Instance_Nodes { get; set; }
-    public Ref<NiMeshHWInstance> Instance_Nodes { get; set; }
+    public Ref<NiMeshHWInstance>[] Instance_Nodes { get; set; }
 
     public NiInstancingMeshModifier() : base() { }
 

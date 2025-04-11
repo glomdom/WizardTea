@@ -13,11 +13,11 @@ namespace WizardTea;
 public class NiPhysXProp : NiObjectNET {
     public float PhysX_to_World_Scale { get; set; }
     public uint Num_Sources { get; set; }
-    public Ref<NiPhysXSrc> Sources { get; set; }
+    public Ref<NiPhysXSrc>[] Sources { get; set; }
     public uint Num_Dests { get; set; }
-    public Ref<NiPhysXDest> Dests { get; set; }
+    public Ref<NiPhysXDest>[] Dests { get; set; }
     public uint Num_Modified_Meshes { get; set; }
-    public Ref<NiMesh> Modified_Meshes { get; set; }
+    public Ref<NiMesh>[] Modified_Meshes { get; set; }
     public NiFixedString Temp_Name { get; set; }
     public bool Keep_Meshes { get; set; }
     public Ref<NiPhysXPropDesc> Snapshot { get; set; }

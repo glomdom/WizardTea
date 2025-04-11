@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiPSSimulatorCollidersStep : NiPSSimulatorStep {
     public uint Num_Colliders { get; set; }
-    public Ref<NiPSCollider> Colliders { get; set; }
+    public Ref<NiPSCollider>[] Colliders { get; set; }
 
     public NiPSSimulatorCollidersStep() : base() { }
 

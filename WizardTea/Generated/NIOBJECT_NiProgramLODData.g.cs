@@ -13,7 +13,7 @@ namespace WizardTea;
 public class NiProgramLODData : NiLODData {
     public uint Unknown_Uint { get; set; }
     public uint Num_LOD_Entries { get; set; }
-    public QQSpeedLODEntry LOD_Entries { get; set; }
+    public QQSpeedLODEntry[] LOD_Entries { get; set; }
 
     public NiProgramLODData() : base() { }
 

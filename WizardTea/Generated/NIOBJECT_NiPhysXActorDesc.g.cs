@@ -13,7 +13,7 @@ namespace WizardTea;
 public class NiPhysXActorDesc : NiObject {
     public NiFixedString Actor_Name { get; set; }
     public uint Num_Poses { get; set; }
-    public Matrix34 Poses { get; set; }
+    public Matrix34[] Poses { get; set; }
     public Ref<NiPhysXBodyDesc> Body_Desc { get; set; }
     public float Density { get; set; }
     public uint Actor_Flags { get; set; }
@@ -23,7 +23,7 @@ public class NiPhysXActorDesc : NiObject {
     public ushort Force_Field_Material { get; set; }
     public uint Dummy { get; set; }
     public uint Num_Shape_Descs { get; set; }
-    public Ref<NiPhysXShapeDesc> Shape_Descriptions { get; set; }
+    public Ref<NiPhysXShapeDesc>[] Shape_Descriptions { get; set; }
     public Ref<NiPhysXActorDesc> Actor_Parent { get; set; }
     public Ref<NiPhysXRigidBodySrc> Source { get; set; }
     public Ref<NiPhysXRigidBodyDest> Dest { get; set; }

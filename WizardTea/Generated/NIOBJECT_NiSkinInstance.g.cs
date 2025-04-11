@@ -15,7 +15,7 @@ public class NiSkinInstance : NiObject {
     public Ref<NiSkinPartition> Skin_Partition { get; set; }
     public Ptr<NiNode> Skeleton_Root { get; set; }
     public uint Num_Bones { get; set; }
-    public Ptr<NiNode> Bones { get; set; }
+    public Ptr<NiNode>[] Bones { get; set; }
 
     public NiSkinInstance() : base() { }
 

@@ -38,15 +38,15 @@ public class NiPhysXClothDesc : NiObject {
     public float Wake_Up_Counter { get; set; }
     public float Sleep_Linear_Velocity { get; set; }
     public ushort Collision_Group { get; set; }
-    public uint Collision_Bits { get; set; }
+    public uint[] Collision_Bits { get; set; }
     public ushort Force_Field_Material { get; set; }
     public NxClothFlag Flags { get; set; }
     public ushort Vertex_Map_Size { get; set; }
-    public ushort Vertex_Map { get; set; }
+    public ushort[] Vertex_Map { get; set; }
     public uint Num_States { get; set; }
-    public PhysXClothState States { get; set; }
+    public PhysXClothState[] States { get; set; }
     public uint Num_Attachments { get; set; }
-    public PhysXClothAttachment Attachments { get; set; }
+    public PhysXClothAttachment[] Attachments { get; set; }
     public Ref<NiPhysXActorDesc> Parent_Actor { get; set; }
     public Ref<NiPhysXDest> Dest { get; set; }
     public Ref<NiMesh> Target_Mesh { get; set; }

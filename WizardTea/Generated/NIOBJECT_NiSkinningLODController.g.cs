@@ -13,11 +13,11 @@ namespace WizardTea;
 public class NiSkinningLODController : NiTimeController {
     public uint Current_LOD { get; set; }
     public uint Num_Bones { get; set; }
-    public Ref<NiNode> Bones { get; set; }
+    public Ref<NiNode>[] Bones { get; set; }
     public uint Num_Skins { get; set; }
-    public Ref<NiMesh> Skins { get; set; }
+    public Ref<NiMesh>[] Skins { get; set; }
     public uint Num_LOD_Levels { get; set; }
-    public LODInfo LODs { get; set; }
+    public LODInfo[] LODs { get; set; }
 
     public NiSkinningLODController() : base() { }
 

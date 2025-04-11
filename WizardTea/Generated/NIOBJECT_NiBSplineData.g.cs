@@ -12,9 +12,9 @@ namespace WizardTea;
 
 public class NiBSplineData : NiObject {
     public uint Num_Float_Control_Points { get; set; }
-    public float Float_Control_Points { get; set; }
+    public float[] Float_Control_Points { get; set; }
     public uint Num_Compact_Control_Points { get; set; }
-    public short Compact_Control_Points { get; set; }
+    public short[] Compact_Control_Points { get; set; }
 
     public NiBSplineData() : base() { }
 

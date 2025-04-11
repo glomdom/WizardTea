@@ -13,7 +13,7 @@ namespace WizardTea;
 public class NiPSysEmitterCtlrData : NiObject {
     public KeyGroup<float> Birth_Rate_Keys { get; set; }
     public uint Num_Active_Keys { get; set; }
-    public Key<byte> Active_Keys { get; set; }
+    public Key<byte>[] Active_Keys { get; set; }
 
     public NiPSysEmitterCtlrData() : base() { }
 

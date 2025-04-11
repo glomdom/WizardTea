@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiPSSimulatorForcesStep : NiPSSimulatorStep {
     public uint Num_Forces { get; set; }
-    public Ref<NiPSForce> Forces { get; set; }
+    public Ref<NiPSForce>[] Forces { get; set; }
 
     public NiPSSimulatorForcesStep() : base() { }
 

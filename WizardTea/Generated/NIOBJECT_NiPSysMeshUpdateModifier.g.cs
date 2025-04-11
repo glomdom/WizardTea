@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiPSysMeshUpdateModifier : NiPSysModifier {
     public uint Num_Meshes { get; set; }
-    public Ref<NiAVObject> Meshes { get; set; }
+    public Ref<NiAVObject>[] Meshes { get; set; }
 
     public NiPSysMeshUpdateModifier() : base() { }
 

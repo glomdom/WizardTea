@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiVertWeightsExtraData : NiExtraData {
     public ushort Num_Vertices { get; set; }
-    public float Weight { get; set; }
+    public float[] Weight { get; set; }
 
     public NiVertWeightsExtraData() : base() { }
 

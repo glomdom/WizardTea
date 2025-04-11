@@ -14,10 +14,10 @@ public class NiPixelData : NiPixelFormat {
     public Ref<NiPalette> Palette { get; set; }
     public uint Num_Mipmaps { get; set; }
     public uint Bytes_Per_Pixel { get; set; }
-    public MipMap Mipmaps { get; set; }
+    public MipMap[] Mipmaps { get; set; }
     public uint Num_Pixels { get; set; }
     public uint Num_Faces { get; set; }
-    public byte Pixel_Data { get; set; }
+    public byte[] Pixel_Data { get; set; }
 
     public NiPixelData() : base() { }
 

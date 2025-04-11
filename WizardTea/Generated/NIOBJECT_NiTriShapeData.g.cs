@@ -13,9 +13,9 @@ namespace WizardTea;
 public class NiTriShapeData : NiTriBasedGeomData {
     public uint Num_Triangle_Points { get; set; }
     public bool Has_Triangles { get; set; }
-    public Triangle Triangles { get; set; }
+    public Triangle[] Triangles { get; set; }
     public ushort Num_Match_Groups { get; set; }
-    public MatchGroup Match_Groups { get; set; }
+    public MatchGroup[] Match_Groups { get; set; }
 
     public NiTriShapeData() : base() { }
 

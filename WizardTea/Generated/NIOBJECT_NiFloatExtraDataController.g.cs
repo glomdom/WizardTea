@@ -12,8 +12,8 @@ namespace WizardTea;
 
 public class NiFloatExtraDataController : NiExtraDataController {
     public byte Num_Extra_Bytes { get; set; }
-    public byte Unknown_Bytes { get; set; }
-    public byte Unknown_Extra_Bytes { get; set; }
+    public byte[] Unknown_Bytes { get; set; }
+    public byte[] Unknown_Extra_Bytes { get; set; }
     public Ref<NiFloatData> Data { get; set; }
 
     public NiFloatExtraDataController() : base() { }

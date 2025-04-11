@@ -14,9 +14,9 @@ public class NiSequenceData : NiObject {
     public NiFixedString Name { get; set; }
     public uint Num_Controlled_Blocks { get; set; }
     public uint Array_Grow_By { get; set; }
-    public ControlledBlock Controlled_Blocks { get; set; }
+    public ControlledBlock[] Controlled_Blocks { get; set; }
     public uint Num_Evaluators { get; set; }
-    public Ref<NiEvaluator> Evaluators { get; set; }
+    public Ref<NiEvaluator>[] Evaluators { get; set; }
     public Ref<NiTextKeyExtraData> Text_Keys { get; set; }
     public float Duration { get; set; }
     public CycleType Cycle_Type { get; set; }

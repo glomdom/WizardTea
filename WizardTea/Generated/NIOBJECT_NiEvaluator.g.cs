@@ -16,7 +16,7 @@ public abstract class NiEvaluator : NiObject {
     public NiFixedString Controller_Type { get; set; }
     public NiFixedString Controller_ID { get; set; }
     public NiFixedString Interpolator_ID { get; set; }
-    public byte Channel_Types { get; set; }
+    public byte[] Channel_Types { get; set; }
 
     public NiEvaluator() : base() { }
 

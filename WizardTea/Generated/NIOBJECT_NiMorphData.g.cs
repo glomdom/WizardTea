@@ -14,7 +14,7 @@ public class NiMorphData : NiObject {
     public uint Num_Morphs { get; set; }
     public uint Num_Vertices { get; set; }
     public byte Relative_Targets { get; set; }
-    public Morph Morphs { get; set; }
+    public Morph[] Morphs { get; set; }
 
     public NiMorphData() : base() { }
 

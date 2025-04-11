@@ -18,7 +18,7 @@ public class NiParticleSystem : NiParticles {
     public Ref<NiPSysData> Data_Particle { get; set; } // injection: FieldOverride
     public bool World_Space { get; set; }
     public uint Num_Modifiers { get; set; }
-    public Ref<NiPSysModifier> Modifiers { get; set; }
+    public Ref<NiPSysModifier>[] Modifiers { get; set; }
 
     public NiParticleSystem() : base() { }
 

@@ -60,6 +60,10 @@ public class NiObjectParser : BaseParser {
                     Log.Verbose("generic of {template} applied for {fieldName} of {fieldType}", template, fieldName, fieldType);
                     fieldType += $"<{template}>";
                 }
+                
+                if (length is not null) {
+                    fieldType += "[]";
+                }
 
                 var baseFieldCode = $"public {fieldType} {fieldName} {{ get; set; }}";
 

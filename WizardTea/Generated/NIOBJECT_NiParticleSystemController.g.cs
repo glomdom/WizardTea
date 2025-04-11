@@ -46,14 +46,14 @@ public class NiParticleSystemController : NiTimeController {
     public ushort Particle_Vertex_Id { get; set; }
     public ushort Num_Particles { get; set; }
     public ushort Num_Valid { get; set; }
-    public NiParticleInfo Particles { get; set; }
+    public NiParticleInfo[] Particles { get; set; }
     public Ref<NiEmitterModifier> Emitter_Modifier { get; set; }
     public Ref<NiParticleModifier> Particle_Modifier { get; set; }
     public Ref<NiParticleCollider> Particle_Collider { get; set; }
     public byte Static_Target_Bound { get; set; }
     public Ref<NiColorData> Color_Data { get; set; }
     public float Unknown_Float_1 { get; set; }
-    public float Unknown_Floats_2 { get; set; }
+    public float[] Unknown_Floats_2 { get; set; }
 
     public NiParticleSystemController() : base() { }
 

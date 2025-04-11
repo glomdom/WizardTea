@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public class NiTextKeyExtraData : NiExtraData {
     public uint Num_Text_Keys { get; set; }
-    public Key<string> Text_Keys { get; set; }
+    public Key<string>[] Text_Keys { get; set; }
 
     public NiTextKeyExtraData() : base() { }
 

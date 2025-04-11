@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiTransparentProperty : NiProperty {
-    public byte Unknown { get; set; }
+    public byte[] Unknown { get; set; }
 
     public NiTransparentProperty() : base() { }
 

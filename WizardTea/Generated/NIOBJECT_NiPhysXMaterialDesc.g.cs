@@ -13,7 +13,7 @@ namespace WizardTea;
 public class NiPhysXMaterialDesc : NiObject {
     public ushort Index { get; set; }
     public uint Num_States { get; set; }
-    public NxMaterialDesc Material_Descs { get; set; }
+    public NxMaterialDesc[] Material_Descs { get; set; }
 
     public NiPhysXMaterialDesc() : base() { }
 

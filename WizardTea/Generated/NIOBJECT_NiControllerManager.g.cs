@@ -13,7 +13,7 @@ namespace WizardTea;
 public class NiControllerManager : NiTimeController {
     public bool Cumulative { get; set; }
     public uint Num_Controller_Sequences { get; set; }
-    public Ref<NiControllerSequence> Controller_Sequences { get; set; }
+    public Ref<NiControllerSequence>[] Controller_Sequences { get; set; }
     public Ref<NiDefaultAVObjectPalette> Object_Palette { get; set; }
 
     public NiControllerManager() : base() { }

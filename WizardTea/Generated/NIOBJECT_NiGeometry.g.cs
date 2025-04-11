@@ -12,7 +12,7 @@ namespace WizardTea;
 
 public abstract class NiGeometry : NiAVObject {
     public NiBound Bounding_Sphere { get; set; }
-    public float Bound_Min_Max { get; set; }
+    public float[] Bound_Min_Max { get; set; }
     public Ref<NiObject> Skin { get; set; }
     public Ref<NiGeometryData> Data { get; set; }
     public Ref<NiSkinInstance> Skin_Instance { get; set; }

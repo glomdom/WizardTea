@@ -13,7 +13,7 @@ namespace WizardTea;
 public class NiRoomGroup : NiNode {
     public Ptr<NiNode> Shell { get; set; }
     public uint Num_Rooms { get; set; }
-    public Ptr<NiRoom> Rooms { get; set; }
+    public Ptr<NiRoom>[] Rooms { get; set; }
 
     public NiRoomGroup() : base() { }
 
