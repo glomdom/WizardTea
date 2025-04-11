@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiColorData : NiObject {
-    public KeyGroup Data { get; set; }
+    public KeyGroup<Color4> Data { get; set; }
 
     public NiColorData() { }
 

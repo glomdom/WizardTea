@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Xml.Linq;
+using Serilog;
 using WizardTea.Generator.Injection;
 
 namespace WizardTea.Generator.Parsers;
@@ -41,8 +42,15 @@ public class NiObjectParser : BaseParser {
                 var rawFieldName = XmlHelper.GetRequiredAttributeValue(field, "name");
                 var fieldName = rawFieldName.Replace(" ", "_");
                 var fieldType = XmlHelper.GetRequiredAttributeValue(field, "type");
+                var template = XmlHelper.GetOptionalAttributeValue(field, "template");
                 var length = XmlHelper.GetOptionalAttributeValue(field, "length");
 
+                if (template is not null && fieldType != "Ref" && fieldType != "Ptr") {
+                    // TODO: Support Ref & Ptr. Same as Struct.
+                    Log.Verbose("generic of {template} applied for {fieldName} of {fieldType}", template, fieldName, fieldType);
+                    fieldType += $"<{template}>";
+                }
+                
                 var baseFieldCode = $"public {fieldType} {fieldName} {{ get; set; }}";
 
                 var fieldContext = new InjectionContext {

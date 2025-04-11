@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiFloatData : NiObject {
-    public KeyGroup Data { get; set; }
+    public KeyGroup<float> Data { get; set; }
 
     public NiFloatData() { }
 

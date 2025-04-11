@@ -11,7 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPosData : NiObject {
-    public KeyGroup Data { get; set; }
+    public KeyGroup<Vector3> Data { get; set; }
 
     public NiPosData() { }
 

@@ -20,7 +20,7 @@ public class NiPhysXPropDesc : NiObject {
     public uint Num_Materials { get; set; }
     public NiPhysXMaterialDescMap Materials { get; set; }
     public uint Num_States { get; set; }
-    public NiTFixedStringMap State_Names { get; set; }
+    public NiTFixedStringMap<uint> State_Names { get; set; }
     public byte Flags { get; set; }
 
     public NiPhysXPropDesc() { }
