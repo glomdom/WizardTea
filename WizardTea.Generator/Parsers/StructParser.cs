@@ -8,13 +8,11 @@ namespace WizardTea.Generator.Parsers;
 public class StructParser : BaseParser {
     private List<string> BlacklistedTypes { get; }
 
-    // private List<string> BlacklistedFields { get; }
     private List<string> BlacklistedModules { get; }
     private Dictionary<string, string> Data { get; } = [];
 
     public StructParser(XDocument xml) : base(xml) {
         BlacklistedTypes = ["string", "Vector3", "Vector2", "hkSubPartData"];
-        // BlacklistedFields = [];
         BlacklistedModules = ["BSHavok", "BSMain"];
     }
 
@@ -67,6 +65,7 @@ public class StructParser : BaseParser {
                 var fieldType = XmlHelper.GetRequiredAttributeValue(structFieldElem, "type");
                 var defaultValue = XmlHelper.GetOptionalAttributeValue(structFieldElem, "default");
                 var template = XmlHelper.GetOptionalAttributeValue(structFieldElem, "template");
+                var length = XmlHelper.GetOptionalAttributeValue(structFieldElem, "length");
 
                 if (fieldType.StartsWith("bhk") || fieldType.StartsWith("BS")) {
                     continue;
@@ -82,6 +81,10 @@ public class StructParser : BaseParser {
                     // TODO: Support Ref & Ptr generics. Correct overwrite.
                     Log.Information("generic of {template} applied for {fieldName} of {fieldType}", template, fieldName, fieldType);
                     fieldType += $"<{template}>";
+                }
+                
+                if (length is not null) {
+                    fieldType += "[]";
                 }
 
                 if (defaultValue is not null) {
