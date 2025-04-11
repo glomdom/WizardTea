@@ -13,7 +13,7 @@ public class StructParser : BaseParser {
 
     public StructParser(XDocument xml) : base(xml) {
         BlacklistedTypes = ["string", "Vector3", "Vector2", "hkSubPartData"];
-        BlacklistedModules = ["BSHavok", "BSMain"];
+        BlacklistedModules = ["BSHavok", "BSMain", "NiLegacy"];
     }
 
     public override void Parse() {
@@ -79,7 +79,7 @@ public class StructParser : BaseParser {
                     fieldType += "<T>";
                 } else if (template is not null && template != "#T#" && fieldType != "Ref" && fieldType != "Ptr") {
                     // TODO: Support Ref & Ptr generics. Correct overwrite.
-                    Log.Information("generic of {template} applied for {fieldName} of {fieldType}", template, fieldName, fieldType);
+                    Log.Verbose("generic of {template} applied for {fieldName} of {fieldType}", template, fieldName, fieldType);
                     fieldType += $"<{template}>";
                 }
                 
