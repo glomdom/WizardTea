@@ -11,4 +11,23 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPhysXShapeDesc : NiObject {
+    public NxShapeType Shape_Type { get; set; }
+    public Matrix34 Local_Pose { get; set; }
+    public NxShapeFlag Flags { get; set; }
+    public ushort Collision_Group { get; set; }
+    public ushort Material_Index { get; set; }
+    public float Density { get; set; }
+    public float Mass { get; set; }
+    public float Skin_Width { get; set; }
+    public NiFixedString Shape_Name { get; set; }
+    public uint Non_Interacting_Compartment_Types { get; set; }
+    public uint Collision_Bits { get; set; }
+    public NxPlane Plane { get; set; }
+    public float Sphere_Radius { get; set; }
+    public Vector3 Box_Half_Extents { get; set; }
+    public NxCapsule Capsule { get; set; }
+    public Ref Mesh { get; set; }
+
+    public NiPhysXShapeDesc() { }
+
 }

@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiParticleGrowFade : NiParticleModifier {
+    public float Grow { get; set; }
+    public float Fade { get; set; }
+
+    public NiParticleGrowFade() { }
+
 }

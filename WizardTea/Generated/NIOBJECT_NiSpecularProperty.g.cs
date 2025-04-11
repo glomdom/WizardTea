@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiSpecularProperty : NiProperty {
+    public SpecularFlags Flags { get; set; }
+
+    public NiSpecularProperty() { }
+
 }

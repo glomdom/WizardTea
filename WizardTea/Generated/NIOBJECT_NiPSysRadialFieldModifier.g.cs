@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysRadialFieldModifier : NiPSysFieldModifier {
+    public float Radial_Type { get; set; }
+
+    public NiPSysRadialFieldModifier() { }
+
 }

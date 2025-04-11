@@ -11,4 +11,13 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiBSplineCompTransformEvaluator : NiBSplineTransformEvaluator {
+    public float Translation_Offset { get; set; }
+    public float Translation_Half_Range { get; set; }
+    public float Rotation_Offset { get; set; }
+    public float Rotation_Half_Range { get; set; }
+    public float Scale_Offset { get; set; }
+    public float Scale_Half_Range { get; set; }
+
+    public NiBSplineCompTransformEvaluator() { }
+
 }

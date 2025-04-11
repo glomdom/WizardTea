@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class BSWindModifier : NiPSysModifier {
+    public float Strength { get; set; }
+
+    public BSWindModifier() { }
+
 }

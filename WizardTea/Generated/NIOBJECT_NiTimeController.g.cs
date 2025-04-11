@@ -11,4 +11,15 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiTimeController : NiObject {
+    public Ref Next_Controller { get; set; }
+    public TimeControllerFlags Flags { get; set; }
+    public float Frequency { get; set; }
+    public float Phase { get; set; }
+    public float Start_Time { get; set; }
+    public float Stop_Time { get; set; }
+    public Ptr Target { get; set; }
+    public uint Unknown_Integer { get; set; }
+
+    public NiTimeController() : base() { }
+
 }

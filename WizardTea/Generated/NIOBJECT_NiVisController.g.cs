@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiVisController : NiBoolInterpController {
+    public Ref Data { get; set; }
+
+    public NiVisController() { }
+
 }

@@ -11,4 +11,24 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiCamera : NiAVObject {
+    public ushort Camera_Flags { get; set; }
+    public float Frustum_Left { get; set; }
+    public float Frustum_Right { get; set; }
+    public float Frustum_Top { get; set; }
+    public float Frustum_Bottom { get; set; }
+    public float Frustum_Near { get; set; }
+    public float Frustum_Far { get; set; }
+    public bool Use_Orthographic_Projection { get; set; }
+    public float Viewport_Left { get; set; }
+    public float Viewport_Right { get; set; }
+    public float Viewport_Top { get; set; }
+    public float Viewport_Bottom { get; set; }
+    public float LOD_Adjust { get; set; }
+    public Ref Scene { get; set; }
+    public uint Num_Screen_Polygons { get; set; }
+    public uint Num_Screen_Textures { get; set; }
+    public uint Unknown_Int_3 { get; set; }
+
+    public NiCamera() { }
+
 }

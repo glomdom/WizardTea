@@ -11,4 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiPSysModifier : NiObject {
+    public string Name { get; set; }
+    public NiPSysModifierOrder Order { get; set; }
+    public Ptr Target { get; set; }
+    public bool Active { get; set; }
+
+    public NiPSysModifier() : base() { }
+
 }

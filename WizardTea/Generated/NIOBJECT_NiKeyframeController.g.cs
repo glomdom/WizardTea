@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiKeyframeController : NiSingleInterpController {
+    public Ref Data { get; set; }
+
+    public NiKeyframeController() { }
+
 }

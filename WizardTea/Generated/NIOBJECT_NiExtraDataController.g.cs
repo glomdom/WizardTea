@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiExtraDataController : NiSingleInterpController {
+    public string Extra_Data_Name { get; set; }
+
+    public NiExtraDataController() : base() { }
+
 }

@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiBlendPoint3Interpolator : NiBlendInterpolator {
+    public Vector3 Value { get; set; }
+
+    public NiBlendPoint3Interpolator() { }
+
 }

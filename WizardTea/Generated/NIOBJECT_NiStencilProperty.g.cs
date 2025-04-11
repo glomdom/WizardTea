@@ -11,4 +11,19 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiStencilProperty : NiProperty {
+    public ushort Flags { get; set; }
+    public byte Stencil_Enabled { get; set; }
+    public StencilTestFunc Stencil_Function { get; set; }
+    public uint Stencil_Ref { get; set; }
+    public uint Stencil_Mask { get; set; }
+    public StencilAction Fail_Action { get; set; }
+    public StencilAction Z_Fail_Action { get; set; }
+    public StencilAction Pass_Action { get; set; }
+    public StencilDrawMode Draw_Mode { get; set; }
+    public StencilFlags Flags { get; set; }
+    public uint Stencil_Ref { get; set; }
+    public uint Stencil_Mask { get; set; }
+
+    public NiStencilProperty() { }
+
 }

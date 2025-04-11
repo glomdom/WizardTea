@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiPhysXSrc : NiObject {
+    public bool Active { get; set; }
+    public bool Interpolate { get; set; }
+
+    public NiPhysXSrc() : base() { }
+
 }

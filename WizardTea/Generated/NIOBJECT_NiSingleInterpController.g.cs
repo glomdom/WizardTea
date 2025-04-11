@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiSingleInterpController : NiInterpController {
+    public Ref Interpolator { get; set; }
+
+    public NiSingleInterpController() : base() { }
+
 }

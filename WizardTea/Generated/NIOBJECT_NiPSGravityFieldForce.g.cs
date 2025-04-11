@@ -11,4 +11,10 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSGravityFieldForce : NiPSFieldForce {
+    public ushort DEM_Unknown_Short { get; set; }
+    public Vector3 Direction { get; set; }
+    public byte DEM_Unknown_Byte { get; set; }
+
+    public NiPSGravityFieldForce() { }
+
 }

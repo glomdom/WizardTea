@@ -11,4 +11,45 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiTexturingProperty : NiProperty {
+    public ushort Flags { get; set; }
+    public TexturingFlags Flags { get; set; }
+    public ApplyMode Apply_Mode { get; set; }
+    public uint Texture_Count { get; set; }
+    public bool Has_Base_Texture { get; set; }
+    public TexDesc Base_Texture { get; set; }
+    public bool Has_Dark_Texture { get; set; }
+    public TexDesc Dark_Texture { get; set; }
+    public bool Has_Detail_Texture { get; set; }
+    public TexDesc Detail_Texture { get; set; }
+    public bool Has_Gloss_Texture { get; set; }
+    public TexDesc Gloss_Texture { get; set; }
+    public bool Has_Glow_Texture { get; set; }
+    public TexDesc Glow_Texture { get; set; }
+    public bool Has_Bump_Map_Texture { get; set; }
+    public TexDesc Bump_Map_Texture { get; set; }
+    public float Bump_Map_Luma_Scale { get; set; }
+    public float Bump_Map_Luma_Offset { get; set; }
+    public Matrix22 Bump_Map_Matrix { get; set; }
+    public bool Has_Normal_Texture { get; set; }
+    public TexDesc Normal_Texture { get; set; }
+    public bool Has_Parallax_Texture { get; set; }
+    public TexDesc Parallax_Texture { get; set; }
+    public float Parallax_Offset { get; set; }
+    public bool Has_Decal_0_Texture { get; set; }
+    public bool Has_Decal_0_Texture { get; set; }
+    public TexDesc Decal_0_Texture { get; set; }
+    public bool Has_Decal_1_Texture { get; set; }
+    public bool Has_Decal_1_Texture { get; set; }
+    public TexDesc Decal_1_Texture { get; set; }
+    public bool Has_Decal_2_Texture { get; set; }
+    public bool Has_Decal_2_Texture { get; set; }
+    public TexDesc Decal_2_Texture { get; set; }
+    public bool Has_Decal_3_Texture { get; set; }
+    public bool Has_Decal_3_Texture { get; set; }
+    public TexDesc Decal_3_Texture { get; set; }
+    public uint Num_Shader_Textures { get; set; }
+    public ShaderTexDesc Shader_Textures { get; set; }
+
+    public NiTexturingProperty() { }
+
 }

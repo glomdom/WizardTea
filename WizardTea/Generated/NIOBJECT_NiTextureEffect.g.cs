@@ -11,4 +11,21 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiTextureEffect : NiDynamicEffect {
+    public Matrix33 Model_Projection_Matrix { get; set; }
+    public Vector3 Model_Projection_Translation { get; set; }
+    public TexFilterMode Texture_Filtering { get; set; }
+    public ushort Max_Anisotropy { get; set; }
+    public TexClampMode Texture_Clamping { get; set; }
+    public TextureType Texture_Type { get; set; }
+    public CoordGenType Coordinate_Generation_Type { get; set; }
+    public Ref Image { get; set; }
+    public Ref Source_Texture { get; set; }
+    public byte Enable_Plane { get; set; }
+    public NiPlane Plane { get; set; }
+    public short PS2_L { get; set; }
+    public short PS2_K { get; set; }
+    public ushort Unknown_Short { get; set; }
+
+    public NiTextureEffect() { }
+
 }

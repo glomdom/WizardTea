@@ -11,4 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiScreenLODData : NiLODData {
+    public NiBound Bounding_Sphere { get; set; }
+    public NiBound World_Bounding_Sphere { get; set; }
+    public uint Num_Proportions { get; set; }
+    public float Proportion_Levels { get; set; }
+
+    public NiScreenLODData() { }
+
 }

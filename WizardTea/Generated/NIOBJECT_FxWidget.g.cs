@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class FxWidget : NiNode {
+    public byte Unknown_3 { get; set; }
+    public byte Unknown_292_Bytes { get; set; }
+
+    public FxWidget() { }
+
 }

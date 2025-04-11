@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiConstTransformEvaluator : NiEvaluator {
+    public NiQuatTransform Value { get; set; }
+
+    public NiConstTransformEvaluator() { }
+
 }

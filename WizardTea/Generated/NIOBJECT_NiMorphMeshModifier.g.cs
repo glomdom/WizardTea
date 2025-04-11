@@ -11,4 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiMorphMeshModifier : NiMeshModifier {
+    public byte Flags { get; set; }
+    public ushort Num_Targets { get; set; }
+    public uint Num_Elements { get; set; }
+    public ElementReference Elements { get; set; }
+
+    public NiMorphMeshModifier() { }
+
 }

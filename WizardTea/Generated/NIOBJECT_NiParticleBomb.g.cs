@@ -11,4 +11,15 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiParticleBomb : NiParticleModifier {
+    public float Decay { get; set; }
+    public float Duration { get; set; }
+    public float DeltaV { get; set; }
+    public float Start { get; set; }
+    public DecayType Decay_Type { get; set; }
+    public SymmetryType Symmetry_Type { get; set; }
+    public Vector3 Position { get; set; }
+    public Vector3 Direction { get; set; }
+
+    public NiParticleBomb() { }
+
 }

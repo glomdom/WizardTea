@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiStringPalette : NiObject {
+    public StringPalette Palette { get; set; }
+
+    public NiStringPalette() { }
+
 }

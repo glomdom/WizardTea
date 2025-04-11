@@ -11,4 +11,16 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysSpawnModifier : NiPSysModifier {
+    public ushort Num_Spawn_Generations { get; set; }
+    public float Percentage_Spawned { get; set; }
+    public ushort Min_Num_to_Spawn { get; set; }
+    public ushort Max_Num_to_Spawn { get; set; }
+    public float Spawn_Speed_Variation { get; set; }
+    public float Spawn_Dir_Variation { get; set; }
+    public float Life_Span { get; set; }
+    public float Life_Span_Variation { get; set; }
+    public float WorldShift_Spawn_Speed_Addition { get; set; }
+
+    public NiPSysSpawnModifier() { }
+
 }

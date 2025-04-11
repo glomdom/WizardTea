@@ -11,4 +11,16 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiRoom : NiNode {
+    public uint Num_Walls { get; set; }
+    public Ref Walls { get; set; }
+    public NiPlane Wall_Planes { get; set; }
+    public uint Num_In_Portals { get; set; }
+    public Ptr In_Portals { get; set; }
+    public uint Num_Out_Portals { get; set; }
+    public Ptr Out_Portals { get; set; }
+    public uint Num_Fixtures { get; set; }
+    public Ptr Fixtures { get; set; }
+
+    public NiRoom() { }
+
 }

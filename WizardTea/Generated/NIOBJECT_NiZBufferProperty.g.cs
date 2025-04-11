@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiZBufferProperty : NiProperty {
+    public ZBufferFlags Flags { get; set; }
+    public TestFunction Function { get; set; }
+
+    public NiZBufferProperty() { }
+
 }

@@ -11,4 +11,10 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysEmitterCtlrData : NiObject {
+    public KeyGroup Birth_Rate_Keys { get; set; }
+    public uint Num_Active_Keys { get; set; }
+    public Key Active_Keys { get; set; }
+
+    public NiPSysEmitterCtlrData() { }
+
 }

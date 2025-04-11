@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiAlphaController : NiFloatInterpController {
+    public Ref Data { get; set; }
+
+    public NiAlphaController() { }
+
 }

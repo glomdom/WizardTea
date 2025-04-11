@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiIntegersExtraData : NiExtraData {
+    public uint Num_Integers { get; set; }
+    public uint Data { get; set; }
+
+    public NiIntegersExtraData() { }
+
 }

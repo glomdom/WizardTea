@@ -11,4 +11,16 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysRotationModifier : NiPSysModifier {
+    public float Rotation_Speed { get; set; }
+    public float Rotation_Speed_Variation { get; set; }
+    public Vector4 Unknown_Vector { get; set; }
+    public byte Unknown_Byte { get; set; }
+    public float Rotation_Angle { get; set; }
+    public float Rotation_Angle_Variation { get; set; }
+    public bool Random_Rot_Speed_Sign { get; set; }
+    public bool Random_Axis { get; set; }
+    public Vector3 Axis { get; set; }
+
+    public NiPSysRotationModifier() { }
+
 }

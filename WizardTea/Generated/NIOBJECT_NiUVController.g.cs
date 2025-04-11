@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiUVController : NiTimeController {
+    public ushort Texture_Set { get; set; }
+    public Ref Data { get; set; }
+
+    public NiUVController() { }
+
 }

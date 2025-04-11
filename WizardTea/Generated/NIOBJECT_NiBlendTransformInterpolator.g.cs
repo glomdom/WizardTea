@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiBlendTransformInterpolator : NiBlendInterpolator {
+    public NiQuatTransform Value { get; set; }
+
+    public NiBlendTransformInterpolator() { }
+
 }

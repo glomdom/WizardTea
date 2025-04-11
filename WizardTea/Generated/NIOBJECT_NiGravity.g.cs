@@ -11,4 +11,14 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiGravity : NiParticleModifier {
+    public float Decay { get; set; }
+    public float Force { get; set; }
+    public FieldType Type { get; set; }
+    public Vector3 Position { get; set; }
+    public Vector3 Direction { get; set; }
+    public float Unknown_01 { get; set; }
+    public float Unknown_02 { get; set; }
+
+    public NiGravity() { }
+
 }

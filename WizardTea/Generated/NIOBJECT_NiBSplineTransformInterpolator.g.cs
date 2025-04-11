@@ -11,4 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiBSplineTransformInterpolator : NiBSplineInterpolator {
+    public NiQuatTransform Transform { get; set; }
+    public uint Translation_Handle { get; set; }
+    public uint Rotation_Handle { get; set; }
+    public uint Scale_Handle { get; set; }
+
+    public NiBSplineTransformInterpolator() { }
+
 }

@@ -11,4 +11,15 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiMaterialProperty : NiProperty {
+    public ushort Flags { get; set; }
+    public Color3 Ambient_Color { get; set; }
+    public Color3 Diffuse_Color { get; set; }
+    public Color3 Specular_Color { get; set; }
+    public Color3 Emissive_Color { get; set; }
+    public float Glossiness { get; set; }
+    public float Alpha { get; set; }
+    public float Emissive_Mult { get; set; }
+
+    public NiMaterialProperty() { }
+
 }

@@ -11,4 +11,15 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysGravityModifier : NiPSysModifier {
+    public Ptr Gravity_Object { get; set; }
+    public Vector3 Gravity_Axis { get; set; }
+    public float Decay { get; set; }
+    public float Strength { get; set; }
+    public ForceType Force_Type { get; set; }
+    public float Turbulence { get; set; }
+    public float Turbulence_Scale { get; set; }
+    public bool World_Aligned { get; set; }
+
+    public NiPSysGravityModifier() { }
+
 }

@@ -11,4 +11,17 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiBinaryVoxelData : NiObject {
+    public ushort Unknown_Short_1 { get; set; }
+    public ushort Unknown_Short_2 { get; set; }
+    public ushort Unknown_Short_3 { get; set; }
+    public float Unknown_7_Floats { get; set; }
+    public byte Unknown_Bytes_1 { get; set; }
+    public uint Num_Unknown_Vectors { get; set; }
+    public Vector4 Unknown_Vectors { get; set; }
+    public uint Num_Unknown_Bytes_2 { get; set; }
+    public byte Unknown_Bytes_2 { get; set; }
+    public uint Unknown_5_Ints { get; set; }
+
+    public NiBinaryVoxelData() { }
+
 }

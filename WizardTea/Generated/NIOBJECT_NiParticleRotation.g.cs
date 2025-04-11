@@ -11,4 +11,10 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiParticleRotation : NiParticleModifier {
+    public byte Random_Initial_Axis { get; set; }
+    public Vector3 Initial_Axis { get; set; }
+    public float Rotation_Speed { get; set; }
+
+    public NiParticleRotation() { }
+
 }

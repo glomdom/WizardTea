@@ -11,4 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiTriShapeSkinController : NiTimeController {
+    public uint Num_Bones { get; set; }
+    public uint Vertex_Counts { get; set; }
+    public Ptr Bones { get; set; }
+    public OldSkinData Bone_Data { get; set; }
+
+    public NiTriShapeSkinController() { }
+
 }

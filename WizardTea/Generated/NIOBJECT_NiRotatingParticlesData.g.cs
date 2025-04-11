@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiRotatingParticlesData : NiParticlesData {
+    public bool Has_Rotations_2 { get; set; }
+    public Quaternion Rotations_2 { get; set; }
+
+    public NiRotatingParticlesData() { }
+
 }

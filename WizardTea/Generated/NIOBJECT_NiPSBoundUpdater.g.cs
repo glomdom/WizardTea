@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSBoundUpdater : NiObject {
+    public ushort Update_Skip { get; set; }
+
+    public NiPSBoundUpdater() { }
+
 }

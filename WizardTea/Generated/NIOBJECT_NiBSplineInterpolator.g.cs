@@ -11,4 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiBSplineInterpolator : NiInterpolator {
+    public float Start_Time { get; set; }
+    public float Stop_Time { get; set; }
+    public Ref Spline_Data { get; set; }
+    public Ref Basis_Data { get; set; }
+
+    public NiBSplineInterpolator() : base() { }
+
 }

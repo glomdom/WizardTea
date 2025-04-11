@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiRimLightProperty : NiProperty {
+    public byte Unknown_Byte { get; set; }
+    public float Unknown_Floats { get; set; }
+
+    public NiRimLightProperty() { }
+
 }

@@ -11,4 +11,17 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPhysXProp : NiObjectNET {
+    public float PhysX_to_World_Scale { get; set; }
+    public uint Num_Sources { get; set; }
+    public Ref Sources { get; set; }
+    public uint Num_Dests { get; set; }
+    public Ref Dests { get; set; }
+    public uint Num_Modified_Meshes { get; set; }
+    public Ref Modified_Meshes { get; set; }
+    public NiFixedString Temp_Name { get; set; }
+    public bool Keep_Meshes { get; set; }
+    public Ref Snapshot { get; set; }
+
+    public NiPhysXProp() { }
+
 }

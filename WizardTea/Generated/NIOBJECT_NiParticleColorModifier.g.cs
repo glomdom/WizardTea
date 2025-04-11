@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiParticleColorModifier : NiParticleModifier {
+    public Ref Color_Data { get; set; }
+
+    public NiParticleColorModifier() { }
+
 }

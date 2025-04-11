@@ -11,4 +11,22 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiControllerSequence : NiSequence {
+    public float Weight { get; set; }
+    public Ref Text_Keys { get; set; }
+    public CycleType Cycle_Type { get; set; }
+    public float Frequency { get; set; }
+    public float Phase { get; set; }
+    public float Start_Time { get; set; }
+    public float Stop_Time { get; set; }
+    public bool Play_Backwards { get; set; }
+    public Ptr Manager { get; set; }
+    public string Accum_Root_Name { get; set; }
+    public AccumFlags Accum_Flags { get; set; }
+    public Ref String_Palette { get; set; }
+    public Ref Anim_Notes { get; set; }
+    public ushort Num_Anim_Note_Arrays { get; set; }
+    public Ref Anim_Note_Arrays { get; set; }
+
+    public NiControllerSequence() { }
+
 }

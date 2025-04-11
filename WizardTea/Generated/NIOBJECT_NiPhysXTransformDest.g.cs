@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPhysXTransformDest : NiPhysXRigidBodyDest {
+    public Ptr Target { get; set; }
+
+    public NiPhysXTransformDest() { }
+
 }

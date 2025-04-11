@@ -11,4 +11,24 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPhysXBodyDesc : NiObject {
+    public Matrix34 Local_Pose { get; set; }
+    public Vector3 Space_Inertia { get; set; }
+    public float Mass { get; set; }
+    public uint Num_Vels { get; set; }
+    public PhysXBodyStoredVels Vels { get; set; }
+    public float Wake_Up_Counter { get; set; }
+    public float Linear_Damping { get; set; }
+    public float Angular_Damping { get; set; }
+    public float Max_Angular_Velocity { get; set; }
+    public float CCD_Motion_Threshold { get; set; }
+    public NxBodyFlag Flags { get; set; }
+    public float Sleep_Linear_Velocity { get; set; }
+    public float Sleep_Angular_Velocity { get; set; }
+    public uint Solver_Iteration_Count { get; set; }
+    public float Sleep_Energy_Threshold { get; set; }
+    public float Sleep_Damping { get; set; }
+    public float Contact_Report_Threshold { get; set; }
+
+    public NiPhysXBodyDesc() { }
+
 }

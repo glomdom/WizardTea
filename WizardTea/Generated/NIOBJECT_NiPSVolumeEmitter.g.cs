@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiPSVolumeEmitter : NiPSEmitter {
+    public byte DEM_Unknown_Byte { get; set; }
+    public Ptr Emitter_Object { get; set; }
+
+    public NiPSVolumeEmitter() : base() { }
+
 }

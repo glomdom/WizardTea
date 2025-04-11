@@ -11,4 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public class BSPSysInheritVelocityModifier : NiPSysModifier {
+    public Ptr Inherit_Object { get; set; }
+    public float Chance_To_Inherit { get; set; }
+    public float Velocity_Multiplier { get; set; }
+    public float Velocity_Variation { get; set; }
+
+    public BSPSysInheritVelocityModifier() { }
+
 }

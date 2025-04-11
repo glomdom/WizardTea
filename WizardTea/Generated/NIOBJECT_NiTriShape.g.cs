@@ -11,4 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiTriShape : NiTriBasedGeom {
+
+    public NiTriShape() { }
+
 }

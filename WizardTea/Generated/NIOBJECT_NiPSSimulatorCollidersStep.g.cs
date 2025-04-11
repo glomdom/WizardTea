@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSSimulatorCollidersStep : NiPSSimulatorStep {
+    public uint Num_Colliders { get; set; }
+    public Ref Colliders { get; set; }
+
+    public NiPSSimulatorCollidersStep() { }
+
 }

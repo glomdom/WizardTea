@@ -11,4 +11,15 @@ using System.Numerics;
 namespace WizardTea;
 
 public class BSPSysSimpleColorModifier : NiPSysModifier {
+    public float Fade_In_Percent { get; set; }
+    public float Fade_Out_Percent { get; set; }
+    public float Color_1_End_Percent { get; set; }
+    public float Color_1_Start_Percent { get; set; }
+    public float Color_2_End_Percent { get; set; }
+    public float Color_2_Start_Percent { get; set; }
+    public Color4 Colors { get; set; }
+    public ushort Unknown_Shorts { get; set; }
+
+    public BSPSysSimpleColorModifier() { }
+
 }

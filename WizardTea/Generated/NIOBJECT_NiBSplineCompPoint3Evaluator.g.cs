@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiBSplineCompPoint3Evaluator : NiBSplinePoint3Evaluator {
+    public float Offset { get; set; }
+    public float Half_Range { get; set; }
+
+    public NiBSplineCompPoint3Evaluator() { }
+
 }

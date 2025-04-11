@@ -11,4 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysEmitterInitialRadiusCtlr : NiPSysModifierFloatCtlr {
+
+    public NiPSysEmitterInitialRadiusCtlr() { }
+
 }

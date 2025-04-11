@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiRenderObject : NiAVObject {
+    public MaterialData Material_Data { get; set; }
+
+    public NiRenderObject() : base() { }
+
 }

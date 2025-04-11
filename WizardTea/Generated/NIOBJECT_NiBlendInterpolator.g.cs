@@ -11,4 +11,35 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiBlendInterpolator : NiInterpolator {
+    public InterpBlendFlags Flags { get; set; }
+    public ushort Array_Size { get; set; }
+    public ushort Array_Grow_By { get; set; }
+    public byte Array_Size { get; set; }
+    public float Weight_Threshold { get; set; }
+    public byte Interp_Count { get; set; }
+    public byte Single_Index { get; set; }
+    public sbyte High_Priority { get; set; }
+    public sbyte Next_High_Priority { get; set; }
+    public float Single_Time { get; set; }
+    public float High_Weights_Sum { get; set; }
+    public float Next_High_Weights_Sum { get; set; }
+    public float High_Ease_Spinner { get; set; }
+    public InterpBlendItem Interp_Array_Items { get; set; }
+    public InterpBlendItem Interp_Array_Items { get; set; }
+    public bool Manager_Controlled { get; set; }
+    public float Weight_Threshold { get; set; }
+    public bool Only_Use_Highest_Weight { get; set; }
+    public ushort Interp_Count { get; set; }
+    public ushort Single_Index { get; set; }
+    public byte Interp_Count { get; set; }
+    public byte Single_Index { get; set; }
+    public Ref Single_Interpolator { get; set; }
+    public float Single_Time { get; set; }
+    public int High_Priority { get; set; }
+    public int Next_High_Priority { get; set; }
+    public sbyte High_Priority { get; set; }
+    public sbyte Next_High_Priority { get; set; }
+
+    public NiBlendInterpolator() : base() { }
+
 }

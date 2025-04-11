@@ -11,4 +11,10 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiRangeLODData : NiLODData {
+    public Vector3 LOD_Center { get; set; }
+    public uint Num_LOD_Levels { get; set; }
+    public LODRange LOD_Levels { get; set; }
+
+    public NiRangeLODData() { }
+
 }

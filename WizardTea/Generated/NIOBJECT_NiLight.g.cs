@@ -11,4 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiLight : NiDynamicEffect {
+    public float Dimmer { get; set; }
+    public Color3 Ambient_Color { get; set; }
+    public Color3 Diffuse_Color { get; set; }
+    public Color3 Specular_Color { get; set; }
+
+    public NiLight() : base() { }
+
 }

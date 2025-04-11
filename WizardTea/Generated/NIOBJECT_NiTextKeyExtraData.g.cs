@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiTextKeyExtraData : NiExtraData {
+    public uint Num_Text_Keys { get; set; }
+    public Key Text_Keys { get; set; }
+
+    public NiTextKeyExtraData() { }
+
 }

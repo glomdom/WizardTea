@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiConstColorEvaluator : NiEvaluator {
+    public Color4 Value { get; set; }
+
+    public NiConstColorEvaluator() { }
+
 }

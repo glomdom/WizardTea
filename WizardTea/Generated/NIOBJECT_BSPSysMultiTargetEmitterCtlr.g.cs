@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class BSPSysMultiTargetEmitterCtlr : NiPSysEmitterCtlr {
+    public ushort Max_Emitters { get; set; }
+    public Ptr Master_Particle_System { get; set; }
+
+    public BSPSysMultiTargetEmitterCtlr() { }
+
 }

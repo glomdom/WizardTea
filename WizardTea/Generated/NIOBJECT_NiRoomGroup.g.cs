@@ -11,4 +11,10 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiRoomGroup : NiNode {
+    public Ptr Shell { get; set; }
+    public uint Num_Rooms { get; set; }
+    public Ptr Rooms { get; set; }
+
+    public NiRoomGroup() { }
+
 }

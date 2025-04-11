@@ -11,4 +11,16 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPhysXMeshDesc : NiObject {
+    public bool Is_Convex { get; set; }
+    public NiFixedString Mesh_Name { get; set; }
+    public ByteArray Mesh_Data { get; set; }
+    public ushort Back_Compat_Vertex_Map_Size { get; set; }
+    public ushort Back_Compat_Vertex_Map { get; set; }
+    public uint Mesh_Flags { get; set; }
+    public uint Mesh_Paging_Mode { get; set; }
+    public bool Is_Hardware { get; set; }
+    public byte Flags { get; set; }
+
+    public NiPhysXMeshDesc() { }
+
 }

@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiBillboardNode : NiNode {
+    public BillboardMode Billboard_Mode { get; set; }
+
+    public NiBillboardNode() { }
+
 }

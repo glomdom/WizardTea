@@ -11,4 +11,46 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPhysXClothDesc : NiObject {
+    public NiFixedString Name { get; set; }
+    public Ref Mesh { get; set; }
+    public Matrix34 Pose { get; set; }
+    public float Thickness { get; set; }
+    public float Self_Collision_Thickness { get; set; }
+    public float Density { get; set; }
+    public float Bending_Stiffness { get; set; }
+    public float Stretching_Stiffness { get; set; }
+    public float Damping_Coefficient { get; set; }
+    public float Hard_Stretch_Limitation_Factor { get; set; }
+    public float Friction { get; set; }
+    public float Pressure { get; set; }
+    public float Tear_Factor { get; set; }
+    public float Collision_Response_Coeff { get; set; }
+    public float Attach_Response_Coeff { get; set; }
+    public float Attach_Tear_Factor { get; set; }
+    public float To_Fluid_Response_Coeff { get; set; }
+    public float From_Fluid_Response_Coeff { get; set; }
+    public float Min_Adhere_Velocity { get; set; }
+    public float Relative_Grid_Spacing { get; set; }
+    public uint Solver_Iterations { get; set; }
+    public uint Hier_Solver_Iterations { get; set; }
+    public Vector3 External_Acceleration { get; set; }
+    public Vector3 Wind_Acceleration { get; set; }
+    public float Wake_Up_Counter { get; set; }
+    public float Sleep_Linear_Velocity { get; set; }
+    public ushort Collision_Group { get; set; }
+    public uint Collision_Bits { get; set; }
+    public ushort Force_Field_Material { get; set; }
+    public NxClothFlag Flags { get; set; }
+    public ushort Vertex_Map_Size { get; set; }
+    public ushort Vertex_Map { get; set; }
+    public uint Num_States { get; set; }
+    public PhysXClothState States { get; set; }
+    public uint Num_Attachments { get; set; }
+    public PhysXClothAttachment Attachments { get; set; }
+    public Ref Parent_Actor { get; set; }
+    public Ref Dest { get; set; }
+    public Ref Target_Mesh { get; set; }
+
+    public NiPhysXClothDesc() { }
+
 }

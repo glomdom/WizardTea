@@ -11,4 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public class BSStripPSysData : NiPSysData {
+    public ushort Max_Point_Count { get; set; }
+    public float Start_Cap_Size { get; set; }
+    public float End_Cap_Size { get; set; }
+    public bool Do_Z_Prepass { get; set; }
+
+    public BSStripPSysData() { }
+
 }

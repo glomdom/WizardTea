@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiBoolData : NiObject {
+    public KeyGroup Data { get; set; }
+
+    public NiBoolData() { }
+
 }

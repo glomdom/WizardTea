@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiConstQuaternionEvaluator : NiEvaluator {
+    public Quaternion Value { get; set; }
+
+    public NiConstQuaternionEvaluator() { }
+
 }

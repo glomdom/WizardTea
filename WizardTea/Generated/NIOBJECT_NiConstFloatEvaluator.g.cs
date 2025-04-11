@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiConstFloatEvaluator : NiEvaluator {
+    public float Value { get; set; }
+
+    public NiConstFloatEvaluator() { }
+
 }

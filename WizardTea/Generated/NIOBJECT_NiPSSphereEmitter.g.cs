@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSSphereEmitter : NiPSVolumeEmitter {
+    public float Emitter_Radius { get; set; }
+
+    public NiPSSphereEmitter() { }
+
 }

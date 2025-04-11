@@ -11,4 +11,14 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSGravityForce : NiPSForce {
+    public Vector3 Gravity_Axis { get; set; }
+    public float Decay { get; set; }
+    public float Strength { get; set; }
+    public ForceType Force_Type { get; set; }
+    public float Turbulence { get; set; }
+    public float Turbulence_Scale { get; set; }
+    public Ptr Gravity_Object { get; set; }
+
+    public NiPSGravityForce() { }
+
 }

@@ -11,4 +11,20 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiAVObject : NiObjectNET {
+    public uint Flags { get; set; }
+    public ushort Flags { get; set; }
+    public Vector3 Translation { get; set; }
+    public Matrix33 Rotation { get; set; }
+    public float Scale { get; set; }
+    public Vector3 Velocity { get; set; }
+    public uint Num_Properties { get; set; }
+    public Ref Properties { get; set; }
+    public uint Unknown_1 { get; set; }
+    public byte Unknown_2 { get; set; }
+    public bool Has_Bounding_Volume { get; set; }
+    public BoundingVolume Bounding_Volume { get; set; }
+    public Ref Collision_Object { get; set; }
+
+    public NiAVObject() : base() { }
+
 }

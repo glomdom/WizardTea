@@ -11,4 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiNode : NiAVObject {
+    public uint Num_Children { get; set; }
+    public Ref Children { get; set; }
+    public uint Num_Effects { get; set; }
+    public Ref Effects { get; set; }
+
+    public NiNode() { }
+
 }

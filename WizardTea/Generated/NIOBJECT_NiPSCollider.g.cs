@@ -11,4 +11,13 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSCollider : NiObject {
+    public Ref Spawner { get; set; }
+    public ColliderType Type { get; set; }
+    public bool Active { get; set; }
+    public float Bounce { get; set; }
+    public bool Spawn_on_Collide { get; set; }
+    public bool Die_on_Collide { get; set; }
+
+    public NiPSCollider() { }
+
 }

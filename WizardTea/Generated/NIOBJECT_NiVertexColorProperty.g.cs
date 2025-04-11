@@ -11,4 +11,10 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiVertexColorProperty : NiProperty {
+    public VertexColorFlags Flags { get; set; }
+    public SourceVertexMode Vertex_Mode { get; set; }
+    public LightingMode Lighting_Mode { get; set; }
+
+    public NiVertexColorProperty() { }
+
 }

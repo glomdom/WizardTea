@@ -11,4 +11,14 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysAirFieldModifier : NiPSysFieldModifier {
+    public Vector3 Direction { get; set; }
+    public float Air_Friction { get; set; }
+    public float Inherit_Velocity { get; set; }
+    public bool Inherit_Rotation { get; set; }
+    public bool Component_Only { get; set; }
+    public bool Enable_Spread { get; set; }
+    public float Spread { get; set; }
+
+    public NiPSysAirFieldModifier() { }
+
 }

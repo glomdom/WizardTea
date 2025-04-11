@@ -11,4 +11,25 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSAlignedQuadGenerator : NiMeshModifier {
+    public float Scale_Amount_U { get; set; }
+    public float Scale_Limit_U { get; set; }
+    public float Scale_Rest_U { get; set; }
+    public float Scale_Amount_V { get; set; }
+    public float Scale_Limit_V { get; set; }
+    public float Scale_Rest_V { get; set; }
+    public float Center_U { get; set; }
+    public float Center_V { get; set; }
+    public bool UV_Scrolling { get; set; }
+    public ushort Num_Frames_Across { get; set; }
+    public ushort Num_Frames_Down { get; set; }
+    public bool Ping_Pong { get; set; }
+    public ushort Initial_Frame { get; set; }
+    public float Initial_Frame_Variation { get; set; }
+    public ushort Num_Frames { get; set; }
+    public float Num_Frames_Variation { get; set; }
+    public float Initial_Time { get; set; }
+    public float Final_Time { get; set; }
+
+    public NiPSAlignedQuadGenerator() { }
+
 }

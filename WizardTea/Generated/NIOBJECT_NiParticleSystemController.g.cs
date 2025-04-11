@@ -11,4 +11,50 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiParticleSystemController : NiTimeController {
+    public uint Old_Speed { get; set; }
+    public float Speed { get; set; }
+    public float Speed_Variation { get; set; }
+    public float Declination { get; set; }
+    public float Declination_Variation { get; set; }
+    public float Planar_Angle { get; set; }
+    public float Planar_Angle_Variation { get; set; }
+    public Vector3 Initial_Normal { get; set; }
+    public Color4 Initial_Color { get; set; }
+    public float Initial_Size { get; set; }
+    public float Emit_Start_Time { get; set; }
+    public float Emit_Stop_Time { get; set; }
+    public byte Reset_Particle_System { get; set; }
+    public uint Old_Emit_Rate { get; set; }
+    public float Birth_Rate { get; set; }
+    public float Lifetime { get; set; }
+    public float Lifetime_Variation { get; set; }
+    public byte Use_Birth_Rate { get; set; }
+    public byte Spawn_On_Death { get; set; }
+    public Vector3 Emitter_Dimensions { get; set; }
+    public Ptr Emitter { get; set; }
+    public ushort Num_Spawn_Generations { get; set; }
+    public float Percentage_Spawned { get; set; }
+    public ushort Spawn_Multiplier { get; set; }
+    public float Spawn_Speed_Chaos { get; set; }
+    public float Spawn_Dir_Chaos { get; set; }
+    public Vector3 Particle_Velocity { get; set; }
+    public Vector3 Particle_Unknown_Vector { get; set; }
+    public float Particle_Lifetime { get; set; }
+    public Ref Particle_Link { get; set; }
+    public uint Particle_Timestamp { get; set; }
+    public ushort Particle_Unknown_Short { get; set; }
+    public ushort Particle_Vertex_Id { get; set; }
+    public ushort Num_Particles { get; set; }
+    public ushort Num_Valid { get; set; }
+    public NiParticleInfo Particles { get; set; }
+    public Ref Emitter_Modifier { get; set; }
+    public Ref Particle_Modifier { get; set; }
+    public Ref Particle_Collider { get; set; }
+    public byte Static_Target_Bound { get; set; }
+    public Ref Color_Data { get; set; }
+    public float Unknown_Float_1 { get; set; }
+    public float Unknown_Floats_2 { get; set; }
+
+    public NiParticleSystemController() { }
+
 }

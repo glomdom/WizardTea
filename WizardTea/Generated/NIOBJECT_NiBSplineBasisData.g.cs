@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiBSplineBasisData : NiObject {
+    public uint Num_Control_Points { get; set; }
+
+    public NiBSplineBasisData() { }
+
 }

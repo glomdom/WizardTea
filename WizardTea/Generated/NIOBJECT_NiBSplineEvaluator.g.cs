@@ -11,4 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiBSplineEvaluator : NiEvaluator {
+    public float Start_Time { get; set; }
+    public float End_Time { get; set; }
+    public Ref Data { get; set; }
+    public Ref Basis_Data { get; set; }
+
+    public NiBSplineEvaluator() { }
+
 }

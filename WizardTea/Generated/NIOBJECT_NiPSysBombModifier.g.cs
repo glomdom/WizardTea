@@ -11,4 +11,13 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysBombModifier : NiPSysModifier {
+    public Ptr Bomb_Object { get; set; }
+    public Vector3 Bomb_Axis { get; set; }
+    public float Decay { get; set; }
+    public float Delta_V { get; set; }
+    public DecayType Decay_Type { get; set; }
+    public SymmetryType Symmetry_Type { get; set; }
+
+    public NiPSysBombModifier() { }
+
 }

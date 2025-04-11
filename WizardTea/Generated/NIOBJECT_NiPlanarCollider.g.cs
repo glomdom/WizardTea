@@ -11,4 +11,13 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPlanarCollider : NiParticleCollider {
+    public float Height { get; set; }
+    public float Width { get; set; }
+    public Vector3 Position { get; set; }
+    public Vector3 X_Vector { get; set; }
+    public Vector3 Y_Vector { get; set; }
+    public NiPlane Plane { get; set; }
+
+    public NiPlanarCollider() { }
+
 }

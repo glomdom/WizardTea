@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiShadeProperty : NiProperty {
+    public ShadeFlags Flags { get; set; }
+
+    public NiShadeProperty() { }
+
 }

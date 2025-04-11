@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiVisData : NiObject {
+    public uint Num_Keys { get; set; }
+    public Key Keys { get; set; }
+
+    public NiVisData() { }
+
 }

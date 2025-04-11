@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiColorEvaluator : NiKeyBasedEvaluator {
+    public Ref Data { get; set; }
+
+    public NiColorEvaluator() { }
+
 }

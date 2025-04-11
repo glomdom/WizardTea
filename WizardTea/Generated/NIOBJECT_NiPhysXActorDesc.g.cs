@@ -11,4 +11,23 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPhysXActorDesc : NiObject {
+    public NiFixedString Actor_Name { get; set; }
+    public uint Num_Poses { get; set; }
+    public Matrix34 Poses { get; set; }
+    public Ref Body_Desc { get; set; }
+    public float Density { get; set; }
+    public uint Actor_Flags { get; set; }
+    public ushort Actor_Group { get; set; }
+    public ushort Dominance_Group { get; set; }
+    public uint Contact_Report_Flags { get; set; }
+    public ushort Force_Field_Material { get; set; }
+    public uint Dummy { get; set; }
+    public uint Num_Shape_Descs { get; set; }
+    public Ref Shape_Descriptions { get; set; }
+    public Ref Actor_Parent { get; set; }
+    public Ref Source { get; set; }
+    public Ref Dest { get; set; }
+
+    public NiPhysXActorDesc() { }
+
 }

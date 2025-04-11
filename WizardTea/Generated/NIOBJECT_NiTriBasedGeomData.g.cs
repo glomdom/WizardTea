@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiTriBasedGeomData : NiGeometryData {
+    public ushort Num_Triangles { get; set; }
+
+    public NiTriBasedGeomData() : base() { }
+
 }

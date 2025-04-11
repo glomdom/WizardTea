@@ -11,4 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiMeshModifier : NiObject {
+    public uint Num_Submit_Points { get; set; }
+    public SyncPoint Submit_Points { get; set; }
+    public uint Num_Complete_Points { get; set; }
+    public SyncPoint Complete_Points { get; set; }
+
+    public NiMeshModifier() : base() { }
+
 }

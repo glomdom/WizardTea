@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiSphericalCollider : NiParticleCollider {
+    public float Radius { get; set; }
+    public Vector3 Position { get; set; }
+
+    public NiSphericalCollider() { }
+
 }

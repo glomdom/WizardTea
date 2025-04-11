@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiBSplineFloatInterpolator : NiBSplineInterpolator {
+    public float Value { get; set; }
+    public uint Handle { get; set; }
+
+    public NiBSplineFloatInterpolator() : base() { }
+
 }

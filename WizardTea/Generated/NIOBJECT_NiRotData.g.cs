@@ -11,4 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiRotData : NiObject {
+    public uint Num_Rotation_Keys { get; set; }
+    public KeyType Rotation_Type { get; set; }
+    public QuatKey Quaternion_Keys { get; set; }
+    public KeyGroup XYZ_Rotations { get; set; }
+
+    public NiRotData() { }
+
 }

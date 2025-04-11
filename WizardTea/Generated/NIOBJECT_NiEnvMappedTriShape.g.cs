@@ -11,4 +11,13 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiEnvMappedTriShape : NiObjectNET {
+    public ushort Unknown_1 { get; set; }
+    public Matrix44 Unknown_Matrix { get; set; }
+    public uint Num_Children { get; set; }
+    public Ref Children { get; set; }
+    public Ref Child_2 { get; set; }
+    public Ref Child_3 { get; set; }
+
+    public NiEnvMappedTriShape() { }
+
 }

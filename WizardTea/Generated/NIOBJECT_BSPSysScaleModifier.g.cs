@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class BSPSysScaleModifier : NiPSysModifier {
+    public uint Num_Scales { get; set; }
+    public float Scales { get; set; }
+
+    public BSPSysScaleModifier() { }
+
 }

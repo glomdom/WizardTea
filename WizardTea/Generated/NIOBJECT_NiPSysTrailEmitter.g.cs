@@ -11,4 +11,14 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysTrailEmitter : NiPSysSphereEmitter {
+    public float Trail_Life_Span { get; set; }
+    public float Trail_Life_Span_Var { get; set; }
+    public int Num_Trails { get; set; }
+    public float Gravity_Force { get; set; }
+    public Vector3 Gravity_Dir { get; set; }
+    public float Turbulence { get; set; }
+    public float Repeat_Time { get; set; }
+
+    public NiPSysTrailEmitter() { }
+
 }

@@ -11,4 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiPoint3InterpController : NiSingleInterpController {
+
+    public NiPoint3InterpController() : base() { }
+
 }

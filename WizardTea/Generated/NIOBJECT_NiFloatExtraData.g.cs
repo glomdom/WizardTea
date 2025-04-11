@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiFloatExtraData : NiExtraData {
+    public float Float_Data { get; set; }
+
+    public NiFloatExtraData() { }
+
 }

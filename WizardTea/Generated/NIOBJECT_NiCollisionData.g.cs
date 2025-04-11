@@ -11,4 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiCollisionData : NiCollisionObject {
+    public PropagationMode Propagation_Mode { get; set; }
+    public CollisionMode Collision_Mode { get; set; }
+    public byte Use_ABV { get; set; }
+    public BoundingVolume Bounding_Volume { get; set; }
+
+    public NiCollisionData() { }
+
 }

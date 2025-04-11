@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiLinesData : NiGeometryData {
+    public bool Lines { get; set; }
+
+    public NiLinesData() { }
+
 }

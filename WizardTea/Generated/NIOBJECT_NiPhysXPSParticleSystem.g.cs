@@ -11,4 +11,16 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPhysXPSParticleSystem : NiPSParticleSystem {
+    public Ptr Prop { get; set; }
+    public Ptr Dest { get; set; }
+    public Ptr Scene { get; set; }
+    public byte PhysX_Flags { get; set; }
+    public uint Default_Actor_Pool_Size { get; set; }
+    public uint Generation_Pool_Size { get; set; }
+    public Vector3 Actor_Pool_Center { get; set; }
+    public Vector3 Actor_Pool_Dimensions { get; set; }
+    public Ptr Actor { get; set; }
+
+    public NiPhysXPSParticleSystem() { }
+
 }

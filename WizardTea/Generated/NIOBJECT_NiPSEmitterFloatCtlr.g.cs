@@ -11,4 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiPSEmitterFloatCtlr : NiPSEmitterCtlr {
+
+    public NiPSEmitterFloatCtlr() : base() { }
+
 }

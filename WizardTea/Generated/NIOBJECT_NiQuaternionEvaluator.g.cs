@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiQuaternionEvaluator : NiKeyBasedEvaluator {
+    public Ref Data { get; set; }
+
+    public NiQuaternionEvaluator() { }
+
 }

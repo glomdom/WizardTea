@@ -11,4 +11,14 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiSkinningLODController : NiTimeController {
+    public uint Current_LOD { get; set; }
+    public uint Num_Bones { get; set; }
+    public Ref Bones { get; set; }
+    public uint Num_Skins { get; set; }
+    public Ref Skins { get; set; }
+    public uint Num_LOD_Levels { get; set; }
+    public LODInfo LODs { get; set; }
+
+    public NiSkinningLODController() { }
+
 }

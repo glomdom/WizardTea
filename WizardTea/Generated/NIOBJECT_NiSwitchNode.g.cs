@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiSwitchNode : NiNode {
+    public NiSwitchFlags Switch_Node_Flags { get; set; }
+    public uint Index { get; set; }
+
+    public NiSwitchNode() { }
+
 }

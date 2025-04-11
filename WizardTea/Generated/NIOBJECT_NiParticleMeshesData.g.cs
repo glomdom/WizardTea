@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiParticleMeshesData : NiRotatingParticlesData {
+    public Ref Container_Node { get; set; }
+
+    public NiParticleMeshesData() { }
+
 }

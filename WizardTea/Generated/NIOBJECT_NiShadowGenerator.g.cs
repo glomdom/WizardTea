@@ -11,4 +11,19 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiShadowGenerator : NiObject {
+    public string Name { get; set; }
+    public NiShadowGeneratorFlags Flags { get; set; }
+    public uint Num_Shadow_Casters { get; set; }
+    public Ref Shadow_Casters { get; set; }
+    public uint Num_Shadow_Receivers { get; set; }
+    public Ref Shadow_Receivers { get; set; }
+    public Ptr Target { get; set; }
+    public float Depth_Bias { get; set; }
+    public ushort Size_Hint { get; set; }
+    public float Near_Clipping_Distance { get; set; }
+    public float Far_Clipping_Distance { get; set; }
+    public float Directional_Light_Frustum_Width { get; set; }
+
+    public NiShadowGenerator() { }
+
 }

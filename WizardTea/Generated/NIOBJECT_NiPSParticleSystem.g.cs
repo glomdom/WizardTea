@@ -11,4 +11,30 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSParticleSystem : NiMesh {
+    public Ref Simulator { get; set; }
+    public Ref Generator { get; set; }
+    public uint Num_Emitters { get; set; }
+    public Ref Emitters { get; set; }
+    public uint Num_Spawners { get; set; }
+    public Ref Spawners { get; set; }
+    public Ref Death_Spawner { get; set; }
+    public uint Max_Num_Particles { get; set; }
+    public bool Has_Colors { get; set; }
+    public bool Has_Rotations { get; set; }
+    public bool Has_Rotation_Axes { get; set; }
+    public bool Has_Animated_Textures { get; set; }
+    public bool World_Space { get; set; }
+    public AlignMethod Normal_Method { get; set; }
+    public Vector3 Normal_Direction { get; set; }
+    public AlignMethod Up_Method { get; set; }
+    public Vector3 Up_Direction { get; set; }
+    public Ref Living_Spawner { get; set; }
+    public byte Num_Spawn_Rate_Keys { get; set; }
+    public PSSpawnRateKey Spawn_Rate_Keys { get; set; }
+    public bool Pre_RPI { get; set; }
+    public uint DEM_Unknown_Int { get; set; }
+    public byte DEM_Unknown_Byte { get; set; }
+
+    public NiPSParticleSystem() { }
+
 }

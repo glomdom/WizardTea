@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiBSplineFloatEvaluator : NiBSplineEvaluator {
+    public uint Handle { get; set; }
+
+    public NiBSplineFloatEvaluator() { }
+
 }

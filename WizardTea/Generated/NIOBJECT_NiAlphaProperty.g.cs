@@ -11,4 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiAlphaProperty : NiProperty {
+    public AlphaFlags Flags { get; set; }
+    public byte Threshold { get; set; }
+    public ushort Unknown_Short_1 { get; set; }
+    public uint Unknown_Int_2 { get; set; }
+
+    public NiAlphaProperty() { }
+
 }

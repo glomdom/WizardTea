@@ -11,4 +11,7 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSFieldMagnitudeCtlr : NiPSForceFloatCtlr {
+
+    public NiPSFieldMagnitudeCtlr() { }
+
 }

@@ -11,4 +11,17 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiDataStream : NiObject {
+    public DataStreamUsage Usage { get; set; }
+    public DataStreamAccess Access { get; set; }
+    public uint Num_Bytes { get; set; }
+    public CloningBehavior Cloning_Behavior { get; set; }
+    public uint Num_Regions { get; set; }
+    public Region Regions { get; set; }
+    public uint Num_Components { get; set; }
+    public ComponentFormat Component_Formats { get; set; }
+    public DataStreamData Data { get; set; }
+    public bool Streamable { get; set; }
+
+    public NiDataStream() { }
+
 }

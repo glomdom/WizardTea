@@ -11,4 +11,10 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysBoxEmitter : NiPSysVolumeEmitter {
+    public float Width { get; set; }
+    public float Height { get; set; }
+    public float Depth { get; set; }
+
+    public NiPSysBoxEmitter() { }
+
 }

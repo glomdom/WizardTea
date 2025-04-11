@@ -11,4 +11,10 @@ using System.Numerics;
 namespace WizardTea;
 
 public class BSPSysRecycleBoundModifier : NiPSysModifier {
+    public Vector3 Bound_Offset { get; set; }
+    public Vector3 Bound_Extent { get; set; }
+    public Ptr Bound_Object { get; set; }
+
+    public BSPSysRecycleBoundModifier() { }
+
 }

@@ -11,4 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public class BSPSysLODModifier : NiPSysModifier {
+    public float LOD_Begin_Distance { get; set; }
+    public float LOD_End_Distance { get; set; }
+    public float End_Emit_Scale { get; set; }
+    public float End_Size { get; set; }
+
+    public BSPSysLODModifier() { }
+
 }

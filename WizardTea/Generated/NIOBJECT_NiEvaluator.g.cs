@@ -11,4 +11,13 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiEvaluator : NiObject {
+    public NiFixedString Node_Name { get; set; }
+    public NiFixedString Property_Type { get; set; }
+    public NiFixedString Controller_Type { get; set; }
+    public NiFixedString Controller_ID { get; set; }
+    public NiFixedString Interpolator_ID { get; set; }
+    public byte Channel_Types { get; set; }
+
+    public NiEvaluator() : base() { }
+
 }

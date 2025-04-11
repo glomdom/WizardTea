@@ -11,4 +11,10 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiParticleCollider : NiParticleModifier {
+    public float Bounce { get; set; }
+    public bool Spawn_On_Collide { get; set; }
+    public bool Die_On_Collide { get; set; }
+
+    public NiParticleCollider() { }
+
 }

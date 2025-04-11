@@ -11,4 +11,10 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPointLight : NiLight {
+    public float Constant_Attenuation { get; set; }
+    public float Linear_Attenuation { get; set; }
+    public float Quadratic_Attenuation { get; set; }
+
+    public NiPointLight() { }
+
 }

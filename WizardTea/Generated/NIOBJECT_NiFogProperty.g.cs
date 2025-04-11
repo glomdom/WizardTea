@@ -11,4 +11,10 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiFogProperty : NiProperty {
+    public FogFlags Flags { get; set; }
+    public float Fog_Depth { get; set; }
+    public Color3 Fog_Color { get; set; }
+
+    public NiFogProperty() { }
+
 }

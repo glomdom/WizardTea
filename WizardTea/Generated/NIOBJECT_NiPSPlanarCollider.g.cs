@@ -11,4 +11,12 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSPlanarCollider : NiPSCollider {
+    public float Width { get; set; }
+    public float Height { get; set; }
+    public Vector3 X_Axis { get; set; }
+    public Vector3 Y_Axis { get; set; }
+    public Ptr Collider_Object { get; set; }
+
+    public NiPSPlanarCollider() { }
+
 }

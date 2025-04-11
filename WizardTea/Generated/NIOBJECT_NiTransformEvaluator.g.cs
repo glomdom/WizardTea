@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiTransformEvaluator : NiKeyBasedEvaluator {
+    public NiQuatTransform Value { get; set; }
+    public Ref Data { get; set; }
+
+    public NiTransformEvaluator() { }
+
 }

@@ -11,4 +11,13 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiFlipController : NiFloatInterpController {
+    public TexType Texture_Slot { get; set; }
+    public float Accum_Time { get; set; }
+    public float Delta { get; set; }
+    public uint Num_Sources { get; set; }
+    public Ref Sources { get; set; }
+    public Ref Images { get; set; }
+
+    public NiFlipController() { }
+
 }

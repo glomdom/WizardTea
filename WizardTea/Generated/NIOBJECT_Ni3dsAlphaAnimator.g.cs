@@ -11,4 +11,12 @@ using System.Numerics;
 namespace WizardTea;
 
 public class Ni3dsAlphaAnimator : NiObject {
+    public byte Unknown_1 { get; set; }
+    public Ref Parent { get; set; }
+    public uint Num_1 { get; set; }
+    public uint Num_2 { get; set; }
+    public uint Unknown_2 { get; set; }
+
+    public Ni3dsAlphaAnimator() { }
+
 }

@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiCollisionObject : NiObject {
+    public Ptr Target { get; set; }
+
+    public NiCollisionObject() { }
+
 }

@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiBlendBoolInterpolator : NiBlendInterpolator {
+    public byte Value { get; set; }
+
+    public NiBlendBoolInterpolator() { }
+
 }

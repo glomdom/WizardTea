@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysColorModifier : NiPSysModifier {
+    public Ref Data { get; set; }
+
+    public NiPSysColorModifier() { }
+
 }

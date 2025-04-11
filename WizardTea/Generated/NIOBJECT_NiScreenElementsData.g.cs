@@ -11,4 +11,16 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiScreenElementsData : NiTriShapeData {
+    public ushort Max_Polygons { get; set; }
+    public Polygon Polygons { get; set; }
+    public ushort Polygon_Indices { get; set; }
+    public ushort Polygon_Grow_By { get; set; }
+    public ushort Num_Polygons { get; set; }
+    public ushort Max_Vertices { get; set; }
+    public ushort Vertices_Grow_By { get; set; }
+    public ushort Max_Indices { get; set; }
+    public ushort Indices_Grow_By { get; set; }
+
+    public NiScreenElementsData() { }
+
 }

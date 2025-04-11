@@ -11,4 +11,10 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiPSForce : NiObject {
+    public NiFixedString Name { get; set; }
+    public PSForceType Type { get; set; }
+    public bool Active { get; set; }
+
+    public NiPSForce() : base() { }
+
 }

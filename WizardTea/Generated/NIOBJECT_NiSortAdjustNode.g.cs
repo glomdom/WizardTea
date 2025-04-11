@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiSortAdjustNode : NiNode {
+    public SortingMode Sorting_Mode { get; set; }
+    public Ref Accumulator { get; set; }
+
+    public NiSortAdjustNode() { }
+
 }

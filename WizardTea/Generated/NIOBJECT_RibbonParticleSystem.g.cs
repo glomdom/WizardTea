@@ -11,4 +11,10 @@ using System.Numerics;
 namespace WizardTea;
 
 public class RibbonParticleSystem : NiPSParticleSystem {
+    public byte EM_Unknown_Bytes_1 { get; set; }
+    public float EM_Unknown_Float_1 { get; set; }
+    public byte EM_Unknown_Bytes_2 { get; set; }
+
+    public RibbonParticleSystem() { }
+
 }

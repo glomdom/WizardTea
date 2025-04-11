@@ -11,4 +11,12 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiRawImageData : NiObject {
+    public uint Width { get; set; }
+    public uint Height { get; set; }
+    public ImageType Image_Type { get; set; }
+    public ByteColor3 RGB_Image_Data { get; set; }
+    public ByteColor4 RGBA_Image_Data { get; set; }
+
+    public NiRawImageData() { }
+
 }

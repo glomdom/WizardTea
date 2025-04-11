@@ -11,4 +11,21 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSSimulatorGeneralStep : NiPSSimulatorStep {
+    public byte Num_Size_Keys { get; set; }
+    public Key Size_Keys { get; set; }
+    public PSLoopBehavior Size_Loop_Behavior { get; set; }
+    public byte Num_Color_Keys { get; set; }
+    public Key Color_Keys { get; set; }
+    public PSLoopBehavior Color_Loop_Behavior { get; set; }
+    public byte Num_Rotation_Keys { get; set; }
+    public QuatKey Rotation_Keys { get; set; }
+    public PSLoopBehavior Rotation_Loop_Behavior { get; set; }
+    public float Grow_Time { get; set; }
+    public float Shrink_Time { get; set; }
+    public ushort Grow_Generation { get; set; }
+    public ushort Shrink_Generation { get; set; }
+    public byte DEM_Unknown_Byte { get; set; }
+
+    public NiPSSimulatorGeneralStep() { }
+
 }

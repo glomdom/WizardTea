@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysSphericalCollider : NiPSysCollider {
+    public float Radius { get; set; }
+
+    public NiPSysSphericalCollider() { }
+
 }

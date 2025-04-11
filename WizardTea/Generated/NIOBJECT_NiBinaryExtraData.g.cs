@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiBinaryExtraData : NiExtraData {
+    public ByteArray Binary_Data { get; set; }
+
+    public NiBinaryExtraData() { }
+
 }

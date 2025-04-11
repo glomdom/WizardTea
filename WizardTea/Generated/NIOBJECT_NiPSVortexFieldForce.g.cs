@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSVortexFieldForce : NiPSFieldForce {
+    public Vector3 Direction { get; set; }
+
+    public NiPSVortexFieldForce() { }
+
 }

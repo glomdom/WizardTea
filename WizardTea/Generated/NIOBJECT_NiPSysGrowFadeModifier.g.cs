@@ -11,4 +11,12 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysGrowFadeModifier : NiPSysModifier {
+    public float Grow_Time { get; set; }
+    public ushort Grow_Generation { get; set; }
+    public float Fade_Time { get; set; }
+    public ushort Fade_Generation { get; set; }
+    public float Base_Scale { get; set; }
+
+    public NiPSysGrowFadeModifier() { }
+
 }

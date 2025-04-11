@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiMultiTargetTransformController : NiInterpController {
+    public ushort Num_Extra_Targets { get; set; }
+    public Ptr Extra_Targets { get; set; }
+
+    public NiMultiTargetTransformController() { }
+
 }

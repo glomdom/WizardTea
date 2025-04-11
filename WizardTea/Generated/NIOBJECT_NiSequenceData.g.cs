@@ -11,4 +11,19 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiSequenceData : NiObject {
+    public NiFixedString Name { get; set; }
+    public uint Num_Controlled_Blocks { get; set; }
+    public uint Array_Grow_By { get; set; }
+    public ControlledBlock Controlled_Blocks { get; set; }
+    public uint Num_Evaluators { get; set; }
+    public Ref Evaluators { get; set; }
+    public Ref Text_Keys { get; set; }
+    public float Duration { get; set; }
+    public CycleType Cycle_Type { get; set; }
+    public float Frequency { get; set; }
+    public NiFixedString Accum_Root_Name { get; set; }
+    public AccumFlags Accum_Flags { get; set; }
+
+    public NiSequenceData() { }
+
 }

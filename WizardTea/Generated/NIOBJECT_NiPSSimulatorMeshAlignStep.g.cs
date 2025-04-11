@@ -11,4 +11,10 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSSimulatorMeshAlignStep : NiPSSimulatorStep {
+    public byte Num_Rotation_Keys { get; set; }
+    public QuatKey Rotation_Keys { get; set; }
+    public PSLoopBehavior Rotation_Loop_Behavior { get; set; }
+
+    public NiPSSimulatorMeshAlignStep() { }
+
 }

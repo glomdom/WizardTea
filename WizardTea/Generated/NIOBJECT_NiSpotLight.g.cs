@@ -11,4 +11,10 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiSpotLight : NiPointLight {
+    public float Outer_Spot_Angle { get; set; }
+    public float Inner_Spot_Angle { get; set; }
+    public float Exponent { get; set; }
+
+    public NiSpotLight() { }
+
 }

@@ -11,4 +11,13 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiLookAtEvaluator : NiEvaluator {
+    public LookAtFlags Flags { get; set; }
+    public NiFixedString Look_At_Name { get; set; }
+    public NiFixedString Driven_Name { get; set; }
+    public Ref Interpolator:_Translation { get; set; }
+    public Ref Interpolator:_Roll { get; set; }
+    public Ref Interpolator:_Scale { get; set; }
+
+    public NiLookAtEvaluator() { }
+
 }

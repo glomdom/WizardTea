@@ -11,4 +11,12 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiPSFieldForce : NiPSForce {
+    public Ref Field_Object { get; set; }
+    public float Magnitude { get; set; }
+    public float Attenuation { get; set; }
+    public bool Use_Max_Distance { get; set; }
+    public float Max_Distance { get; set; }
+
+    public NiPSFieldForce() : base() { }
+
 }

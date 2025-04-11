@@ -11,4 +11,14 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPathInterpolator : NiKeyBasedInterpolator {
+    public PathFlags Flags { get; set; }
+    public int Bank_Dir { get; set; }
+    public float Max_Bank_Angle { get; set; }
+    public float Smoothing { get; set; }
+    public short Follow_Axis { get; set; }
+    public Ref Path_Data { get; set; }
+    public Ref Percent_Data { get; set; }
+
+    public NiPathInterpolator() { }
+
 }

@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiInterpController : NiTimeController {
+    public bool Manager_Controlled { get; set; }
+
+    public NiInterpController() : base() { }
+
 }

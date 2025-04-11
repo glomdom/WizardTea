@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiPSysModifierCtlr : NiSingleInterpController {
+    public string Modifier_Name { get; set; }
+
+    public NiPSysModifierCtlr() : base() { }
+
 }

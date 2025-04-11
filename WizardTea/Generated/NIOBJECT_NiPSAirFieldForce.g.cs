@@ -11,4 +11,13 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSAirFieldForce : NiPSFieldForce {
+    public Vector3 Direction { get; set; }
+    public float Air_Friction { get; set; }
+    public float Inherited_Velocity { get; set; }
+    public bool Inherit_Rotation { get; set; }
+    public bool Enable_Spread { get; set; }
+    public float Spread { get; set; }
+
+    public NiPSAirFieldForce() { }
+
 }

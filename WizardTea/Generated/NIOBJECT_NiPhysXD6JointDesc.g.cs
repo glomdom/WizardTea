@@ -11,4 +11,33 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPhysXD6JointDesc : NiPhysXJointDesc {
+    public NxD6JointMotion X_Motion { get; set; }
+    public NxD6JointMotion Y_Motion { get; set; }
+    public NxD6JointMotion Z_Motion { get; set; }
+    public NxD6JointMotion Swing_1_Motion { get; set; }
+    public NxD6JointMotion Swing_2_Motion { get; set; }
+    public NxD6JointMotion Twist_Motion { get; set; }
+    public NxJointLimitSoftDesc Linear_Limit { get; set; }
+    public NxJointLimitSoftDesc Swing_1_Limit { get; set; }
+    public NxJointLimitSoftDesc Swing_2_Limit { get; set; }
+    public NxJointLimitSoftDesc Twist_Low_Limit { get; set; }
+    public NxJointLimitSoftDesc Twist_High_Limit { get; set; }
+    public NxJointDriveDesc X_Drive { get; set; }
+    public NxJointDriveDesc Y_Drive { get; set; }
+    public NxJointDriveDesc Z_Drive { get; set; }
+    public NxJointDriveDesc Swing_Drive { get; set; }
+    public NxJointDriveDesc Twist_Drive { get; set; }
+    public NxJointDriveDesc Slerp_Drive { get; set; }
+    public Vector3 Drive_Position { get; set; }
+    public Quaternion Drive_Orientation { get; set; }
+    public Vector3 Drive_Linear_Velocity { get; set; }
+    public Vector3 Drive_Angular_Velocity { get; set; }
+    public NxJointProjectionMode Projection_Mode { get; set; }
+    public float Projection_Distance { get; set; }
+    public float Projection_Angle { get; set; }
+    public float Gear_Ratio { get; set; }
+    public uint Flags { get; set; }
+
+    public NiPhysXD6JointDesc() { }
+
 }

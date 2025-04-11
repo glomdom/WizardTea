@@ -11,4 +11,18 @@ using System.Numerics;
 namespace WizardTea;
 
 public abstract class NiPhysXJointDesc : NiObject {
+    public NxJointType Joint_Type { get; set; }
+    public NiFixedString Joint_Name { get; set; }
+    public NiPhysXJointActor Actors { get; set; }
+    public float Max_Force { get; set; }
+    public float Max_Torque { get; set; }
+    public float Solver_Extrapolation_Factor { get; set; }
+    public uint Use_Acceleration_Spring { get; set; }
+    public uint Joint_Flags { get; set; }
+    public Vector3 Limit_Point { get; set; }
+    public uint Num_Limits { get; set; }
+    public NiPhysXJointLimit Limits { get; set; }
+
+    public NiPhysXJointDesc() : base() { }
+
 }

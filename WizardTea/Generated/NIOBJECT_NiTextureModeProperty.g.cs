@@ -11,4 +11,11 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiTextureModeProperty : NiProperty {
+    public uint Unknown_Ints { get; set; }
+    public ushort Flags { get; set; }
+    public short PS2_L { get; set; }
+    public short PS2_K { get; set; }
+
+    public NiTextureModeProperty() { }
+
 }

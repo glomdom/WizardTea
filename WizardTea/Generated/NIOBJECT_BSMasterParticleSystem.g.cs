@@ -11,4 +11,10 @@ using System.Numerics;
 namespace WizardTea;
 
 public class BSMasterParticleSystem : NiNode {
+    public ushort Max_Emitter_Objects { get; set; }
+    public uint Num_Particle_Systems { get; set; }
+    public Ref Particle_Systems { get; set; }
+
+    public BSMasterParticleSystem() { }
+
 }

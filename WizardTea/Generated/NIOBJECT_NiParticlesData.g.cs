@@ -11,4 +11,29 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiParticlesData : NiGeometryData {
+    public ushort Num_Particles { get; set; }
+    public float Particle_Radius { get; set; }
+    public bool Has_Radii { get; set; }
+    public float Radii { get; set; }
+    public ushort Num_Active { get; set; }
+    public bool Has_Sizes { get; set; }
+    public float Sizes { get; set; }
+    public bool Has_Rotations { get; set; }
+    public Quaternion Rotations { get; set; }
+    public bool Has_Rotation_Angles { get; set; }
+    public float Rotation_Angles { get; set; }
+    public bool Has_Rotation_Axes { get; set; }
+    public Vector3 Rotation_Axes { get; set; }
+    public bool Has_Texture_Indices { get; set; }
+    public uint Num_Subtexture_Offsets { get; set; }
+    public byte Num_Subtexture_Offsets { get; set; }
+    public Vector4 Subtexture_Offsets { get; set; }
+    public float Aspect_Ratio { get; set; }
+    public AspectFlags Aspect_Flags { get; set; }
+    public float Speed_to_Aspect_Aspect_2 { get; set; }
+    public float Speed_to_Aspect_Speed_1 { get; set; }
+    public float Speed_to_Aspect_Speed_2 { get; set; }
+
+    public NiParticlesData() { }
+
 }

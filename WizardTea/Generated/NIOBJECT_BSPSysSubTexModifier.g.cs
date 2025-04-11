@@ -11,4 +11,14 @@ using System.Numerics;
 namespace WizardTea;
 
 public class BSPSysSubTexModifier : NiPSysModifier {
+    public float Start_Frame { get; set; }
+    public float Start_Frame_Fudge { get; set; }
+    public float End_Frame { get; set; }
+    public float Loop_Start_Frame { get; set; }
+    public float Loop_Start_Frame_Fudge { get; set; }
+    public float Frame_Count { get; set; }
+    public float Frame_Count_Fudge { get; set; }
+
+    public BSPSysSubTexModifier() { }
+
 }

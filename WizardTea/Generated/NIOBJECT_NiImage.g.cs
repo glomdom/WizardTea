@@ -11,4 +11,12 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiImage : NiObject {
+    public byte Use_External { get; set; }
+    public FilePath File_Name { get; set; }
+    public Ref Image_Data { get; set; }
+    public uint Unknown_Int { get; set; }
+    public float Unknown_Float { get; set; }
+
+    public NiImage() { }
+
 }

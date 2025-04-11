@@ -11,4 +11,8 @@ using System.Numerics;
 namespace WizardTea;
 
 public class Ni3dsMorphShape : NiObject {
+    public byte Unknown_1 { get; set; }
+
+    public Ni3dsMorphShape() { }
+
 }

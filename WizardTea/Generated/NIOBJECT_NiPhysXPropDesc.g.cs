@@ -11,4 +11,18 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPhysXPropDesc : NiObject {
+    public uint Num_Actors { get; set; }
+    public Ref Actors { get; set; }
+    public uint Num_Joints { get; set; }
+    public Ref Joints { get; set; }
+    public uint Num_Clothes { get; set; }
+    public Ref Clothes { get; set; }
+    public uint Num_Materials { get; set; }
+    public NiPhysXMaterialDescMap Materials { get; set; }
+    public uint Num_States { get; set; }
+    public NiTFixedStringMap State_Names { get; set; }
+    public byte Flags { get; set; }
+
+    public NiPhysXPropDesc() { }
+
 }

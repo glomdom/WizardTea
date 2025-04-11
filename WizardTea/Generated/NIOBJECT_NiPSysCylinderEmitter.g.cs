@@ -11,4 +11,9 @@ using System.Numerics;
 namespace WizardTea;
 
 public class NiPSysCylinderEmitter : NiPSysVolumeEmitter {
+    public float Radius { get; set; }
+    public float Height { get; set; }
+
+    public NiPSysCylinderEmitter() { }
+
 }
