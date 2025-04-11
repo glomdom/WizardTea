@@ -8,11 +8,9 @@ namespace WizardTea.Generator.Parsers;
 public class NiObjectParser : BaseParser {
     private Dictionary<string, string> Data { get; } = [];
 
-    private List<string> BlacklistedModules { get; }
     private List<string> BlacklistedTypes { get; }
 
     public NiObjectParser(XDocument xml) : base(xml) {
-        BlacklistedModules = ["BSHavok", "BSMain", "BSAnimation"];
         BlacklistedTypes = ["BSVertexDesc", "BSVertexDataSSE"];
     }
 
@@ -25,7 +23,7 @@ public class NiObjectParser : BaseParser {
             var fields = niobjectElement.Elements("field");
 
             var module = XmlHelper.GetOptionalAttributeValue(niobjectElement, "module");
-            if (module is not null && BlacklistedModules.Contains(module)) continue;
+            if (module is not null && module.StartsWith("BS")) continue;
             if (className.StartsWith("MdlMan")) continue; // we don't want divinity stuff. no clue why it isn't in its own module but meh
 
             var isAbstract = XmlHelper.GetOptionalAttributeValue(niobjectElement, "abstract") is not null;
