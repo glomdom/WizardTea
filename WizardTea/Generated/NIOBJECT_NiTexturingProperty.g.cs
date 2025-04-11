@@ -12,7 +12,6 @@ namespace WizardTea;
 
 public class NiTexturingProperty : NiProperty {
     public ushort Flags { get; set; }
-    public TexturingFlags Flags { get; set; }
     public ApplyMode Apply_Mode { get; set; }
     public uint Texture_Count { get; set; }
     public bool Has_Base_Texture { get; set; }
@@ -36,15 +35,11 @@ public class NiTexturingProperty : NiProperty {
     public TexDesc Parallax_Texture { get; set; }
     public float Parallax_Offset { get; set; }
     public bool Has_Decal_0_Texture { get; set; }
-    public bool Has_Decal_0_Texture { get; set; }
     public TexDesc Decal_0_Texture { get; set; }
-    public bool Has_Decal_1_Texture { get; set; }
     public bool Has_Decal_1_Texture { get; set; }
     public TexDesc Decal_1_Texture { get; set; }
     public bool Has_Decal_2_Texture { get; set; }
-    public bool Has_Decal_2_Texture { get; set; }
     public TexDesc Decal_2_Texture { get; set; }
-    public bool Has_Decal_3_Texture { get; set; }
     public bool Has_Decal_3_Texture { get; set; }
     public TexDesc Decal_3_Texture { get; set; }
     public uint Num_Shader_Textures { get; set; }

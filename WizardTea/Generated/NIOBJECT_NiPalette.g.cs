@@ -14,7 +14,6 @@ public class NiPalette : NiObject {
     public byte Has_Alpha { get; set; }
     public uint Num_Entries { get; set; }
     public ByteColor4 Palette { get; set; }
-    public ByteColor4 Palette { get; set; }
 
     public NiPalette() { }
 

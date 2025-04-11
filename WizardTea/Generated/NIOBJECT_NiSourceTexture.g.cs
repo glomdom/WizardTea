@@ -14,9 +14,6 @@ public class NiSourceTexture : NiTexture {
     public byte Use_External { get; set; }
     public byte Use_Internal { get; set; }
     public FilePath File_Name { get; set; }
-    public FilePath File_Name { get; set; }
-    public Ref Pixel_Data { get; set; }
-    public Ref Pixel_Data { get; set; }
     public Ref Pixel_Data { get; set; }
     public FormatPrefs Format_Prefs { get; set; }
     public byte Is_Static { get; set; }

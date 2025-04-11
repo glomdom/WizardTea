@@ -15,7 +15,6 @@ public class NiTriStripsData : NiTriBasedGeomData {
     public ushort Strip_Lengths { get; set; }
     public bool Has_Points { get; set; }
     public ushort Points { get; set; }
-    public ushort Points { get; set; }
 
     public NiTriStripsData() { }
 

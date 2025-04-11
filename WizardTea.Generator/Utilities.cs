@@ -11,4 +11,12 @@ internal static class Utilities {
                 .Select(line => indent + line)
         );
     }
+
+    internal static string RemoveAfter(this string str, char chr) {
+        if (string.IsNullOrEmpty(str)) return str;
+
+        return str.Contains(chr)
+            ? str[..str.IndexOf(chr)]
+            : str;
+    }
 }

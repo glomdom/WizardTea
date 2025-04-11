@@ -19,11 +19,9 @@ public abstract class NiPixelFormat : NiObject {
     public uint Bits_Per_Pixel { get; set; }
     public byte Old_Fast_Compare { get; set; }
     public PixelTiling Tiling { get; set; }
-    public byte Bits_Per_Pixel { get; set; }
     public uint Renderer_Hint { get; set; }
     public uint Extra_Data { get; set; }
     public byte Flags { get; set; }
-    public PixelTiling Tiling { get; set; }
     public bool sRGB_Space { get; set; }
     public PixelFormatComponent Channels { get; set; }
 

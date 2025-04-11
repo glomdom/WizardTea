@@ -124,7 +124,10 @@ namespace WizardTea.Generator {
                 Use(SCT_RigidBodyToNxCompartmentType).For("NxCompartmentDescMap"),
                 Use(WRAP_S_WRAP_TToTexClampMode).For("TexDesc"),
                 Use(FILTER_TRILERPToTexFilterMode).For("TexDesc"),
-                Use(Vector2ToTexCoord).For("TexCoord")
+                Use(Vector2ToTexCoord).For("TexCoord"),
+                Use(NiControllerSequenceTextKeysToNonHide).For("NiControllerSequence"),
+                Use(NiControllerSequenceAccumRootNameToNonHide).For("NiControllerSequence"),
+                Use(NiParticleSystemDataToNonHide).For("NiParticleSystem")
             );
 
             Log.Information("registered injections");

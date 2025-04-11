@@ -26,7 +26,6 @@ public class NiParticlesData : NiGeometryData {
     public Vector3 Rotation_Axes { get; set; }
     public bool Has_Texture_Indices { get; set; }
     public uint Num_Subtexture_Offsets { get; set; }
-    public byte Num_Subtexture_Offsets { get; set; }
     public Vector4 Subtexture_Offsets { get; set; }
     public float Aspect_Ratio { get; set; }
     public AspectFlags Aspect_Flags { get; set; }

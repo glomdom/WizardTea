@@ -46,7 +46,6 @@ public class NiPhysXSceneDesc : NiObject {
     public NxPruningStructure Static_Structure { get; set; }
     public NxPruningStructure Dynamic_Structure { get; set; }
     public uint Dynamic_Tree_Rebuild_Rate_Hint { get; set; }
-    public NxBroadPhaseType Broad_Phase_Type { get; set; }
     public uint Grid_Cells_X { get; set; }
     public uint Grid_Cells_Y { get; set; }
     public uint Num_Actors { get; set; }

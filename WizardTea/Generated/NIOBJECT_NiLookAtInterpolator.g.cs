@@ -15,9 +15,7 @@ public class NiLookAtInterpolator : NiInterpolator {
     public Ptr Look_At { get; set; }
     public string Look_At_Name { get; set; }
     public NiQuatTransform Transform { get; set; }
-    public Ref Interpolator:_Translation { get; set; }
-    public Ref Interpolator:_Roll { get; set; }
-    public Ref Interpolator:_Scale { get; set; }
+    public Ref Interpolator { get; set; }
 
     public NiLookAtInterpolator() { }
 

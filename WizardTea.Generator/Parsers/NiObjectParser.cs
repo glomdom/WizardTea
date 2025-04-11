@@ -8,10 +8,12 @@ namespace WizardTea.Generator.Parsers;
 public class NiObjectParser : BaseParser {
     private Dictionary<string, string> Data { get; } = [];
 
-    private List<string> BlacklistedModules { get; set; }
+    private List<string> BlacklistedModules { get; }
+    private List<string> BlacklistedTypes { get; }
 
     public NiObjectParser(XDocument xml) : base(xml) {
         BlacklistedModules = ["BSHavok", "BSMain", "BSAnimation"];
+        BlacklistedTypes = ["BSVertexDesc", "BSVertexDataSSE"];
     }
 
     public override void Parse() {
@@ -38,10 +40,18 @@ public class NiObjectParser : BaseParser {
             sb.AppendLine(Prelude());
             sb.AppendLine($"public {classType} {className}{baseClass} {{");
 
+            var seenFields = new List<string>();
+
             foreach (var field in fields) {
                 var rawFieldName = XmlHelper.GetRequiredAttributeValue(field, "name");
-                var fieldName = rawFieldName.Replace(" ", "_");
+                var fieldName = rawFieldName.RemoveAfter(':').Replace(" ", "_");
+                
+                if (seenFields.Contains(fieldName)) continue;
+                seenFields.Add(fieldName);
+                
                 var fieldType = XmlHelper.GetRequiredAttributeValue(field, "type");
+                if (BlacklistedTypes.Contains(fieldType)) continue;
+                
                 var template = XmlHelper.GetOptionalAttributeValue(field, "template");
                 var length = XmlHelper.GetOptionalAttributeValue(field, "length");
 
@@ -50,7 +60,7 @@ public class NiObjectParser : BaseParser {
                     Log.Verbose("generic of {template} applied for {fieldName} of {fieldType}", template, fieldName, fieldType);
                     fieldType += $"<{template}>";
                 }
-                
+
                 var baseFieldCode = $"public {fieldType} {fieldName} {{ get; set; }}";
 
                 var fieldContext = new InjectionContext {

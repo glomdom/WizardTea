@@ -18,7 +18,6 @@ public class NiPixelData : NiPixelFormat {
     public uint Num_Pixels { get; set; }
     public uint Num_Faces { get; set; }
     public byte Pixel_Data { get; set; }
-    public byte Pixel_Data { get; set; }
 
     public NiPixelData() { }
 

@@ -129,6 +129,10 @@ public static class DefaultInjections {
         RegisterOverrideReplacement(injector, "#VEC2_ONE#", "Vector2.One");
     }
 
+    public static void NiControllerSequenceTextKeysToNonHide(Injector injector) => RegisterOverrideReplacement(injector, "Text_Keys", "Text_Keys_Controller");
+    public static void NiControllerSequenceAccumRootNameToNonHide(Injector injector) => RegisterOverrideReplacement(injector, "Accum_Root_Name", "Accum_Root_Name_Controller");
+    public static void NiParticleSystemDataToNonHide(Injector injector) => RegisterOverrideReplacement(injector, "Data", "Data_Particle");
+
     #endregion
 
     #region utilities

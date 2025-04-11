@@ -13,7 +13,6 @@ namespace WizardTea;
 public abstract class NiGeometryData : NiObject {
     public int Group_ID { get; set; }
     public ushort Num_Vertices { get; set; }
-    public ushort Num_Vertices { get; set; }
     public ushort BS_Max_Vertices { get; set; }
     public byte Keep_Flags { get; set; }
     public byte Compress_Flags { get; set; }
@@ -31,7 +30,6 @@ public abstract class NiGeometryData : NiObject {
     public NiBound Bounding_Sphere { get; set; }
     public bool Has_Vertex_Colors { get; set; }
     public Color4 Vertex_Colors { get; set; }
-    public NiGeometryDataFlags Data_Flags { get; set; }
     public bool Has_UV { get; set; }
     public TexCoord UV_Sets { get; set; }
     public ConsistencyType Consistency_Flags { get; set; }

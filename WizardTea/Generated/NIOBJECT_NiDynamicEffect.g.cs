@@ -15,8 +15,6 @@ public abstract class NiDynamicEffect : NiAVObject {
     public uint Num_Affected_Nodes { get; set; }
     public Ptr Affected_Nodes { get; set; }
     public uint Affected_Node_Pointers { get; set; }
-    public uint Num_Affected_Nodes { get; set; }
-    public Ptr Affected_Nodes { get; set; }
 
     public NiDynamicEffect() : base() { }
 
