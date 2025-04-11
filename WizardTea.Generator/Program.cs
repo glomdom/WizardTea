@@ -92,6 +92,11 @@ namespace WizardTea.Generator {
             bitfieldParser.Generate();
             Log.Information("generated bitfields");
 
+            var niobjectParser = new NiObjectParser(xml);
+            niobjectParser.Parse();
+            niobjectParser.Generate();
+            Log.Information("generated niobjects");
+
             var structParser = new StructParser(xml);
             structParser.Parse();
             structParser.Generate();
