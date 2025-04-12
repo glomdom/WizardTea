@@ -1,4 +1,6 @@
 ﻿using System.Xml.Linq;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using Serilog;
 using WizardTea.Generator.Injection;
 using WizardTea.Generator.Parsers;
@@ -17,7 +19,7 @@ namespace WizardTea.Generator {
                 .MinimumLevel.Verbose()
                 .WriteTo.Console()
                 .CreateLogger();
-            
+
             Directory.CreateDirectory(Path.GetDirectoryName(XmlCachePath)!);
             Directory.CreateDirectory(GeneratedOutputPath);
 
@@ -35,11 +37,11 @@ namespace WizardTea.Generator {
                     Log.Information("no xml updates (etags matched)");
                     if (!File.Exists(XmlCachePath)) return;
 
-
                     var cachedXml = await File.ReadAllTextAsync(XmlCachePath);
                     var cachedDoc = XDocument.Parse(cachedXml);
 
-                    GenerateCode(cachedDoc);
+                    GenerateRawCode(cachedDoc);
+                    RewriteFiles();
 
                     return;
                 }
@@ -66,7 +68,8 @@ namespace WizardTea.Generator {
                 }
 
                 var doc = XDocument.Parse(newXml);
-                GenerateCode(doc);
+                GenerateRawCode(doc);
+                RewriteFiles();
             } catch (HttpRequestException ex) {
                 Log.Fatal("http request failed: {error}", ex.Message);
             } catch (Exception ex) {
@@ -74,7 +77,13 @@ namespace WizardTea.Generator {
             }
         }
 
-        private static void GenerateCode(XDocument xml) {
+        /// <summary>
+        /// Generates basic C# types for every NIF type.
+        /// Generated code from here is expected to be
+        /// handed to the Roslyn Syntax Rewriter.
+        /// </summary>
+        /// <param name="xml">The XML to generate code from.</param>
+        private static void GenerateRawCode(XDocument xml) {
             RegisterInjections();
 
             var enumParser = new EnumParser(xml);
@@ -131,6 +140,48 @@ namespace WizardTea.Generator {
             );
 
             Log.Information("registered injections");
+        }
+
+        private static void RewriteFiles() {
+            var trees = new List<SyntaxTree>();
+            var fileMap = new Dictionary<SyntaxTree, string>();
+
+            foreach (var file in Directory.GetFiles(GeneratedOutputPath)) {
+                // Log.Debug("parsing {fileName}", file);
+
+                var tree = CSharpSyntaxTree.ParseText(File.ReadAllText(file));
+                trees.Add(tree);
+                fileMap.Add(tree, file);
+            }
+
+            // mscorlib stuff and some common system libs
+            MetadataReference[] references = [
+                MetadataReference.CreateFromFile(typeof(object).Assembly.Location),
+                MetadataReference.CreateFromFile(typeof(Console).Assembly.Location),
+                MetadataReference.CreateFromFile(typeof(Enumerable).Assembly.Location),
+                MetadataReference.CreateFromFile(typeof(List<>).Assembly.Location)
+            ];
+
+            var compilation = CSharpCompilation.Create("GeneratedNIFObjects")
+                .AddSyntaxTrees(trees)
+                .AddReferences(references)
+                .WithOptions(new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
+            
+            Log.Debug("created compilation");
+            
+            foreach (var tree in trees) {
+                var model = compilation.GetSemanticModel(tree);
+                var root = tree.GetRoot();
+
+                // Log.Debug("rewriting file {fileName}", fileMap[tree]);
+
+                var rewriter = new Rewriter(model);
+                var newRoot = rewriter.Visit(root);
+
+                File.WriteAllText(fileMap[tree], newRoot.NormalizeWhitespace().ToFullString());
+            }
+
+            Log.Information("read methods created for all objects");
         }
     }
 }

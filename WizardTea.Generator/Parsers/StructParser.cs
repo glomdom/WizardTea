@@ -2,6 +2,7 @@
 using System.Xml.Linq;
 using Serilog;
 using WizardTea.Generator.Injection;
+using WizardTea.Generator.Metadata;
 
 namespace WizardTea.Generator.Parsers;
 
@@ -66,6 +67,10 @@ public class StructParser : BaseParser {
                 var defaultValue = XmlHelper.GetOptionalAttributeValue(structFieldElem, "default");
                 var template = XmlHelper.GetOptionalAttributeValue(structFieldElem, "template");
                 var length = XmlHelper.GetOptionalAttributeValue(structFieldElem, "length");
+                var since = XmlHelper.GetOptionalAttributeValue(structFieldElem, "since");
+                var until = XmlHelper.GetOptionalAttributeValue(structFieldElem, "until");
+
+                var metadata = new FieldMetadata();
 
                 if (fieldType.StartsWith("bhk") || fieldType.StartsWith("BS")) {
                     continue;
@@ -81,9 +86,18 @@ public class StructParser : BaseParser {
                     Log.Verbose("generic of {template} applied for {fieldName} of {fieldType}", template, fieldName, fieldType);
                     fieldType += $"<{template}>";
                 }
-                
+
                 if (length is not null) {
                     fieldType += "[]";
+                    metadata = metadata with { SizeIdentifier = length.Replace(" ", "_") };
+                }
+
+                if (since is not null) {
+                    metadata = metadata with { VersionSince = since };
+                }
+
+                if (until is not null) {
+                    metadata = metadata with { VersionUntil = until };
                 }
 
                 if (defaultValue is not null) {
@@ -105,38 +119,32 @@ public class StructParser : BaseParser {
 
                 var before = injector.Execute(InjectionPoint.BeforeField, fieldContext);
                 if (!string.IsNullOrWhiteSpace(before)) {
-                    sb.AppendLine("    " + before + " // injection: BeforeField");
+                    sb.AppendLine("    " + before);
                 }
 
-                var wasOverridden = false;
                 fieldContext.CurrentSource = baseFieldCode;
 
                 string fieldFinal;
                 if (injector.HasAny(InjectionPoint.FieldOverride)) {
-                    var overridden = injector.Execute(InjectionPoint.FieldOverride, fieldContext);
-                    wasOverridden = !overridden.Equals(baseFieldCode, StringComparison.Ordinal);
-                    fieldFinal = overridden;
+                    fieldFinal = injector.Execute(InjectionPoint.FieldOverride, fieldContext);
+                    ;
                 } else {
                     fieldFinal = baseFieldCode;
                 }
 
                 var finalLine = "    " + fieldFinal;
-                if (wasOverridden) {
-                    finalLine += " // injection: FieldOverride";
-                }
-
-                sb.AppendLine(finalLine);
+                sb.AppendLine(finalLine + metadata.ToComment());
 
                 if (injector.HasAny(InjectionPoint.AfterField)) {
                     var after = injector.Execute(InjectionPoint.AfterField, fieldContext);
                     if (!string.IsNullOrWhiteSpace(after) && after != fieldFinal) {
-                        sb.AppendLine("    " + after + " // injection: AfterField");
+                        sb.AppendLine("    " + after);
                     }
                 }
             }
 
             sb.AppendLine();
-            sb.AppendLine($"    public {structName}() {{ }}");
+            sb.AppendLine($"    public {structName}(BinaryReader reader) {{ }}");
             sb.AppendLine();
 
             var structEndContext = new InjectionContext {
@@ -148,7 +156,7 @@ public class StructParser : BaseParser {
             var structEndCode = injector.Execute(InjectionPoint.ItemEnd, structEndContext);
             if (!string.IsNullOrWhiteSpace(structEndCode)) {
                 var indented = Utilities.IndentLines(structEndCode, 4);
-                sb.AppendLine(indented + " // injection: StructEnd");
+                sb.AppendLine(indented);
             }
 
             sb.AppendLine("}");
