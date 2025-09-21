@@ -4,6 +4,9 @@ using System.Xml.Linq;
 namespace WizardTea.Generator.Parsers;
 
 public class BitflagParser : BaseParser {
+    public int GeneratedCount { get; private set; }
+    public int GeneratedFlagCount { get; private set; }
+
     private Dictionary<string, string> Data { get; } = [];
 
     public BitflagParser(XDocument xml) : base(xml) { }
@@ -27,10 +30,14 @@ public class BitflagParser : BaseParser {
                 var bit = XmlHelper.GetRequiredAttributeValue(optionElement, "bit");
 
                 sb.AppendLine($"    {name} = {bit},");
+
+                GeneratedFlagCount++;
             }
 
             sb.AppendLine("}");
             Data.Add(bitflagName, sb.ToString());
+
+            GeneratedCount++;
         }
     }
 

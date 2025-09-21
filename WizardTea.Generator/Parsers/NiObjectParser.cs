@@ -6,6 +6,9 @@ using WizardTea.Generator.Injection;
 namespace WizardTea.Generator.Parsers;
 
 public class NiObjectParser : BaseParser {
+    public int GeneratedCount { get; private set; }
+    public int GeneratedFieldsCount;
+
     private Dictionary<string, string> Data { get; } = [];
 
     private List<string> BlacklistedTypes { get; }
@@ -60,7 +63,7 @@ public class NiObjectParser : BaseParser {
                     Log.Verbose("generic of {template} applied for {fieldName} of {fieldType}", template, fieldName, fieldType);
                     fieldType += $"<{template}>";
                 }
-                
+
                 if (length is not null) {
                     fieldType += "[]";
                 }
@@ -73,7 +76,7 @@ public class NiObjectParser : BaseParser {
                     FieldElement = field,
                     FieldName = fieldName,
                     FieldType = fieldType,
-                    CurrentSource = ""
+                    CurrentSource = "",
                 };
 
                 var before = injector.Execute(InjectionPoint.BeforeField, fieldContext);
@@ -108,6 +111,8 @@ public class NiObjectParser : BaseParser {
                 }
 
                 // TODO: Implement #ARG# passing in. Very important for multi-functional classes.
+
+                GeneratedFieldsCount++;
             }
 
             sb.AppendLine();
@@ -128,6 +133,8 @@ public class NiObjectParser : BaseParser {
 
             sb.AppendLine("}");
             Data.Add(className, sb.ToString());
+
+            GeneratedCount++;
         }
     }
 

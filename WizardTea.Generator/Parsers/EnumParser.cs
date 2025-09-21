@@ -4,6 +4,9 @@ using System.Xml.Linq;
 namespace WizardTea.Generator.Parsers;
 
 public class EnumParser : BaseParser {
+    public int GeneratedCount { get; private set; }
+    public int GeneratedTagCount { get; private set; }
+
     private Dictionary<string, string> Data { get; } = [];
 
     public EnumParser(XDocument xml) : base(xml) { }
@@ -26,10 +29,14 @@ public class EnumParser : BaseParser {
                 var value = XmlHelper.GetRequiredAttributeValue(optionElement, "value");
 
                 stringBuilder.AppendLine($"    {name} = {value},");
+
+                GeneratedTagCount++;
             }
 
             stringBuilder.AppendLine("}");
             Data.Add(enumName, stringBuilder.ToString());
+
+            GeneratedCount++;
         }
     }
 

@@ -4,6 +4,9 @@ using System.Xml.Linq;
 namespace WizardTea.Generator.Parsers;
 
 public class BitfieldParser : BaseParser {
+    public int GeneratedCount { get; private set; }
+    public int GeneratedFieldCount { get; private set; }
+    
     private Dictionary<string, string> Data { get; } = [];
 
     public BitfieldParser(XDocument xml) : base(xml) { }
@@ -16,7 +19,7 @@ public class BitfieldParser : BaseParser {
             var storage = XmlHelper.GetRequiredAttributeValue(bitfieldElement, "storage");
             var name = XmlHelper.GetRequiredAttributeValue(bitfieldElement, "name");
             var memberElements = bitfieldElement.Elements("member");
-            storage = GetCSType(storage);
+            storage = NormalizeType(storage);
 
             var is64Bit = storage == "ulong";
 
@@ -45,6 +48,8 @@ public class BitfieldParser : BaseParser {
                 }
 
                 sb.AppendLine("    }");
+
+                GeneratedFieldCount++;
             }
 
             sb.AppendLine();
@@ -55,6 +60,8 @@ public class BitfieldParser : BaseParser {
 
             sb.AppendLine("}");
             Data.Add(name, sb.ToString());
+            
+            GeneratedCount++;
         }
     }
 
@@ -64,7 +71,7 @@ public class BitfieldParser : BaseParser {
         }
     }
 
-    private string GetCSType(string type) {
+    private string NormalizeType(string type) {
         return type switch {
             "uint64" => "ulong",
 

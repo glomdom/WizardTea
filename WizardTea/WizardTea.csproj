@@ -10,7 +10,11 @@
 
     <ItemGroup>
       <Compile Include="Generated\*.g.cs" />
+      <Compile Include="NifReader.cs" />
+      <Compile Include="NifVersion.cs" />
       <Compile Include="Overrides\*.cs" />
+      <Compile Include="VersionHelpers.cs" />
+      <Compile Include="VersionRange.cs" />
     </ItemGroup>
     
     <Target Name="GenerateFiles" BeforeTargets="BeforeBuild">

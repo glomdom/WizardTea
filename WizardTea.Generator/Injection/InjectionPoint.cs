@@ -5,5 +5,5 @@ public enum InjectionPoint {
     ItemEnd,
     BeforeField,
     AfterField,
-    FieldOverride
+    FieldOverride,
 }

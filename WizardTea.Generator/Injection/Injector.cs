@@ -39,7 +39,7 @@ public sealed class Injector {
                         FieldType = context.FieldType,
                         ItemElement = context.ItemElement,
                         FieldElement = context.FieldElement,
-                        CurrentSource = result
+                        CurrentSource = result,
                     };
 
                     result = func(localContext);
@@ -61,7 +61,7 @@ public sealed class Injector {
                         FieldType = context.FieldType,
                         ItemElement = context.ItemElement,
                         FieldElement = context.FieldElement,
-                        CurrentSource = result
+                        CurrentSource = result,
                     };
 
                     result = func(localContext);

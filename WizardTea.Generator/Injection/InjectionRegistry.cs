@@ -38,4 +38,6 @@ public static class InjectionRegistry {
 
         return injector;
     }
+
+    public static int Count => _globalInjections.Count + _structInjections.Count;
 }

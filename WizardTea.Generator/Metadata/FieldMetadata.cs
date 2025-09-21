@@ -5,11 +5,19 @@ using System.Text.RegularExpressions;
 namespace WizardTea.Generator.Metadata;
 
 [SuppressMessage("ReSharper", "NotAccessedPositionalProperty.Global")]
-public partial record FieldMetadata(string? SizeIdentifier = null, string? VersionSince = null, string? VersionUntil = null) {
-    private static readonly Dictionary<string, string> TagMap = new Dictionary<string, string> {
+public partial record FieldMetadata(
+    string? SizeIdentifier = null,
+    string? VersionSince = null,
+    string? VersionUntil = null,
+    string? Condition = null,
+    string? VersionCondition = null
+) {
+    private static readonly Dictionary<string, string> TagMap = new() {
         { "si", nameof(SizeIdentifier) },
         { "vs", nameof(VersionSince) },
         { "vu", nameof(VersionUntil) },
+        { "cd", nameof(Condition) },
+        { "vc", nameof(VersionCondition) },
     };
 
     public override string ToString() {

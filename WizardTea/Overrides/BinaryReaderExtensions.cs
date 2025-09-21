@@ -28,7 +28,7 @@ internal static class BinaryReaderExtensions {
             not null when underlyingType == typeof(long) => reader.ReadInt64(),
             not null when underlyingType == typeof(ulong) => reader.ReadUInt64(),
 
-            _ => throw new NotSupportedException($"unsupported enum underlying type: {underlyingType}")
+            _ => throw new NotSupportedException($"Unsupported enum underlying type: {underlyingType}"),
         };
 
         return (T)Enum.ToObject(typeof(T), value);

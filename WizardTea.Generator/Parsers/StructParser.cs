@@ -7,8 +7,10 @@ using WizardTea.Generator.Metadata;
 namespace WizardTea.Generator.Parsers;
 
 public class StructParser : BaseParser {
-    private List<string> BlacklistedTypes { get; }
+    public int GeneratedCount { get; private set; }
+    public int GeneratedFieldsCount { get; private set; }
 
+    private List<string> BlacklistedTypes { get; }
     private List<string> BlacklistedModules { get; }
     private Dictionary<string, string> Data { get; } = [];
 
@@ -30,9 +32,10 @@ public class StructParser : BaseParser {
             }
 
             var isGeneric = bool.TryParse(
-                XmlHelper.GetOptionalAttributeValue(structElem, "generic"),
-                out var result
-            ) && result;
+                                XmlHelper.GetOptionalAttributeValue(structElem, "generic"),
+                                out var result
+                            ) &&
+                            result;
 
             if (BlacklistedTypes.Contains(structName)) {
                 continue;
@@ -44,7 +47,7 @@ public class StructParser : BaseParser {
             var structStartContext = new InjectionContext {
                 ItemName = structName,
                 ItemElement = structElem,
-                CurrentSource = Prelude()
+                CurrentSource = Prelude(),
             };
 
             sb.AppendLine(injector.Execute(InjectionPoint.StructStart, structStartContext));
@@ -52,15 +55,10 @@ public class StructParser : BaseParser {
                 ? $"public struct {structName} {{"
                 : $"public struct {structName}<T> {{"); // nif spec doesn't have more than 2 generics, so this is fine.
 
-            var seenFields = new List<string>();
+            sb.AppendLine("private NifReader _reader;");
 
             foreach (var structFieldElem in structElem.Elements("field")) {
                 var rawFieldName = XmlHelper.GetRequiredAttributeValue(structFieldElem, "name");
-                if (seenFields.Contains(rawFieldName)) {
-                    continue;
-                }
-
-                seenFields.Add(rawFieldName);
 
                 var fieldName = rawFieldName.Replace(" ", "_");
                 var fieldType = XmlHelper.GetRequiredAttributeValue(structFieldElem, "type");
@@ -69,6 +67,8 @@ public class StructParser : BaseParser {
                 var length = XmlHelper.GetOptionalAttributeValue(structFieldElem, "length");
                 var since = XmlHelper.GetOptionalAttributeValue(structFieldElem, "since");
                 var until = XmlHelper.GetOptionalAttributeValue(structFieldElem, "until");
+                var condition = XmlHelper.GetOptionalAttributeValue(structFieldElem, "cond");
+                var versionCondition = XmlHelper.GetOptionalAttributeValue(structFieldElem, "vercond");
 
                 var metadata = new FieldMetadata();
 
@@ -100,6 +100,14 @@ public class StructParser : BaseParser {
                     metadata = metadata with { VersionUntil = until };
                 }
 
+                if (condition is not null) {
+                    metadata = metadata with { Condition = condition };
+                }
+
+                if (versionCondition is not null) {
+                    metadata = metadata with { VersionCondition = versionCondition };
+                }
+
                 if (defaultValue is not null) {
                     ParserHelper.RewriteValueBasedOnType(ref defaultValue, fieldType);
                 }
@@ -108,13 +116,15 @@ public class StructParser : BaseParser {
                     ? $"public {fieldType} {fieldName} {{ get; set; }} = {defaultValue};"
                     : $"public {fieldType} {fieldName} {{ get; set; }}";
 
+                GeneratedFieldsCount++;
+
                 var fieldContext = new InjectionContext {
                     ItemName = structName,
                     ItemElement = structElem,
                     FieldElement = structFieldElem,
                     FieldName = fieldName,
                     FieldType = fieldType,
-                    CurrentSource = ""
+                    CurrentSource = "",
                 };
 
                 var before = injector.Execute(InjectionPoint.BeforeField, fieldContext);
@@ -124,27 +134,21 @@ public class StructParser : BaseParser {
 
                 fieldContext.CurrentSource = baseFieldCode;
 
-                string fieldFinal;
-                if (injector.HasAny(InjectionPoint.FieldOverride)) {
-                    fieldFinal = injector.Execute(InjectionPoint.FieldOverride, fieldContext);
-                    ;
-                } else {
-                    fieldFinal = baseFieldCode;
-                }
+                var fieldFinal = injector.HasAny(InjectionPoint.FieldOverride) ? injector.Execute(InjectionPoint.FieldOverride, fieldContext) : baseFieldCode;
 
                 var finalLine = "    " + fieldFinal;
                 sb.AppendLine(finalLine + metadata.ToComment());
 
-                if (injector.HasAny(InjectionPoint.AfterField)) {
-                    var after = injector.Execute(InjectionPoint.AfterField, fieldContext);
-                    if (!string.IsNullOrWhiteSpace(after) && after != fieldFinal) {
-                        sb.AppendLine("    " + after);
-                    }
+                if (!injector.HasAny(InjectionPoint.AfterField)) continue;
+
+                var after = injector.Execute(InjectionPoint.AfterField, fieldContext);
+                if (!string.IsNullOrWhiteSpace(after) && after != fieldFinal) {
+                    sb.AppendLine("    " + after);
                 }
             }
 
             sb.AppendLine();
-            sb.AppendLine($"    public {structName}(BinaryReader reader) {{ }}");
+            sb.AppendLine($"    public {structName}(NifReader reader) {{ _reader = reader; }}");
             sb.AppendLine();
 
             var structEndContext = new InjectionContext {
@@ -160,7 +164,9 @@ public class StructParser : BaseParser {
             }
 
             sb.AppendLine("}");
-            Data[structName] = sb.ToString();
+            Data.Add(structName, sb.ToString());
+
+            GeneratedCount++;
         }
     }
 
