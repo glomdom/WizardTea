@@ -12,6 +12,7 @@
       <Compile Include="Generated\*.g.cs" />
       <Compile Include="NifReader.cs" />
       <Compile Include="NifVersion.cs" />
+      <Compile Include="NifVersionValue.cs" />
       <Compile Include="Overrides\*.cs" />
       <Compile Include="VersionHelpers.cs" />
       <Compile Include="VersionRange.cs" />

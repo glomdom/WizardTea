@@ -98,6 +98,16 @@ public class Rewriter : CSharpSyntaxRewriter {
             (not null, not null) => $"{since}_{until}",
         };
 
+        if (since is null && until is null && metadata.VersionCondition is not null) {
+            if (!_renamed.TryGetValue(id, out var value)) {
+                value = [];
+                _renamed[id] = value;
+            }
+
+            var count = value.Count + 1;
+            versionString = $"v{count}";
+        }
+
         if (string.IsNullOrEmpty(versionString)) {
             return base.VisitPropertyDeclaration(node);
         }
@@ -120,20 +130,30 @@ public class Rewriter : CSharpSyntaxRewriter {
         var newMembers = new List<MemberDeclarationSyntax>(node.Members);
 
         foreach (var (baseName, versions) in _renamed) {
-            Log.Verbose("Creating versioned property for {PropName} with {VersionCount} version(s)", baseName, versions.Count);
+            var candidateTypeNames = versions
+                .Select(v => node.Members
+                    .OfType<PropertyDeclarationSyntax>()
+                    .First(p => p.Identifier.Text == v.VersionedName)
+                    .Type.ToString())
+                .ToList();
 
-            var type = node.Members
-                .OfType<PropertyDeclarationSyntax>()
-                .First(p => p.Identifier.Text == versions[0].VersionedName)
-                .Type;
+            var commonTypeName = PromoteIntegerTypeNames(candidateTypeNames);
+            var typeSyntax = SyntaxFactory.ParseTypeName(commonTypeName);
 
             var getterBody = new List<StatementSyntax>();
             foreach (var (fieldName, meta) in versions) {
-                var since = meta.VersionSince is not null ? $"NifVersion.V{meta.VersionSince.Replace(".", "_")}" : "null";
-                var until = meta.VersionUntil is not null ? $"NifVersion.V{meta.VersionUntil.Replace(".", "_")}" : "null";
+                if (meta.VersionCondition is not null) {
+                    getterBody.Add(SyntaxFactory.ParseStatement(
+                        $"if (VersionHelpers.Matches(\"{meta.VersionCondition}\", _reader)) return {fieldName};"));
+
+                    continue;
+                }
+
+                var since = meta.VersionSince is not null ? $"NifVersionValue.V{meta.VersionSince.Replace(".", "_")}" : "null";
+                var until = meta.VersionUntil is not null ? $"NifVersionValue.V{meta.VersionUntil.Replace(".", "_")}" : "null";
 
                 getterBody.Add(SyntaxFactory.ParseStatement(
-                    $"if (VersionHelpers.Matches(_reader.Version, new VersionRange({since}, {until}))) return {fieldName};"));
+                    $"if (VersionHelpers.Matches(_reader.Version.Value, new VersionRange({since}, {until}))) return {fieldName};"));
             }
 
             getterBody.Add(SyntaxFactory.ParseStatement(
@@ -141,22 +161,30 @@ public class Rewriter : CSharpSyntaxRewriter {
 
             var setterBody = new List<StatementSyntax>();
             foreach (var (fieldName, meta) in versions) {
-                var since = meta.VersionSince is not null ? $"NifVersion.V{meta.VersionSince.Replace(".", "_")}" : "null";
-                var until = meta.VersionUntil is not null ? $"NifVersion.V{meta.VersionUntil.Replace(".", "_")}" : "null";
-                
-                var fieldType = node.Members
+                var fieldTypeName = node.Members
                     .OfType<PropertyDeclarationSyntax>()
                     .First(p => p.Identifier.Text == fieldName)
-                    .Type;
-                
+                    .Type.ToString();
+
+                if (meta.VersionCondition is not null) {
+                    setterBody.Add(SyntaxFactory.ParseStatement(
+                        $"if (VersionHelpers.Matches(\"{meta.VersionCondition}\", _reader)) {{ {fieldName} = ({fieldTypeName})value; return; }}"));
+
+                    continue;
+                }
+
+                var since = meta.VersionSince is not null ? $"NifVersionValue.V{meta.VersionSince.Replace(".", "_")}" : "null";
+                var until = meta.VersionUntil is not null ? $"NifVersionValue.V{meta.VersionUntil.Replace(".", "_")}" : "null";
+
                 setterBody.Add(SyntaxFactory.ParseStatement(
-                    $"if (VersionHelpers.Matches(_reader.Version, new VersionRange({since}, {until}))) {{ {fieldName} = ({fieldType})value; return; }}"));
+                    $"if (VersionHelpers.Matches(_reader.Version.Value, new VersionRange({since}, {until}))) {{ {fieldName} = ({fieldTypeName})value; return; }}"));
             }
 
             setterBody.Add(SyntaxFactory.ParseStatement(
                 $"throw new NotSupportedException($\"Version {{_reader.Version}} not supported for {baseName}\");"));
 
-            var property = SyntaxFactory.PropertyDeclaration(type, baseName)
+            // Emit the unified property using *fresh* type syntax
+            var property = SyntaxFactory.PropertyDeclaration(typeSyntax, baseName)
                 .AddModifiers(SyntaxFactory.Token(SyntaxKind.PublicKeyword))
                 .AddAccessorListAccessors(
                     SyntaxFactory.AccessorDeclaration(SyntaxKind.GetAccessorDeclaration)
@@ -169,54 +197,42 @@ public class Rewriter : CSharpSyntaxRewriter {
         }
 
         _renamed.Clear();
-
         return (T)node.WithMembers(SyntaxFactory.List(newMembers));
     }
 
-    private static IEnumerable<PropertyDeclarationSyntax> GetPropertiesFromParent(SyntaxNode? parent) {
-        return parent switch {
-            ClassDeclarationSyntax @class => @class.Members.OfType<PropertyDeclarationSyntax>(),
-            StructDeclarationSyntax @struct => @struct.Members.OfType<PropertyDeclarationSyntax>(),
 
-            _ => [],
+    private static string PromoteIntegerTypeNames(IEnumerable<string> typeNames) {
+        var rank = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase) {
+            { "sbyte", 1 }, { "System.SByte", 1 },
+            { "byte", 2 }, { "System.Byte", 2 },
+            { "short", 3 }, { "System.Int16", 3 },
+            { "ushort", 4 }, { "System.UInt16", 4 },
+            { "int", 5 }, { "System.Int32", 5 },
+            { "uint", 6 }, { "System.UInt32", 6 },
+            { "long", 7 }, { "System.Int64", 7 },
+            { "ulong", 8 }, { "System.UInt64", 8 }
         };
-    }
 
-    private static string GetReadMethodForBuiltin(ITypeSymbol type) {
-        return type.SpecialType switch {
-            SpecialType.System_Boolean => "ReadBoolean",
-            SpecialType.System_Byte => "ReadByte",
-            SpecialType.System_SByte => "ReadSByte",
-            SpecialType.System_Int16 => "ReadInt16",
-            SpecialType.System_UInt16 => "ReadUInt16",
-            SpecialType.System_Int32 => "ReadInt32",
-            SpecialType.System_UInt32 => "ReadUInt32",
-            SpecialType.System_Int64 => "ReadInt64",
-            SpecialType.System_UInt64 => "ReadUInt64",
+        var cleaned = typeNames.Select(N).ToList();
 
-            _ => string.Empty,
-        };
-    }
+        if (cleaned.All(t => rank.ContainsKey(t))) {
+            var max = cleaned.Max(t => rank[t]);
+            return max switch {
+                1 => "sbyte",
+                2 => "byte",
+                3 => "short",
+                4 => "ushort",
+                5 => "int",
+                6 => "uint",
+                7 => "long",
+                8 => "ulong",
+                _ => "int"
+            };
+        }
 
-    private static bool IsBuiltin(ITypeSymbol type) {
-        return type.SpecialType switch {
-            SpecialType.System_Boolean or
-                SpecialType.System_Byte or
-                SpecialType.System_SByte or
-                SpecialType.System_Int16 or
-                SpecialType.System_UInt16 or
-                SpecialType.System_Int32 or
-                SpecialType.System_UInt32 or
-                SpecialType.System_Int64 or
-                SpecialType.System_UInt64 or
-                SpecialType.System_Single or
-                SpecialType.System_Double or
-                SpecialType.System_Char or
-                SpecialType.System_String or
-                SpecialType.System_Object => true,
+        return typeNames.First();
 
-            _ => false,
-        };
+        static string N(string s) => s.Replace(" ", "");
     }
 
     private static bool IsArray(ITypeSymbol type) {
