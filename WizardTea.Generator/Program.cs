@@ -174,8 +174,6 @@ internal static class Program {
         var fileMap = new Dictionary<SyntaxTree, string>();
 
         foreach (var file in Directory.GetFiles(GeneratedOutputPath)) {
-            // Log.Debug("parsing {fileName}", file);
-
             var tree = CSharpSyntaxTree.ParseText(File.ReadAllText(file));
             trees.Add(tree);
             fileMap.Add(tree, file);
