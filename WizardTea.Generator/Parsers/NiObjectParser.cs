@@ -18,7 +18,7 @@ public class NiObjectParser : BaseParser {
     }
 
     public override void Parse() {
-        var root = Xml.Root ?? throw new InvalidDataException("cache.xml missing root element");
+        var root = Xml.Root ?? throw new InvalidDataException("cache.xml missing root element.");
         var niobjectElements = root.Elements("niobject");
 
         foreach (var niobjectElement in niobjectElements) {
@@ -60,7 +60,7 @@ public class NiObjectParser : BaseParser {
                 var length = XmlHelper.GetOptionalAttributeValue(field, "length");
 
                 if (template is not null) {
-                    Log.Verbose("generic of {template} applied for {fieldName} of {fieldType}", template, fieldName, fieldType);
+                    Log.Verbose("Generic of {template} applied for {fieldName} of type {fieldType}", template, fieldName, fieldType);
                     fieldType += $"<{template}>";
                 }
 

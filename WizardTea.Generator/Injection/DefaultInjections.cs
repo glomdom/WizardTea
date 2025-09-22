@@ -6,31 +6,31 @@ public static class DefaultInjections {
 
     public static void SystemVector3ToXYZ(Injector injector) {
         injector.Register(InjectionPoint.ItemEnd,
-            ctx => """
-                   public static implicit operator ByteVector3(System.Numerics.Vector3 v) {
-                       var temp = new ByteVector3();
-                       temp.x = (byte)v.X;
-                       temp.y = (byte)v.Y;
-                       temp.z = (byte)v.Z;
-                       
-                       return temp;
-                   }
-                   """);
+            _ => """
+                 public static implicit operator ByteVector3(System.Numerics.Vector3 v) {
+                     var temp = new ByteVector3();
+                     temp.x = (byte)v.X;
+                     temp.y = (byte)v.Y;
+                     temp.z = (byte)v.Z;
+                     
+                     return temp;
+                 }
+                 """);
     }
 
     public static void XYZToSystemVector3(Injector injector) {
         injector.Register(
             InjectionPoint.ItemEnd,
-            ctx => """
-                   public static implicit operator System.Numerics.Vector3(ByteVector3 v) {
-                       var temp = new System.Numerics.Vector3();
-                       temp.X = v.x;
-                       temp.Y = v.y;
-                       temp.Z = v.z;
-                       
-                       return temp;
-                   }
-                   """);
+            _ => """
+                 public static implicit operator System.Numerics.Vector3(ByteVector3 v) {
+                     var temp = new System.Numerics.Vector3();
+                     temp.X = v.x;
+                     temp.Y = v.y;
+                     temp.Z = v.z;
+                     
+                     return temp;
+                 }
+                 """);
     }
 
     public static void Vector2ToTexCoord(Injector injector) {
@@ -52,7 +52,7 @@ public static class DefaultInjections {
     public static void MIP_FMT_DEFAULTToMipMapFormat(Injector injector) {
         RegisterOverrideReplacement(injector, "MIP_FMT_DEFAULT", "MipMapFormat.MIP_FMT_DEFAULT");
     }
-    
+
     public static void ALPHA_DEFAULTToAlphaFormat(Injector injector) {
         RegisterOverrideReplacement(injector, "ALPHA_DEFAULT", "AlphaFormat.ALPHA_DEFAULT");
     }
@@ -103,7 +103,7 @@ public static class DefaultInjections {
             ctx => ctx.CurrentSource.Replace("FileVersion", "int")
         );
     }
-    
+
     public static void FloatMaxTokenToValue(Injector injector) {
         injector.Register(
             InjectionPoint.FieldOverride,
@@ -118,7 +118,7 @@ public static class DefaultInjections {
             }
         );
     }
-    
+
     public static void XAxisTokenToValue(Injector injector) {
         injector.Register(
             InjectionPoint.FieldOverride,
@@ -146,7 +146,7 @@ public static class DefaultInjections {
 
     private static void ValuesFromVec2ToProperties(Injector injector, string structName, string prop1, string prop2) {
         injector.Register(InjectionPoint.ItemEnd,
-            ctx => $@"
+            _ => $@"
                    public static implicit operator {structName}(System.Numerics.Vector2 v) {{
                        var temp = new {structName}();
                        temp.{prop1} = (byte)v.X;
@@ -158,4 +158,5 @@ public static class DefaultInjections {
     }
 
     #endregion
+
 }

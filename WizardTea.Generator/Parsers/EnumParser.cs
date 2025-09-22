@@ -12,7 +12,7 @@ public class EnumParser : BaseParser {
     public EnumParser(XDocument xml) : base(xml) { }
 
     public override void Parse() {
-        var root = Xml.Root ?? throw new InvalidDataException("cache.xml missing root element");
+        var root = Xml.Root ?? throw new InvalidDataException("cache.xml missing root element.");
         var enumElements = root.Elements("enum");
 
         foreach (var enumElement in enumElements) {

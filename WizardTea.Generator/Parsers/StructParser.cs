@@ -20,7 +20,7 @@ public class StructParser : BaseParser {
     }
 
     public override void Parse() {
-        var root = Xml.Root ?? throw new InvalidDataException("cache.xml missing root element");
+        var root = Xml.Root ?? throw new InvalidDataException("cache.xml missing root element.");
         var structElements = root.Elements("struct").ToList();
 
         foreach (var structElem in structElements) {
@@ -83,7 +83,7 @@ public class StructParser : BaseParser {
                 if (template is not null && template == "#T#") {
                     fieldType += "<T>";
                 } else if (template is not null && template != "#T#") {
-                    Log.Verbose("generic of {template} applied for {fieldName} of {fieldType}", template, fieldName, fieldType);
+                    Log.Verbose("Generic of {template} applied for {fieldName} of type {fieldType}", template, fieldName, fieldType);
                     fieldType += $"<{template}>";
                 }
 
