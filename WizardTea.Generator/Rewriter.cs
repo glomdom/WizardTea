@@ -213,24 +213,22 @@ public class Rewriter : CSharpSyntaxRewriter {
             { "ulong", 8 }, { "System.UInt64", 8 }
         };
 
-        var cleaned = typeNames.Select(N).ToList();
+        var enumerable = typeNames.ToList();
+        var cleaned = enumerable.Select(N).ToList();
+        if (!cleaned.All(t => rank.ContainsKey(t))) return enumerable.First();
 
-        if (cleaned.All(t => rank.ContainsKey(t))) {
-            var max = cleaned.Max(t => rank[t]);
-            return max switch {
-                1 => "sbyte",
-                2 => "byte",
-                3 => "short",
-                4 => "ushort",
-                5 => "int",
-                6 => "uint",
-                7 => "long",
-                8 => "ulong",
-                _ => "int"
-            };
-        }
-
-        return typeNames.First();
+        var max = cleaned.Max(t => rank[t]);
+        return max switch {
+            1 => "sbyte",
+            2 => "byte",
+            3 => "short",
+            4 => "ushort",
+            5 => "int",
+            6 => "uint",
+            7 => "long",
+            8 => "ulong",
+            _ => "int",
+        };
 
         static string N(string s) => s.Replace(" ", "");
     }
