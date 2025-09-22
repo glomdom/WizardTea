@@ -18,7 +18,7 @@ internal static class Program {
 
     public static async Task Main() {
         Log.Logger = new LoggerConfiguration()
-            .MinimumLevel.Verbose()
+            .MinimumLevel.Debug()
             .WriteTo.Console()
             .CreateLogger();
 
@@ -189,24 +189,32 @@ internal static class Program {
             MetadataReference.CreateFromFile(typeof(List<>).Assembly.Location),
         ];
 
-        var compilation = CSharpCompilation.Create("GeneratedNIFObjects")
-            .AddSyntaxTrees(trees)
-            .AddReferences(references)
-            .WithOptions(new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
+        CSharpCompilation compilation;
 
-        Log.Debug("Created compilation");
-
-        foreach (var tree in trees) {
-            var model = compilation.GetSemanticModel(tree);
-            var root = tree.GetRoot();
-
-            var rewriter = new Rewriter(model);
-            var newRoot = rewriter.Visit(root);
-
-            File.WriteAllText(fileMap[tree], newRoot.NormalizeWhitespace().ToFullString());
+        var compilationWatch = Stopwatch.StartNew();
+        using (UsingStopwatch(compilationWatch)) {
+            compilation = CSharpCompilation.Create("GeneratedNIFObjects")
+                .AddSyntaxTrees(trees)
+                .AddReferences(references)
+                .WithOptions(new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
         }
 
-        Log.Information("Read methods created for all objects");
+        Log.Information("Created compilation with {TreeCount} syntax trees in {Elapsed}ms", trees.Count, compilationWatch.ElapsedMilliseconds);
+
+        var rewriteWatch = Stopwatch.StartNew();
+        using (UsingStopwatch(rewriteWatch)) {
+            foreach (var tree in trees) {
+                var model = compilation.GetSemanticModel(tree);
+                var root = tree.GetRoot();
+
+                var rewriter = new Rewriter(model);
+                var newRoot = rewriter.Visit(root);
+
+                File.WriteAllText(fileMap[tree], newRoot.NormalizeWhitespace().ToFullString());
+            }
+        }
+
+        Log.Information("Read methods created for all objects in {Elapsed}ms", rewriteWatch.ElapsedMilliseconds);
     }
 
     private static StopwatchDisposable UsingStopwatch(Stopwatch watch) {
