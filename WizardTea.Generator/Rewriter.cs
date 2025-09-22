@@ -183,7 +183,6 @@ public class Rewriter : CSharpSyntaxRewriter {
             setterBody.Add(SyntaxFactory.ParseStatement(
                 $"throw new NotSupportedException($\"Version {{_reader.Version}} not supported for {baseName}\");"));
 
-            // Emit the unified property using *fresh* type syntax
             var property = SyntaxFactory.PropertyDeclaration(typeSyntax, baseName)
                 .AddModifiers(SyntaxFactory.Token(SyntaxKind.PublicKeyword))
                 .AddAccessorListAccessors(
@@ -231,22 +230,6 @@ public class Rewriter : CSharpSyntaxRewriter {
         };
 
         static string N(string s) => s.Replace(" ", "");
-    }
-
-    private static bool IsArray(ITypeSymbol type) {
-        return type is IArrayTypeSymbol;
-    }
-
-    private static bool IsEnum(ITypeSymbol type) {
-        return type is INamedTypeSymbol { TypeKind: TypeKind.Enum };
-    }
-
-    private static ITypeSymbol GetInnerArrayType(ITypeSymbol type) {
-        if (!IsArray(type)) return type;
-
-        var arr = type as IArrayTypeSymbol;
-
-        return arr!.ElementType;
     }
 
     private static string GetTrailingComment(PropertyDeclarationSyntax prop) {
